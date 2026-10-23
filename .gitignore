@@ -1,0 +1,41 @@
+# Dependensi
+node_modules/
+.pnpm-store/
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+
+# Build dan cakupan test
+build/
+dist/
+coverage/
+playwright-report/
+test-results/
+
+# Variabel lingkungan (rahasia)
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Vercel
+.vercel
+
+# Log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistem operasi dan editor
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+
+# Data pribadi untuk uji lokal
+*.local.json
+
+# TypeScript
+*.tsbuildinfo

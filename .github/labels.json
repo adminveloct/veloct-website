@@ -1,0 +1,67 @@
+[
+  {
+    "name": "tugas",
+    "color": "1F6FEB",
+    "description": "Pekerjaan atau fitur"
+  },
+  {
+    "name": "bug",
+    "color": "D73A4A",
+    "description": "Sesuatu tidak berjalan sebagaimana mestinya"
+  },
+  {
+    "name": "dokumentasi",
+    "color": "0075CA",
+    "description": "Perubahan dokumentasi"
+  },
+  {
+    "name": "desain",
+    "color": "A371F7",
+    "description": "Pekerjaan UI/UX dan Figma"
+  },
+  {
+    "name": "butuh-diskusi",
+    "color": "FBCA04",
+    "description": "Perlu keputusan sebelum dikerjakan"
+  },
+  {
+    "name": "terhambat",
+    "color": "B60205",
+    "description": "Tidak bisa lanjut karena hambatan"
+  },
+  {
+    "name": "prioritas:wajib",
+    "color": "E99695",
+    "description": "Fitur Wajib di MVP"
+  },
+  {
+    "name": "prioritas:sebaiknya",
+    "color": "F9D0C4",
+    "description": "Fitur Sebaiknya"
+  },
+  {
+    "name": "good first issue",
+    "color": "7057FF",
+    "description": "Cocok untuk memulai"
+  },
+  {
+    "name": "area:halaman",
+    "color": "C5DEF5",
+    "description": "Area halaman"
+  },
+  {
+    "name": "area:i18n",
+    "color": "C5DEF5",
+    "description": "Area i18n"
+  },
+  {
+    "name": "area:konten",
+    "color": "C5DEF5",
+    "description": "Area konten"
+  },
+  {
+    "name": "area:seo",
+    "color": "C5DEF5",
+    "description": "Area seo"
+  }
+]

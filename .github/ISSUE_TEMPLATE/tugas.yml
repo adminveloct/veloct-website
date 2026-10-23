@@ -1,0 +1,36 @@
+name: Tugas
+description: Pekerjaan atau fitur yang akan dikerjakan
+title: "[Tugas] "
+labels: ["tugas"]
+body:
+  - type: textarea
+    id: tujuan
+    attributes:
+      label: Tujuan
+      description: Apa yang ingin dicapai dari tugas ini?
+    validations:
+      required: true
+  - type: input
+    id: kebutuhan
+    attributes:
+      label: ID kebutuhan terkait
+      description: "Contoh: F-W-01"
+  - type: textarea
+    id: kriteria
+    attributes:
+      label: Kriteria selesai
+      description: Kondisi yang harus terpenuhi agar tugas dianggap selesai
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: input
+    id: estimasi
+    attributes:
+      label: Estimasi (jam)
+  - type: textarea
+    id: catatan
+    attributes:
+      label: Catatan atau tautan
+      description: Desain Figma, dokumen, atau referensi lain

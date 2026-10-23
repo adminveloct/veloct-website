@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cek apakah proyek sudah disiapkan
+        id: project
+        run: |
+          if [ -f package.json ]; then echo "ready=true" >> "$GITHUB_OUTPUT"; else echo "ready=false" >> "$GITHUB_OUTPUT"; echo "package.json belum ada, langkah CI dilewati."; fi
+
+      - uses: actions/setup-node@v4
+        if: steps.project.outputs.ready == 'true'
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Pasang dependensi
+        if: steps.project.outputs.ready == 'true'
+        run: npm ci
+
+      - name: Lint
+        if: steps.project.outputs.ready == 'true'
+        run: npm run lint --if-present
+
+      - name: Typecheck
+        if: steps.project.outputs.ready == 'true'
+        run: npm run typecheck --if-present
+
+      - name: Test
+        if: steps.project.outputs.ready == 'true'
+        run: npm test --if-present
+
+      - name: Build
+        if: steps.project.outputs.ready == 'true'
+        run: npm run build --if-present

@@ -1,0 +1,35 @@
+{
+  "api": {
+    "sent": "Terima kasih, pesan Anda sudah terkirim. Kami akan membalas pesan Anda paling lambat 3 hari kerja.",
+    "invalid": "Periksa kembali kolom yang ditandai.",
+    "failed": "Pesan Anda belum terkirim. Silakan coba lagi, atau hubungi kami lewat email atau WhatsApp.",
+    "rejected": "Pesan tidak dapat diproses. Muat ulang halaman ini lalu coba lagi.",
+    "expired": "Sesi formulir sudah berakhir. Isian Anda masih ada, silakan tekan kirim lagi.",
+    "rateLimited": "Terlalu banyak pesan dalam waktu singkat. Silakan coba lagi beberapa menit lagi."
+  },
+  "errors": {
+    "name": {
+      "required": "Nama wajib diisi.",
+      "tooLong": "Nama paling panjang 100 karakter.",
+      "invalid": "Nama mengandung karakter yang tidak diizinkan."
+    },
+    "email": {
+      "required": "Email wajib diisi.",
+      "tooLong": "Email paling panjang 254 karakter.",
+      "invalid": "Format email tidak valid."
+    },
+    "organization": {
+      "required": "Organisasi wajib diisi.",
+      "tooLong": "Organisasi paling panjang 150 karakter.",
+      "invalid": "Organisasi mengandung karakter yang tidak diizinkan."
+    },
+    "message": {
+      "required": "Pesan wajib diisi.",
+      "tooLong": "Pesan paling panjang 5000 karakter.",
+      "invalid": "Pesan mengandung karakter yang tidak diizinkan."
+    },
+    "privacyConsent": {
+      "required": "Centang persetujuan Kebijakan Privasi untuk mengirim pesan."
+    }
+  }
+}

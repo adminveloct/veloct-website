@@ -1,0 +1,35 @@
+{
+  "api": {
+    "sent": "Thank you, your message has been sent. We will reply to your message within 3 working days.",
+    "invalid": "Please check the highlighted fields.",
+    "failed": "Your message has not been sent. Please try again, or contact us by email or WhatsApp.",
+    "rejected": "Your message could not be processed. Please reload this page and try again.",
+    "expired": "Your form session has ended. Your entries are still here, please press send again.",
+    "rateLimited": "Too many messages in a short time. Please try again in a few minutes."
+  },
+  "errors": {
+    "name": {
+      "required": "Name is required.",
+      "tooLong": "Name can be at most 100 characters.",
+      "invalid": "Name contains characters that are not allowed."
+    },
+    "email": {
+      "required": "Email is required.",
+      "tooLong": "Email can be at most 254 characters.",
+      "invalid": "Email format is not valid."
+    },
+    "organization": {
+      "required": "Organization is required.",
+      "tooLong": "Organization can be at most 150 characters.",
+      "invalid": "Organization contains characters that are not allowed."
+    },
+    "message": {
+      "required": "Message is required.",
+      "tooLong": "Message can be at most 5000 characters.",
+      "invalid": "Message contains characters that are not allowed."
+    },
+    "privacyConsent": {
+      "required": "Please accept the Privacy Policy to send your message."
+    }
+  }
+}

@@ -4,5 +4,23 @@
     "label": "Pilih bahasa",
     "id": "Indonesia",
     "en": "Inggris"
+  },
+  "nav": {
+    "aria": "Menu navigasi",
+    "menuLabel": "Buka menu",
+    "home": "Beranda",
+    "about": "Tentang Kami",
+    "services": "Layanan",
+    "contact": "Kontak",
+    "privacy": "Kebijakan Privasi"
+  },
+  "footer": {
+    "rights": "Hak cipta dilindungi."
+  },
+  "notFound": {
+    "title": "Halaman tidak ditemukan",
+    "description": "Alamat yang Anda buka tidak tersedia.",
+    "backHome": "Ke Beranda",
+    "goContact": "Ke Kontak"
   }
 }

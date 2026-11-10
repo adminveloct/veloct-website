@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
-import LanguageSwitcher from "@/components/language-switcher";
+import SiteFooter from "@/components/site-footer";
+import SiteHeader from "@/components/site-header";
 import { routing } from "@/i18n/routing";
 
 import "../globals.css";
@@ -28,24 +29,12 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params,
-}: Pick<Props, "params">): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "home" });
-
+export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(
       process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
     ),
-    title: t("metaTitle"),
-    description: t("metaDescription"),
-    alternates: {
-      languages: {
-        id: "/id",
-        en: "/en",
-      },
-    },
+    title: "Veloct",
   };
 }
 
@@ -56,7 +45,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
   setRequestLocale(locale);
 
-  const t = await getTranslations({ locale, namespace: "common" });
+  const messages = await getMessages({ locale });
 
   return (
     <html
@@ -64,15 +53,10 @@ export default async function LocaleLayout({ children, params }: Props) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <NextIntlClientProvider>
-          <header className="flex items-center justify-between border-b border-zinc-200 px-6 py-4 dark:border-zinc-800">
-            <span className="text-lg font-semibold">{t("brand")}</span>
-            <LanguageSwitcher
-              locale={locale}
-              label={t("switcher.label")}
-            />
-          </header>
-          {children}
+        <NextIntlClientProvider messages={messages}>
+          <SiteHeader locale={locale} />
+          <main className="flex flex-1 flex-col">{children}</main>
+          <SiteFooter locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>

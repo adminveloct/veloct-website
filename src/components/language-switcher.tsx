@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname, useRouter } from "@/i18n/navigation";
+import { findPageKey, getSlug } from "@/i18n/pages";
 import { routing } from "@/i18n/routing";
 
 type Props = {
@@ -13,7 +14,10 @@ export default function LanguageSwitcher({ locale, label }: Props) {
   const pathname = usePathname();
 
   function switchLocale(nextLocale: string) {
-    router.replace(pathname, { locale: nextLocale });
+    const slug = pathname.split("/").filter(Boolean)[0];
+    const pageKey = slug ? findPageKey(locale, slug) : undefined;
+    const target = pageKey ? `/${getSlug(pageKey, nextLocale)}` : pathname;
+    router.replace(target, { locale: nextLocale });
   }
 
   return (

@@ -1,8 +1,28 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 type Props = {
   params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({
+  params,
+}: Pick<Props, "params">): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "home" });
+
+  return {
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        id: "/id",
+        en: "/en",
+      },
+    },
+  };
+}
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
@@ -11,7 +31,7 @@ export default async function HomePage({ params }: Props) {
   const t = await getTranslations({ locale, namespace: "home" });
 
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-6 px-6 py-16 text-center">
+    <div className="flex flex-1 flex-col items-center justify-center gap-6 px-6 py-16 text-center">
       <h1 className="max-w-md text-3xl font-semibold leading-tight tracking-tight">
         {t("heading")}
       </h1>
@@ -24,6 +44,6 @@ export default async function HomePage({ params }: Props) {
       >
         {t("button")}
       </button>
-    </main>
+    </div>
   );
 }

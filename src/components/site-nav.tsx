@@ -15,7 +15,7 @@ export default function SiteNav() {
 
   const items = [
     { key: "home", href: "/" },
-    ...PAGES.map((page) => ({
+    ...PAGES.filter((page) => page.key !== "privacy").map((page) => ({
       key: page.key,
       href: `/${getSlug(page.key, locale)}`,
     })),

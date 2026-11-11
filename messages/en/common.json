@@ -1,5 +1,5 @@
 {
-  "brand": "Veloct",
+  "brand": "VeloCT",
   "switcher": {
     "label": "Choose language",
     "id": "Indonesian",
@@ -10,7 +10,7 @@
     "menuLabel": "Open menu",
     "home": "Home",
     "about": "About Us",
-    "services": "Services & Products",
+    "services-products": "Services/Products",
     "contact": "Contact Us",
     "privacy": "Privacy Policy"
   },
@@ -21,6 +21,6 @@
     "title": "Page not found",
     "description": "The address you requested is unavailable.",
     "backHome": "Go to Home",
-    "goContact": "Go to Contact"
+    "goContact": "Contact Us"
   }
 }

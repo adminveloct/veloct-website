@@ -1,6 +1,6 @@
 export type Locale = "id" | "en";
 
-export type PageKey = "about" | "services" | "contact" | "privacy";
+export type PageKey = "about" | "services-products" | "contact" | "privacy";
 
 type PageDefinition = {
   key: PageKey;
@@ -9,7 +9,7 @@ type PageDefinition = {
 
 export const PAGES: readonly PageDefinition[] = [
   { key: "about", slugs: { id: "tentang", en: "about" } },
-  { key: "services", slugs: { id: "layanan", en: "services-products" } },
+  { key: "services-products", slugs: { id: "layanan-produk", en: "services-products" } },
   { key: "contact", slugs: { id: "kontak", en: "contact" } },
   { key: "privacy", slugs: { id: "kebijakan-privasi", en: "privacy-policy" } },
 ];

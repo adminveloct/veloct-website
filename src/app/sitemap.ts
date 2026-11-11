@@ -27,9 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages: {
             id: `${baseUrl}/id${pathFor("id")}`,
             en: `${baseUrl}/en${pathFor("en")}`,
-            "x-default": `${baseUrl}${
-              entry.key === "home" ? "/" : pathFor("id")
-            }`,
+            "x-default": `${baseUrl}/id${pathFor("id")}`,
           },
         },
       };

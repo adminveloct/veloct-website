@@ -1,5 +1,5 @@
 {
-  "brand": "Veloct",
+  "brand": "VeloCT",
   "switcher": {
     "label": "Pilih bahasa",
     "id": "Indonesia",
@@ -10,7 +10,7 @@
     "menuLabel": "Buka menu",
     "home": "Beranda",
     "about": "Tentang Kami",
-    "services": "Layanan",
+    "services-products": "Layanan/Produk",
     "contact": "Hubungi Kami",
     "privacy": "Kebijakan Privasi"
   },
@@ -21,6 +21,6 @@
     "title": "Halaman tidak ditemukan",
     "description": "Alamat yang Anda buka tidak tersedia.",
     "backHome": "Ke Beranda",
-    "goContact": "Ke Kontak"
+    "goContact": "Hubungi Kami"
   }
 }

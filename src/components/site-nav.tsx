@@ -13,12 +13,16 @@ export default function SiteNav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const items = [
-    { key: "home", href: "/" },
-    ...PAGES.filter((page) => page.key !== "privacy").map((page) => ({
-      key: page.key,
-      href: `/${getSlug(page.key, locale)}`,
-    })),
+  const items = PAGES.filter(
+    (page) => page.key !== "privacy" && page.key !== "contact"
+  ).map((page) => ({
+    key: page.key,
+    href: `/${getSlug(page.key, locale)}`,
+  }));
+
+  const mobileItems = [
+    ...items,
+    { key: "contact", href: `/${getSlug("contact", locale)}` },
   ];
 
   return (
@@ -30,10 +34,10 @@ export default function SiteNav() {
               <Link
                 href={item.href}
                 aria-current={pathname === item.href ? "page" : undefined}
-                className={`block rounded-full px-3 py-2 transition-colors ${
+                className={`block px-3 py-2 transition-colors ${
                   pathname === item.href
                     ? "font-semibold text-zinc-900 dark:text-zinc-50"
-                    : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+                    : "font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
                 }`}
               >
                 {t(`nav.${item.key}`)}
@@ -75,7 +79,7 @@ export default function SiteNav() {
         >
           <nav aria-label={t("nav.aria")}>
             <ul className="mx-auto flex max-w-6xl flex-col gap-1 text-sm">
-              {items.map((item) => (
+              {mobileItems.map((item) => (
                 <li key={item.key}>
                   <Link
                     href={item.href}

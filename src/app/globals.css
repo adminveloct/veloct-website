@@ -8,8 +8,14 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "General Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-blush: #fff5f5;
+  --color-blush-deep: #fadbd5;
+  --color-mint: #d9eedf;
+  --color-flame: #ee4a1b;
+  --color-sun: #fcefb8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +25,20 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+.btn-flame {
+  background: linear-gradient(90deg, #eb3113 0%, #c6461f 50%, #ec4b11 100%);
+}
+
+.btn-flame-hover:hover {
+  background: linear-gradient(90deg, #eb3113 0%, #c6461f 50%, #ec4b11 100%);
 }

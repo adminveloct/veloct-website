@@ -102,8 +102,19 @@ describe("successful send", () => {
     const encodedBody = mime.split("\r\n\r\n")[1].replace(/\r\n/g, "");
     const text = Buffer.from(encodedBody, "base64").toString();
     expect(text).toContain("Halo VeloCT");
+    expect(text).toContain("Telepon: -");
     expect(text).toContain("Persetujuan Kebijakan Privasi: Ya");
     expect(text).toContain("2026-11-09T08:00:05.000Z");
+  });
+
+  it("includes an optional phone number in the email, without separators", async () => {
+    const response = await post(await validBody({ phone: "+62 812-3456-7890" }));
+
+    expect(response.status).toBe(200);
+    const encodedBody = sentMime().split("\r\n\r\n")[1].replace(/\r\n/g, "");
+    expect(Buffer.from(encodedBody, "base64").toString()).toContain(
+      "Telepon: +6281234567890",
+    );
   });
 
   it("answers in English for the English page", async () => {
@@ -134,6 +145,16 @@ describe("invalid input", () => {
         email: "Email format is not valid.",
         privacyConsent: "Please accept the Privacy Policy to send your message.",
       },
+    });
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("rejects a wrong phone format in the visitor's language", async () => {
+    const response = await post(await validBody({ phone: "021-1234567" }));
+
+    expect(response.status).toBe(422);
+    expect((await response.json()).fields).toEqual({
+      phone: "Nomor telepon harus diawali 08 atau +62, contoh 081234567890.",
     });
     expect(fetchMock).not.toHaveBeenCalled();
   });

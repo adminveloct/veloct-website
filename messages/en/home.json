@@ -27,20 +27,20 @@
     {
       "year": "2026",
       "tag": "AI",
-      "label": "Helipark AI application consulting"
+      "label": "AI helpdesk application consulting"
     },
     {
       "year": "2026",
       "tag": "AI",
-      "label": "AI training for digital talents"
+      "label": "AI training for digital talent"
     },
     {
-      "year": "2024",
+      "year": "2026",
       "tag": "Big Data",
-      "label": "Energy economics dashboard and database"
+      "label": "Energy-economy dashboard and database"
     },
     {
-      "year": "2024",
+      "year": "2026",
       "tag": "Big Data",
       "label": "Automated personnel data recap"
     },
@@ -53,5 +53,5 @@
   "partnersTitle": "Our Clients and Partners",
   "ctaTitle": "Need data or AI solutions?",
   "ctaSubtitle": "Tell us your situation. We will reply within 3 business days.",
-  "ctaButton": "Contact us now!"
+  "ctaButton": "Contact Us"
 }

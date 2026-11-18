@@ -41,8 +41,8 @@ export default function LanguageSwitcher({ locale, label }: Props) {
           aria-current={candidate === locale ? "true" : undefined}
           className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
             candidate === locale
-              ? "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900"
-              : "border border-zinc-200 bg-background text-zinc-600 hover:text-zinc-900 dark:border-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-100"
+              ? "bg-zinc-900 text-white"
+              : "border border-zinc-200 bg-background text-zinc-600 hover:text-zinc-900"
           }`}
         >
           <Image

@@ -1,7 +1,7 @@
 {
   "metaTitle": "VeloCT — Konsultan AI dan Data untuk Pemerintah dan Industri",
   "metaDescription": "VeloCT merancang dan membangun infrastruktur, data, dan AI untuk pemerintah dan industri di Indonesia.",
-  "heading": "<bold>AI</bold> yang <bold>baik, lahir</bold> dari <bold>data</bold> yang <bold>baik</bold>.",
+  "heading": "<bold>AI</bold> yang <bold>baik lahir</bold> dari <bold>data</bold> yang <bold>baik</bold>.",
   "description": "Kami merancang dan membangun infrastruktur, data, dan AI untuk pemerintah dan industri, sampai <bold>manfaatnya terasa</bold>.",
   "button": "Selengkapnya",
   "scrollHint": "Jelajahi Lebih Lanjut",
@@ -27,17 +27,17 @@
     {
       "year": "2026",
       "tag": "AI",
-      "label": "Konsultasi aplikasi Helipark AI"
+      "label": "Konsultasi aplikasi Helpdesk AI"
     },
     {
       "year": "2026",
       "tag": "AI",
-      "label": "Pelatihan AI untuk talents digital"
+      "label": "Pelatihan AI untuk talenta digital"
     },
     {
       "year": "2026",
       "tag": "Big Data",
-      "label": "Dashboard dan database energi ekonomi"
+      "label": "Dashboard dan database energi-ekonomi"
     },
     {
       "year": "2026",
@@ -53,5 +53,5 @@
   "partnersTitle": "Klien dan Mitra Kami",
   "ctaTitle": "Punya kebutuhan data atau AI?",
   "ctaSubtitle": "Ceritakan kondisinya. Kami akan membalas paling lambat 3 hari kerja.",
-  "ctaButton": "Hubungi Sekarang!"
+  "ctaButton": "Hubungi Kami"
 }

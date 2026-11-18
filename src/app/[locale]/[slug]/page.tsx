@@ -58,7 +58,7 @@ export default async function SlugPage({ params }: Props) {
       <h1 className="text-3xl font-semibold leading-tight tracking-tight">
         {t("heading")}
       </h1>
-      <p className="mt-4 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+      <p className="mt-4 text-lg leading-8 text-zinc-600">
         {t("description")}
       </p>
     </div>

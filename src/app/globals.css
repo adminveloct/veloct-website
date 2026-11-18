@@ -18,14 +18,8 @@
   --color-sun: #fcefb8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 html {
+  color-scheme: light;
   scroll-behavior: smooth;
 }
 
@@ -41,4 +35,5 @@ body {
 
 .btn-flame-hover:hover {
   background: linear-gradient(90deg, #eb3113 0%, #c6461f 50%, #ec4b11 100%);
+  color: #ffffff;
 }

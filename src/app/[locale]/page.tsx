@@ -106,7 +106,6 @@ export default async function HomePage({ params }: Props) {
             <Image
               src="/images/hero.png"
               alt={t("heroImageAlt")}
-              unoptimized
               priority
               width={921}
               height={1080}
@@ -118,7 +117,7 @@ export default async function HomePage({ params }: Props) {
         <div className="mt-12 flex justify-center">
           <a
             href={`#${servicesSectionId}`}
-            className="inline-flex items-center gap-2 rounded-full bg-zinc-500/80 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-600"
+            className="inline-flex items-center gap-2 rounded-full bg-[#222222] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-black"
           >
             {t("scrollHint")}
             <svg
@@ -141,7 +140,6 @@ export default async function HomePage({ params }: Props) {
         <Image
           src="/images/Frame1.png"
           alt=""
-          unoptimized
           width={2880}
           height={400}
           className="block h-auto w-full"
@@ -179,7 +177,7 @@ export default async function HomePage({ params }: Props) {
                 <p className="mt-3 flex-1 text-center text-sm leading-6 text-zinc-600">
                   {t(`serviceDescriptions.${key}`)}
                 </p>
-                <span className="mt-4 flex w-full items-center justify-center gap-3 rounded-full bg-mint px-4 py-2 text-sm font-medium text-[#2f7a4a] transition-colors group-hover:bg-[#cbe7d5]">
+                <span className="mt-4 flex w-full items-center justify-center gap-3 rounded-full bg-[#D9EEDF] px-4 py-2 text-sm font-medium text-[#2f7a4a] transition-colors group-hover:bg-[#21813E] group-hover:text-white">
                   {t("serviceCardCta")}
                   <ArrowIcon />
                 </span>
@@ -193,7 +191,6 @@ export default async function HomePage({ params }: Props) {
         <Image
           src="/images/Frame2.png"
           alt=""
-          unoptimized
           width={2880}
           height={400}
           className="block h-auto w-full"
@@ -242,7 +239,6 @@ export default async function HomePage({ params }: Props) {
         <Image
           src="/images/Frame3.png"
           alt=""
-          unoptimized
           width={2880}
           height={400}
           className="block h-auto w-full"

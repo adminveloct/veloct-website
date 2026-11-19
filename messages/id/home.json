@@ -1,7 +1,57 @@
 {
-  "metaTitle": "VeloCT — Solusi Teknologi untuk Bisnis Anda",
-  "metaDescription": "VeloCT menyediakan solusi teknologi terbaik untuk membantu bisnis Anda berkembang.",
-  "heading": "Selamat Datang di VeloCT",
-  "description": "Kami menyediakan solusi terbaik untuk bisnis Anda.",
-  "button": "Pelajari Lebih Lanjut"
+  "metaTitle": "VeloCT — Konsultan AI dan Data untuk Pemerintah dan Industri",
+  "metaDescription": "VeloCT merancang dan membangun infrastruktur, data, dan AI untuk pemerintah dan industri di Indonesia.",
+  "heading": "<bold>AI</bold> yang <bold>baik lahir</bold> dari <bold>data</bold> yang <bold>baik</bold>.",
+  "description": "Kami merancang dan membangun infrastruktur, data, dan AI untuk pemerintah dan industri, sampai <bold>manfaatnya terasa</bold>.",
+  "button": "Selengkapnya",
+  "scrollHint": "Jelajahi Lebih Lanjut",
+  "heroImageAlt": "Ilustrasi AI yang terhubung dengan basis data dan panel analitik",
+  "servicesTitle": "Empat layanan, dari data sampai aplikasi",
+  "services": {
+    "ai": "AI",
+    "bigData": "Big Data",
+    "cloud": "Cloud AWS",
+    "software": "Software"
+  },
+  "serviceDescriptions": {
+    "ai": "Prediksi dan otomatisasi pekerjaan seperti membaca laporan, memilih dokumen, dan menjawab pertanyaan layanan.",
+    "bigData": "Data historis yang lengkap, bersih, dan terhubung, siap dipakai untuk keputusan.",
+    "cloud": "Pengelolaan dan pemantauan cloud AWS supaya sistem andal, aman, dan biayanya terkendali.",
+    "software": "Aplikasi yang dibangun bersama mitra terpercaya, dengan VeloCT sebagai satu penanggung jawab."
+  },
+  "serviceCardCta": "Lihat Selengkapnya",
+  "workTitle": "Sudah kami kerjakan di setiap lapis",
+  "workSubtitle": "<bold>10 pekerjaan sejak 2023</bold> untuk instansi pemerintah, BUMN, dan perguruan tinggi, dari pemeliharaan IT sampai AI prediktif.",
+  "workCta": "Lihat proyek",
+  "projects": [
+    {
+      "year": "2026",
+      "tag": "AI",
+      "label": "Konsultasi aplikasi Helpdesk AI"
+    },
+    {
+      "year": "2026",
+      "tag": "AI",
+      "label": "Pelatihan AI untuk talenta digital"
+    },
+    {
+      "year": "2026",
+      "tag": "Big Data",
+      "label": "Dashboard dan database energi-ekonomi"
+    },
+    {
+      "year": "2026",
+      "tag": "Big Data",
+      "label": "Rekap data personel otomatis"
+    },
+    {
+      "year": "2026",
+      "tag": "Big Data",
+      "label": "Konsultasi pengelolaan data"
+    }
+  ],
+  "partnersTitle": "Klien dan Mitra Kami",
+  "ctaTitle": "Punya kebutuhan data atau AI?",
+  "ctaSubtitle": "Ceritakan kondisinya. Kami akan membalas paling lambat 3 hari kerja.",
+  "ctaButton": "Hubungi Kami"
 }

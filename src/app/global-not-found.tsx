@@ -44,6 +44,7 @@ export default async function GlobalNotFound() {
               Roboto, "Helvetica Neue", Arial, sans-serif;
             background: #ffffff;
             color: #18181b;
+            color-scheme: light;
           }
           main {
             max-width: 36rem;
@@ -103,33 +104,6 @@ export default async function GlobalNotFound() {
           a:focus-visible {
             outline: 2px solid #18181b;
             outline-offset: 2px;
-          }
-          @media (prefers-color-scheme: dark) {
-            body {
-              background: #09090b;
-              color: #fafafa;
-            }
-            p {
-              color: #a1a1aa;
-            }
-            a.primary {
-              background: #fafafa;
-              color: #18181b;
-            }
-            a.primary:hover {
-              background: #e4e4e7;
-            }
-            a.secondary {
-              background: transparent;
-              color: #fafafa;
-              border-color: #3f3f46;
-            }
-            a.secondary:hover {
-              background: #27272a;
-            }
-            a:focus-visible {
-              outline-color: #fafafa;
-            }
           }
         `}</style>
       </head>

@@ -15,7 +15,10 @@
     "privacy": "Privacy Policy"
   },
   "footer": {
-    "rights": "All rights reserved."
+    "companyName": "PT Velo Citra Teknologi",
+    "tagline": "AI and data consulting for government and industry.",
+    "contactTitle": "Contact Us",
+    "pending": "[to be confirmed]"
   },
   "notFound": {
     "title": "Page not found",

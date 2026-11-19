@@ -1,7 +1,57 @@
 {
-  "metaTitle": "VeloCT — Technology Solutions for Your Business",
-  "metaDescription": "VeloCT provides the best technology solutions to help your business grow.",
-  "heading": "Welcome to VeloCT",
-  "description": "We provide the best solutions for your business.",
-  "button": "Learn More"
+  "metaTitle": "VeloCT — AI and Data Consulting for Government and Industry",
+  "metaDescription": "VeloCT designs and builds infrastructure, data, and AI for government and industry in Indonesia.",
+  "heading": "<bold>Good AI</bold> starts with <bold>good data</bold>.",
+  "description": "We design and build infrastructure, data, and AI for government and industry, and stay until <bold>the benefits are felt</bold>.",
+  "button": "Read more",
+  "scrollHint": "Explore more",
+  "heroImageAlt": "Illustration of AI connected to a database and analytics panels",
+  "servicesTitle": "Four services, from data to applications",
+  "services": {
+    "ai": "AI",
+    "bigData": "Big Data",
+    "cloud": "Cloud AWS",
+    "software": "Software"
+  },
+  "serviceDescriptions": {
+    "ai": "Prediction and automation of work such as reading reports, selecting documents, and answering service queries.",
+    "bigData": "Complete, clean, and connected historical data, ready to be used for decisions.",
+    "cloud": "AWS cloud management and monitoring to keep systems reliable, secure, and costs under control.",
+    "software": "Applications built with trusted partners, with VeloCT as the single party responsible."
+  },
+  "serviceCardCta": "See details",
+  "workTitle": "We have worked on every layer",
+  "workSubtitle": "<bold>10 projects since 2023</bold> for government institutions, state-owned enterprises, and universities, from IT maintenance to predictive AI.",
+  "workCta": "See projects",
+  "projects": [
+    {
+      "year": "2026",
+      "tag": "AI",
+      "label": "AI helpdesk application consulting"
+    },
+    {
+      "year": "2026",
+      "tag": "AI",
+      "label": "AI training for digital talent"
+    },
+    {
+      "year": "2026",
+      "tag": "Big Data",
+      "label": "Energy-economy dashboard and database"
+    },
+    {
+      "year": "2026",
+      "tag": "Big Data",
+      "label": "Automated personnel data recap"
+    },
+    {
+      "year": "2026",
+      "tag": "Big Data",
+      "label": "Data management consulting"
+    }
+  ],
+  "partnersTitle": "Our Clients and Partners",
+  "ctaTitle": "Need data or AI solutions?",
+  "ctaSubtitle": "Tell us your situation. We will reply within 3 business days.",
+  "ctaButton": "Contact Us"
 }

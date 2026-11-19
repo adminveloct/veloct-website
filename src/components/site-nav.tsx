@@ -7,19 +7,20 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { PAGES, getSlug } from "@/i18n/pages";
 
+import LanguageSwitcher from "@/components/language-switcher";
+
 export default function SiteNav() {
   const locale = useLocale();
   const t = useTranslations("common");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const items = [
-    { key: "home", href: "/" },
-    ...PAGES.filter((page) => page.key !== "privacy").map((page) => ({
-      key: page.key,
-      href: `/${getSlug(page.key, locale)}`,
-    })),
-  ];
+  const items = PAGES.filter(
+    (page) => page.key !== "privacy" && page.key !== "contact"
+  ).map((page) => ({
+    key: page.key,
+    href: `/${getSlug(page.key, locale)}`,
+  }));
 
   return (
     <>
@@ -30,10 +31,10 @@ export default function SiteNav() {
               <Link
                 href={item.href}
                 aria-current={pathname === item.href ? "page" : undefined}
-                className={`block rounded-full px-3 py-2 transition-colors ${
+                className={`block px-3 py-2 transition-colors ${
                   pathname === item.href
-                    ? "font-semibold text-zinc-900 dark:text-zinc-50"
-                    : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+                    ? "font-semibold text-zinc-900"
+                    : "font-medium text-zinc-600 hover:text-zinc-900"
                 }`}
               >
                 {t(`nav.${item.key}`)}
@@ -49,7 +50,7 @@ export default function SiteNav() {
         aria-controls="site-menu"
         aria-label={t("nav.menuLabel")}
         onClick={() => setOpen((value) => !value)}
-        className="rounded-md p-2 text-zinc-700 transition-colors hover:bg-zinc-100 lg:hidden dark:text-zinc-300 dark:hover:bg-zinc-800"
+        className="rounded-md p-2 text-zinc-700 transition-colors hover:bg-zinc-100 lg:hidden"
       >
         <svg
           aria-hidden="true"
@@ -71,7 +72,7 @@ export default function SiteNav() {
       {open && (
         <div
           id="site-menu"
-          className="absolute inset-x-0 top-full z-10 border-b border-zinc-200 bg-background px-6 py-3 shadow-lg lg:hidden dark:border-zinc-800"
+          className="absolute inset-x-0 top-full z-10 border-b border-zinc-200 bg-background px-6 py-3 shadow-lg lg:hidden"
         >
           <nav aria-label={t("nav.aria")}>
             <ul className="mx-auto flex max-w-6xl flex-col gap-1 text-sm">
@@ -85,8 +86,8 @@ export default function SiteNav() {
                     onClick={() => setOpen(false)}
                     className={`block rounded-md px-3 py-2 transition-colors ${
                       pathname === item.href
-                        ? "font-semibold text-zinc-900 dark:text-zinc-50"
-                        : "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
+                        ? "font-semibold text-zinc-900"
+                        : "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900"
                     }`}
                   >
                     {t(`nav.${item.key}`)}
@@ -95,6 +96,9 @@ export default function SiteNav() {
               ))}
             </ul>
           </nav>
+          <div className="mx-auto mt-3 flex max-w-6xl border-t border-zinc-200 pt-3">
+            <LanguageSwitcher locale={locale} label={t("switcher.label")} />
+          </div>
         </div>
       )}
     </>

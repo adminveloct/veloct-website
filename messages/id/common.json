@@ -15,7 +15,10 @@
     "privacy": "Kebijakan Privasi"
   },
   "footer": {
-    "rights": "Hak cipta dilindungi."
+    "companyName": "PT Velo Citra Teknologi",
+    "tagline": "Konsultan AI dan data untuk pemerintah dan industri.",
+    "contactTitle": "Hubungi Kami",
+    "pending": "[menyusul]"
   },
   "notFound": {
     "title": "Halaman tidak ditemukan",

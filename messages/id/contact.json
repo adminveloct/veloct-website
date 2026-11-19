@@ -23,6 +23,9 @@
       "tooLong": "Organisasi paling panjang 150 karakter.",
       "invalid": "Organisasi mengandung karakter yang tidak diizinkan."
     },
+    "phone": {
+      "invalid": "Nomor WhatsApp harus diawali 08 atau +62, contoh 081234567890."
+    },
     "message": {
       "required": "Pesan wajib diisi.",
       "tooLong": "Pesan paling panjang 5000 karakter.",

@@ -102,7 +102,7 @@ describe("successful send", () => {
     const encodedBody = mime.split("\r\n\r\n")[1].replace(/\r\n/g, "");
     const text = Buffer.from(encodedBody, "base64").toString();
     expect(text).toContain("Halo VeloCT");
-    expect(text).toContain("Telepon: -");
+    expect(text).toContain("WhatsApp: -");
     expect(text).toContain("Persetujuan Kebijakan Privasi: Ya");
     expect(text).toContain("2026-11-09T08:00:05.000Z");
   });
@@ -113,7 +113,7 @@ describe("successful send", () => {
     expect(response.status).toBe(200);
     const encodedBody = sentMime().split("\r\n\r\n")[1].replace(/\r\n/g, "");
     expect(Buffer.from(encodedBody, "base64").toString()).toContain(
-      "Telepon: +6281234567890",
+      "WhatsApp: +6281234567890",
     );
   });
 
@@ -154,7 +154,7 @@ describe("invalid input", () => {
 
     expect(response.status).toBe(422);
     expect((await response.json()).fields).toEqual({
-      phone: "Nomor telepon harus diawali 08 atau +62, contoh 081234567890.",
+      phone: "Nomor WhatsApp harus diawali 08 atau +62, contoh 081234567890.",
     });
     expect(fetchMock).not.toHaveBeenCalled();
   });

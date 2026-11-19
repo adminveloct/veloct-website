@@ -24,7 +24,7 @@
       "invalid": "Organization contains characters that are not allowed."
     },
     "phone": {
-      "invalid": "Phone number must start with 08 or +62, for example 081234567890."
+      "invalid": "WhatsApp number must start with 08 or +62, for example 081234567890."
     },
     "message": {
       "required": "Message is required.",

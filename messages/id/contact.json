@@ -24,7 +24,7 @@
       "invalid": "Organisasi mengandung karakter yang tidak diizinkan."
     },
     "phone": {
-      "invalid": "Nomor telepon harus diawali 08 atau +62, contoh 081234567890."
+      "invalid": "Nomor WhatsApp harus diawali 08 atau +62, contoh 081234567890."
     },
     "message": {
       "required": "Pesan wajib diisi.",

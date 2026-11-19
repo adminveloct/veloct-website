@@ -27,7 +27,7 @@ describe("buildEmailBody", () => {
     expect(body).toContain("Nama: Budi Contoh");
     expect(body).toContain("Email: budi@contoh.test");
     expect(body).toContain("Organisasi: PT Contoh");
-    expect(body).toContain("Telepon: 081234567890");
+    expect(body).toContain("WhatsApp: 081234567890");
     expect(body).toContain("Baris pertama\nBaris kedua é");
     expect(body).toContain("Persetujuan Kebijakan Privasi: Ya");
     expect(body).toContain("9 November 2026");
@@ -38,7 +38,7 @@ describe("buildEmailBody", () => {
 
 it("shows a dash when the phone number is left empty", () => {
   const body = buildEmailBody({ ...submission, phone: null }, "id", consentAt);
-  expect(body).toContain("Telepon: -");
+  expect(body).toContain("WhatsApp: -");
 });
 
 describe("buildMimeMessage", () => {

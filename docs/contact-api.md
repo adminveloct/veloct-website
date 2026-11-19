@@ -31,7 +31,7 @@ Kebutuhan terkait: F-W-13, F-W-14, F-W-15, F-W-17, NF-W-04, NF-W-05, NF-W-06, NF
 | `name` | Wajib, paling panjang 100 karakter, satu baris |
 | `email` | Wajib, format email, paling panjang 254 karakter |
 | `organization` | Wajib, paling panjang 150 karakter, satu baris |
-| `phone` | Opsional. Nomor ponsel berawalan `08` atau `+628`, 10 sampai 13 digit untuk format `08`. Spasi dan tanda hubung boleh dipakai, dan nomor ditulis di email tanpa pemisah. Bila kosong, email menulis `-` |
+| `phone` | Opsional. Nomor WhatsApp berawalan `08` atau `+628`, 10 sampai 13 digit untuk format `08`. Spasi dan tanda hubung boleh dipakai, dan nomor ditulis di email tanpa pemisah. Bila kosong, email menulis `-` |
 | `message` | Wajib, paling panjang 5000 karakter |
 | `privacyConsent` | Harus bernilai `true` |
 | `locale` | `id` atau `en`, menentukan bahasa pesan respons. Bawaan `id` |

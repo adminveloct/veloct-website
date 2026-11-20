@@ -2,5 +2,63 @@
   "metaTitle": "About Us — VeloCT",
   "metaDescription": "Get to know VeloCT: who we are, our vision, and the team behind technology solutions for your business.",
   "heading": "About Us",
-  "description": "This page is still a skeleton. Company profile content will be added in the next stage."
+  "description": "PT Velo Citra Teknologi is a legally registered AI and data consulting company in Indonesia. We help government agencies and industry put infrastructure, data, and AI to real use.",
+  "heroImageAlt": "PT Velo Citra Teknologi team photo",
+  "visionLabel": "Vision",
+  "visionText": "Trusted AI & Data Expert Consulting Company — <yellow>built</yellow> to <red>give government</red> and <red>industry</red> the leverage they need to build a <green>better Indonesia.</green>",
+  "motoLabel": "Motto",
+  "motoLine1": "From understanding",
+  "motoLine2": "to real impact.",
+  "missionLabel": "Mission",
+  "missionItems": [
+    "Build the infrastructure and data foundation first, so the AI that runs on it can be relied on.",
+    "Prepare historical data that is ready for decisions, with personal data protection and data sovereignty.",
+    "Manage clients' AWS cloud so their systems stay reliable, secure, and cost-controlled.",
+    "Stay with clients until the system is used every day and its benefits are felt."
+  ],
+  "nameLabel": "Name Origin",
+  "nameWord": "velocity",
+  "nameText": "The name VeloCT comes from velocity: faster decisions because the data is ready.",
+  "logoLabel": "Logo Meaning",
+  "logoText": "The three lines of the logo form a zebra crossing. Its colours come from Edward de Bono's Six Thinking Hats and read in order:",
+  "logoItems": [
+    {
+      "name": "Red",
+      "meaning": "to sense the problem"
+    },
+    {
+      "name": "Green",
+      "meaning": "to find the solution"
+    },
+    {
+      "name": "Yellow",
+      "meaning": "to deliver the benefit"
+    }
+  ],
+  "valuesLabel": "Working values",
+  "values": [
+    {
+      "title": "Honest about capability",
+      "text": "We only claim what we have done and can prove."
+    },
+    {
+      "title": "Client data belongs to the client",
+      "text": "Access, ownership, and exit rights are clear from the start."
+    },
+    {
+      "title": "No surprises",
+      "text": "Cost, scope, and partner roles are agreed in writing up front."
+    },
+    {
+      "title": "Proven before the trendy",
+      "text": "New technology is used once it is proven to solve the client's problem."
+    }
+  ],
+  "valuesBanner": "Foundation first",
+  "valuesBannerText": "AI is built once the data and infrastructure are ready.",
+  "teamLabel": "Core team",
+  "teamCertLabel": "Certifications",
+  "teamSkillsLabel": "Primary Expertise",
+  "teamBioLabel": "Short Bio",
+  "teamLinkedin": "LinkedIn"
 }

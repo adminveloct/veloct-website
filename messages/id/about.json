@@ -2,5 +2,63 @@
   "metaTitle": "Tentang Kami — VeloCT",
   "metaDescription": "Kenali VeloCT: siapa kami, visi, dan tim di balik solusi teknologi untuk bisnis Anda.",
   "heading": "Tentang Kami",
-  "description": "Bagian ini masih berisi kerangka. Konten profil perusahaan akan diisi pada tahap berikutnya."
+  "description": "PT Velo Citra Teknologi adalah perusahaan konsultan AI dan data yang berbadan hukum di Indonesia. Kami membantu instansi pemerintah dan industri menyiapkan infrastruktur, data, dan AI yang benar-benar dipakai.",
+  "heroImageAlt": "Foto tim PT Velo Citra Teknologi",
+  "visionLabel": "Visi",
+  "visionText": "Trusted AI & Data Expert Consulting Company — <yellow>built</yellow> to <red>give government</red> and <red>industry</red> the leverage they need to build a <green>better Indonesia.</green>",
+  "motoLabel": "Moto",
+  "motoLine1": "Dari memahami",
+  "motoLine2": "sampai berdampak.",
+  "missionLabel": "Misi",
+  "missionItems": [
+    "Membangun fondasi infrastruktur dan data lebih dulu, supaya AI yang dijalankan di atasnya bisa diandalkan.",
+    "Menyiapkan data historis yang siap dipakai untuk keputusan, dengan pelindungan data pribadi dan kedaulatan data.",
+    "Mengelola cloud AWS klien supaya sistemnya andal, aman, dan biayanya terkendali.",
+    "Mendampingi klien sampai sistem dipakai setiap hari dan manfaatnya terasa."
+  ],
+  "nameLabel": "Arti Nama",
+  "nameWord": "velocity",
+  "nameText": "Nama VeloCT berasal dari velocity, kecepatan: yang berarti keputusan lebih cepat karena datanya siap.",
+  "logoLabel": "Arti Logo",
+  "logoText": "Tiga garis pada logo membentuk zebra cross. Warnanya diambil dari Six Thinking Hats karya Edward de Bono dan dibaca berurutan:",
+  "logoItems": [
+    {
+      "name": "Merah",
+      "meaning": "untuk merasakan masalah"
+    },
+    {
+      "name": "Hijau",
+      "meaning": "untuk menemukan solusi"
+    },
+    {
+      "name": "Kuning",
+      "meaning": "untuk mewujudkan manfaat"
+    }
+  ],
+  "valuesLabel": "Nilai kerja",
+  "values": [
+    {
+      "title": "Jujur soal kemampuan",
+      "text": "Kami hanya mengklaim yang sudah dikerjakan dan bisa dibuktikan."
+    },
+    {
+      "title": "Data klien milik klien",
+      "text": "Akses, kepemilikan, dan hak keluar dari layanan jelas sejak awal."
+    },
+    {
+      "title": "Tanpa kejutan",
+      "text": "Biaya, ruang lingkup, dan peran mitra disepakati tertulis di awal."
+    },
+    {
+      "title": "Terbukti sebelum tren",
+      "text": "Teknologi baru dipakai bila terbukti menyelesaikan masalah klien."
+    }
+  ],
+  "valuesBanner": "Fondasi dulu",
+  "valuesBannerText": "AI dikerjakan setelah data dan infrastrukturnya siap.",
+  "teamLabel": "Tim inti",
+  "teamCertLabel": "Sertifikasi",
+  "teamSkillsLabel": "Keahlian Utama",
+  "teamBioLabel": "Bio Singkat",
+  "teamLinkedin": "LinkedIn"
 }

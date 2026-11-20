@@ -1,9 +1,9 @@
 {
   "metaTitle": "VeloCT — AI and Data Consulting for Government and Industry",
   "metaDescription": "VeloCT designs and builds infrastructure, data, and AI for government and industry in Indonesia.",
-  "heading": "<bold>Good AI</bold> starts with <bold>good data</bold>.",
+  "heading": "<bold>Good AI starts</bold> with <bold>good data</bold>.",
   "description": "We design and build infrastructure, data, and AI for government and industry, and stay until <bold>the benefits are felt</bold>.",
-  "button": "Read more",
+  "button": "See More",
   "scrollHint": "Explore more",
   "heroImageAlt": "Illustration of AI connected to a database and analytics panels",
   "servicesTitle": "Four services, from data to applications",
@@ -14,15 +14,15 @@
     "software": "Software"
   },
   "serviceDescriptions": {
-    "ai": "Prediction and automation of work such as reading reports, selecting documents, and answering service queries.",
-    "bigData": "Complete, clean, and connected historical data, ready to be used for decisions.",
-    "cloud": "AWS cloud management and monitoring to keep systems reliable, secure, and costs under control.",
-    "software": "Applications built with trusted partners, with VeloCT as the single party responsible."
+    "ai": "<medium>Prediction</medium> and <medium>automation</medium> of work such as reading reports, selecting documents, and answering service queries.",
+    "bigData": "Complete, clean, and connected historical data, <medium>ready for decision-making</medium>.",
+    "cloud": "AWS cloud <medium>management and monitoring</medium> to keep systems reliable, secure, and costs under control.",
+    "software": "<medium>Applications</medium> built with trusted partners, with VeloCT as the single party responsible."
   },
-  "serviceCardCta": "See details",
-  "workTitle": "We have worked on every layer",
-  "workSubtitle": "<bold>10 projects since 2023</bold> for government institutions, state-owned enterprises, and universities, from IT maintenance to predictive AI.",
-  "workCta": "See projects",
+  "serviceCardCta": "See More",
+  "workTitle": "Delivered at every layer",
+  "workSubtitle": "<bold>10 engagements </bold> since 2023 for government agencies, state-owned enterprises, and universities, from IT maintenance to predictive AI.",
+  "workCta": "See Our Projects",
   "projects": [
     {
       "year": "2026",
@@ -51,7 +51,7 @@
     }
   ],
   "partnersTitle": "Our Clients and Partners",
-  "ctaTitle": "Need data or AI solutions?",
-  "ctaSubtitle": "Tell us your situation. We will reply within 3 business days.",
+  "ctaTitle": "Have a data or AI need?",
+  "ctaSubtitle": "Tell us about it. We will reply within 3 working days.",
   "ctaButton": "Contact Us"
 }

@@ -37,7 +37,11 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages({ locale });
 
   return (
-    <html lang={locale} className="h-full antialiased">
+    <html
+      lang={locale}
+      className="h-full antialiased"
+      data-scroll-behavior="smooth"
+    >
       <link
         rel="stylesheet"
         href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap"

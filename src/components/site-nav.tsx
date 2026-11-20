@@ -31,9 +31,9 @@ export default function SiteNav() {
               <Link
                 href={item.href}
                 aria-current={pathname === item.href ? "page" : undefined}
-                className={`block px-3 py-2 transition-colors ${
+                className={`relative block px-3 py-2 transition-colors ${
                   pathname === item.href
-                    ? "font-semibold text-zinc-900"
+                    ? "font-semibold text-zinc-900 after:absolute after:inset-x-3 after:bottom-0 after:h-[3px] after:bg-[linear-gradient(90deg,#eb3113_0%,#c6461f_50%,#ec4b11_100%)] after:content-['']"
                     : "font-medium text-zinc-600 hover:text-zinc-900"
                 }`}
               >
@@ -84,9 +84,9 @@ export default function SiteNav() {
                       pathname === item.href ? "page" : undefined
                     }
                     onClick={() => setOpen(false)}
-                    className={`block rounded-md px-3 py-2 transition-colors ${
+                    className={`relative block rounded-md px-3 py-2 transition-colors ${
                       pathname === item.href
-                        ? "font-semibold text-zinc-900"
+                        ? "font-semibold text-zinc-900 after:absolute after:inset-x-3 after:bottom-1 after:h-[3px] after:bg-[linear-gradient(90deg,#eb3113_0%,#c6461f_50%,#ec4b11_100%)] after:content-['']"
                         : "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900"
                     }`}
                   >

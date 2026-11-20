@@ -95,7 +95,7 @@ export default async function HomePage({ params }: Props) {
             </p>
             <Link
               href={`/${getSlug("services-products", locale)}`}
-              className="btn-flame mt-8 inline-flex h-14 items-center gap-2 rounded-lg px-5 text-base font-semibold text-white shadow-sm transition hover:brightness-110"
+              className="btn-flame mt-8 flex h-14 w-full items-center justify-center gap-2 rounded-lg px-5 text-base font-semibold text-white shadow-sm transition hover:brightness-110 sm:inline-flex sm:w-auto"
             >
               {t("button")}
               <ArrowIcon />
@@ -151,7 +151,7 @@ export default async function HomePage({ params }: Props) {
         className="bg-linear-to-b from-mint via-mint to-[#f4faf6] px-6 py-16 md:py-20"
       >
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl">
+          <h2 className="text-center text-3xl font-semibold tracking-tight text-zinc-900 md:text-4xl">
             {t("servicesTitle")}
           </h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:items-start">
@@ -175,9 +175,16 @@ export default async function HomePage({ params }: Props) {
                   {t(`services.${key}`)}
                 </h3>
                 <p className="mt-3 flex-1 text-center text-sm leading-6 text-zinc-600">
-                  {t(`serviceDescriptions.${key}`)}
+                  {t.rich(`serviceDescriptions.${key}`, {
+                    medium: (chunks) => (
+                      <span className="font-medium text-zinc-900">{chunks}</span>
+                    ),
+                    bold: (chunks) => (
+                      <span className="font-medium text-zinc-900">{chunks}</span>
+                    ),
+                  })}
                 </p>
-                <span className="mt-4 flex w-full items-center justify-center gap-3 rounded-full bg-[#D9EEDF] px-4 py-2 text-sm font-medium text-[#2f7a4a] transition-colors group-hover:bg-[#21813E] group-hover:text-white">
+                <span className="mt-4 flex w-full items-center justify-center gap-3 rounded-full bg-[#D9EEDF] px-4 py-2 text-sm font-medium text-[#222222] transition-colors group-hover:bg-[#21813E] group-hover:text-white">
                   {t("serviceCardCta")}
                   <ArrowIcon />
                 </span>
@@ -200,7 +207,7 @@ export default async function HomePage({ params }: Props) {
       <section className="bg-sun px-6 py-16 md:py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-zinc-900 md:text-4xl">
               {t("workTitle")}
             </h2>
             <p className="mt-4 max-w-md text-base leading-7 text-zinc-700">
@@ -210,7 +217,7 @@ export default async function HomePage({ params }: Props) {
             </p>
             <Link
               href={`/${getSlug("services-products", locale)}`}
-              className="btn-flame mt-6 inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:brightness-110"
+              className="btn-flame mt-6 flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:brightness-110 sm:inline-flex sm:w-auto"
             >
               {t("workCta")}
               <ArrowIcon />
@@ -247,7 +254,7 @@ export default async function HomePage({ params }: Props) {
 
       <section className="bg-[#FBFBFA]  px-6 py-16 md:py-20">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl">
+          <h2 className="text-center text-3xl font-semibold tracking-tight text-zinc-900 md:text-4xl">
             {t("partnersTitle")}
           </h2>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
@@ -285,7 +292,7 @@ export default async function HomePage({ params }: Props) {
             </p>
             <Link
               href={`/${getSlug("contact", locale)}`}
-              className="btn-flame mt-6 inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:brightness-110"
+              className="btn-flame mt-6 flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:brightness-110 sm:inline-flex sm:w-auto"
             >
               {t("ctaButton")}
             </Link>

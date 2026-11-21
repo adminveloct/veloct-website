@@ -1,6 +1,160 @@
 {
-  "metaTitle": "Services/Products — VeloCT",
-  "metaDescription": "VeloCT's technology services and products to help your business grow.",
+  "metaTitle": "Services & Products — VeloCT",
+  "metaDescription": "VeloCT technology services and products: AI, Big Data, Cloud AWS, and Software ready for government and industry.",
   "heading": "Services/Products",
-  "description": "This page is still a skeleton. Service details will be added in the next stage."
+  "description": "AI only works when the data is complete and the infrastructure is reliable. That is why we build all three, then add the software that connects them to daily work.",
+  "roleHeading": "What is our role in solving client problems?",
+  "problemTitle": "Client problem",
+  "solutionTitle": "What we do",
+  "roles": [
+    {
+      "key": "ai",
+      "category": "AI",
+      "problem": "Reading reports, sorting documents, and answering service questions is manual and slow.",
+      "solution": "Prediction and automation of cognitive work, from AI helpdesk apps to risk prediction models, including consulting and training."
+    },
+    {
+      "key": "bigData",
+      "category": "Big Data",
+      "problem": "Data is scattered, incomplete, and not ready for decisions.",
+      "solution": "Decision-ready historical data with personal data protection and data sovereignty, including consulting and training."
+    },
+    {
+      "key": "cloud",
+      "category": "Cloud AWS",
+      "problem": "Cloud systems fail, lack security, or overrun their budget.",
+      "solution": "AWS management and monitoring so systems stay reliable, secure, and cost-controlled.",
+      "partnerNote": "VeloCT is an AWS Partner Network member."
+    },
+    {
+      "key": "software",
+      "category": "Software",
+      "problem": "Clients need an application without managing many vendors.",
+      "solution": "Applications built with trusted partners, with VeloCT as the single point of accountability."
+    }
+  ],
+  "howWeWorkHeading": "How we work",
+  "steps": [
+    {
+      "key": "understand",
+      "title": "Understand",
+      "description": "We study the client's data, infrastructure, and ways of working, then design the solution architecture.",
+      "bg": "bg-[#FADBD5]"
+    },
+    {
+      "key": "build",
+      "title": "Build",
+      "description": "We build the solution with trusted partners, with VeloCT as the single point of accountability.",
+      "bg": "bg-[#D9EEDF]"
+    },
+    {
+      "key": "impact",
+      "title": "Deliver Impact",
+      "description": "We stay until the system is used every day and its benefits are felt.",
+      "bg": "bg-[#FCEFB8]"
+    }
+  ],
+  "projectsHeading": "Project list",
+  "projectsSubtitle": "Clients are shown by sector. Project images are team-made mockups, not screenshots of client applications. A short description for each project is [menyusul].",
+  "projectFilters": {
+    "all": "All",
+    "ai": "AI",
+    "bigData": "Big Data",
+    "infrastructure": "Infrastructure",
+    "software": "Software"
+  },
+  "showMore": "Show More",
+  "showLess": "Show Less",
+  "projects": [
+    {
+      "id": "helpdesk-ai",
+      "year": "2026",
+      "category": "ai",
+      "categoryLabel": "AI",
+      "title": "AI helpdesk application consulting",
+      "sector": "Instansi pemerintah pusat",
+      "description": "[to follow]"
+    },
+    {
+      "id": "pelatihan-ai",
+      "year": "2026",
+      "category": "ai",
+      "categoryLabel": "AI",
+      "title": "AI training for digital talent",
+      "sector": "University",
+      "description": "[to follow]"
+    },
+    {
+      "id": "energi-ekonomi",
+      "year": "2026",
+      "category": "bigData",
+      "categoryLabel": "Big Data",
+      "title": "Energy-economy dashboard and database",
+      "sector": "State-owned energy research institute",
+      "description": "[to follow]"
+    },
+    {
+      "id": "data-personel",
+      "year": "2026",
+      "category": "bigData",
+      "categoryLabel": "Big Data",
+      "title": "Automated personnel data recap",
+      "sector": "Law enforcement agency",
+      "description": "[to follow]"
+    },
+    {
+      "id": "pengelolaan-data",
+      "year": "2026",
+      "category": "bigData",
+      "categoryLabel": "Big Data",
+      "title": "Data Management Consulting",
+      "sector": "Central government agency",
+      "description": "[to follow]"
+    },
+    {
+      "id": "monitoring-cloud-aws",
+      "year": "2026",
+      "category": "infrastructure",
+      "categoryLabel": "Infrastructure",
+      "title": "AWS cloud management and monitoring",
+      "sector": "Central government agency",
+      "description": "[to follow]"
+    },
+    {
+      "id": "layanan-email",
+      "year": "2025",
+      "category": "infrastructure",
+      "categoryLabel": "Infrastructure",
+      "title": "Email service consulting",
+      "sector": "Central government agency",
+      "description": "[to follow]"
+    },
+    {
+      "id": "prediksi-keuangan",
+      "year": "2024",
+      "category": "ai",
+      "categoryLabel": "AI",
+      "title": "Financial and occupational risk prediction",
+      "sector": "Telecommunications company",
+      "description": "[to follow]"
+    },
+    {
+      "id": "audit-kecepatan",
+      "year": "2023",
+      "category": "software",
+      "categoryLabel": "Software",
+      "title": "Speed audit system",
+      "sector": "Law enforcement agency",
+      "description": "[to follow]"
+    },
+    {
+      "id": "pemeliharaan-it",
+      "year": "2023",
+      "category": "infrastructure",
+      "categoryLabel": "Infrastructure",
+      "title": "IT maintenance",
+      "sector": "Law enforcement agency",
+      "description": "[to follow]"
+    }
+  ]
 }

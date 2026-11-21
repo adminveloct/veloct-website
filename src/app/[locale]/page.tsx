@@ -216,7 +216,7 @@ export default async function HomePage({ params }: Props) {
               })}
             </p>
             <Link
-              href={`/${getSlug("services-products", locale)}`}
+              href={`/${getSlug("services-products", locale)}#${locale === "id" ? "proyek" : "projects"}`}
               className="btn-flame mt-6 flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:brightness-110 sm:inline-flex sm:w-auto"
             >
               {t("workCta")}

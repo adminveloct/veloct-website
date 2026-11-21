@@ -727,7 +727,11 @@ export default async function SlugPage({ params }: Props) {
         </div>
 
         {/* Daftar Proyek Section */}
-        <section className="bg-[#FBFBFA] px-6 py-16 md:py-20">
+        <section
+          id={locale === "id" ? "proyek" : "projects"}
+          className="scroll-mt-20 bg-[#FBFBFA] px-6 py-16 md:py-20"
+        >
+          <span id={locale === "id" ? "projects" : "proyek"} className="sr-only" />
           <div className="mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold tracking-tight text-[#222222] md:text-4xl lg:text-[48px]">
               {t("projectsHeading")}

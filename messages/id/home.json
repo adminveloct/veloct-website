@@ -14,10 +14,10 @@
     "software": "Software"
   },
   "serviceDescriptions": {
-    "ai": "Prediksi dan otomatisasi pekerjaan seperti membaca laporan, memilih dokumen, dan menjawab pertanyaan layanan.",
-    "bigData": "Data historis yang lengkap, bersih, dan terhubung, siap dipakai untuk keputusan.",
-    "cloud": "Pengelolaan dan pemantauan cloud AWS supaya sistem andal, aman, dan biayanya terkendali.",
-    "software": "Aplikasi yang dibangun bersama mitra terpercaya, dengan VeloCT sebagai satu penanggung jawab."
+    "ai": "<medium>Prediksi</medium> dan <medium>otomatisasi</medium> pekerjaan seperti membaca laporan, memilih dokumen, dan menjawab pertanyaan layanan.",
+    "bigData": "Data historis yang lengkap, bersih, dan terhubung, <medium>siap dipakai untuk keputusan</medium>.",
+    "cloud": "<medium>Pengelolaan dan pemantauan</medium> cloud AWS supaya sistem andal, aman, dan biayanya terkendali.",
+    "software": "<medium>Aplikasi</medium> yang dibangun bersama mitra terpercaya, dengan VeloCT sebagai satu penanggung jawab."
   },
   "serviceCardCta": "Lihat Selengkapnya",
   "workTitle": "Sudah kami kerjakan di setiap lapis",

@@ -18,6 +18,9 @@
       "tooLong": "Email paling panjang 254 karakter.",
       "invalid": "Format email tidak valid."
     },
+    "phone": {
+      "invalid": "Nomor WhatsApp harus diawali 08 atau +62, contoh 081234567890."
+    },
     "organization": {
       "required": "Organisasi wajib diisi.",
       "tooLong": "Organisasi paling panjang 150 karakter.",
@@ -34,6 +37,59 @@
   },
   "metaTitle": "Kontak — VeloCT",
   "metaDescription": "Hubungi VeloCT untuk berkonsultasi tentang kebutuhan teknologi bisnis Anda.",
-  "heading": "Kontak",
-  "description": "Bagian ini masih berisi kerangka. Formulir dan detail kontak akan diisi pada tahap berikutnya."
+  "heading": "Hubungi Kami",
+  "subtitle": "Ceritakan kebutuhan data, AI, cloud, atau aplikasi Anda. Kami akan membalas pesan Anda ",
+  "subtitleHighlight": "paling lambat 3 hari kerja.",
+  "stepsTitle": "Langkah Kerja Sama",
+  "steps": [
+    "Hubungi kami lewat formulir, email, atau WhatsApp.",
+    "Kami membalas paling lambat 3 hari kerja.",
+    "Diskusi kebutuhan.",
+    "Kami kirim proposal dan penawaran.",
+    "Kesepakatan, lalu proyek dimulai."
+  ],
+  "form": {
+    "nameLabel": "Nama",
+    "namePlaceholder": "Bob",
+    "emailLabel": "Email",
+    "emailPlaceholder": "example123@gmail.com",
+    "phoneLabel": "Nomor WhatsApp (opsional)",
+    "phonePlaceholder": "62891234567890",
+    "organizationLabel": "Organisasi",
+    "organizationPlaceholder": "PT Bob Victory",
+    "messageLabel": "Pesan",
+    "privacyConsentPrefix": "Saya setuju data saya diproses sesuai ",
+    "privacyConsentLink": "Kebijakan Privasi",
+    "privacyConsentSuffix": ".",
+    "submitButton": "Kirim Pesan",
+    "submitting": "Mengirim...",
+    "successTitle": "Pesan Terkirim!",
+    "errorTitle": "Gagal Mengirim Pesan"
+  },
+  "infoTitle": "Informasi Kontak",
+  "infoEmailLabel": "Email",
+  "infoEmailValue": "[menyusul]",
+  "infoWhatsappLabel": "WhatsApp",
+  "infoWhatsappValue": "[menyusul]",
+  "infoAddressLabel": "Alamat",
+  "infoAddressValue": "[menyusul]",
+  "faqTitle": "Pertanyaan Umum",
+  "faq": [
+    {
+      "question": "Apakah VeloCT pernah mengerjakan proyek di bidang kami?",
+      "answer": "Kami sudah bekerja untuk instansi pemerintah, lembaga penegak hukum, BUMN, perusahaan telekomunikasi, dan perguruan tinggi. Contohnya ada di halaman Layanan/Produk."
+    },
+    {
+      "question": "Bagaimana kalau kebutuhan kami belum jelas?",
+      "answer": "Mulai dari diskusi kebutuhan. Kami pelajari kondisi data dan sistem Anda dulu, lalu mengusulkan langkah yang paling masuk akal."
+    },
+    {
+      "question": "Apakah data kami tetap milik kami?",
+      "answer": "Ya. Akses, kepemilikan, dan hak keluar dari layanan disepakati tertulis sejak awal."
+    },
+    {
+      "question": "Apakah VeloCT mengerjakan semuanya sendiri?",
+      "answer": "Konsultasi, arsitektur solusi, dan operasi cloud AWS kami pegang langsung. Pengembangan aplikasi dikerjakan bersama mitra, dengan VeloCT sebagai satu penanggung jawab."
+    }
+  ]
 }

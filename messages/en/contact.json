@@ -23,6 +23,9 @@
       "tooLong": "Organization can be at most 150 characters.",
       "invalid": "Organization contains characters that are not allowed."
     },
+    "phone": {
+      "invalid": "WhatsApp number must start with 08 or +62, for example 081234567890."
+    },
     "message": {
       "required": "Message is required.",
       "tooLong": "Message can be at most 5000 characters.",
@@ -33,7 +36,60 @@
     }
   },
   "metaTitle": "Contact — VeloCT",
-  "metaDescription": "Get in touch with VeloCT to discuss your business technology needs.",
-  "heading": "Contact",
-  "description": "This page is still a skeleton. Contact form and details will be added in the next stage."
+  "metaDescription": "Contact VeloCT to consult about your business technology needs.",
+  "heading": "Contact Us",
+  "subtitle": "Tell us about your data, AI, cloud, or application needs. We will reply to your message ",
+  "subtitleHighlight": "within 3 working days.",
+  "stepsTitle": "Collaboration Steps",
+  "steps": [
+    "Contact us via form, email, or WhatsApp.",
+    "We reply within 3 business days at the latest.",
+    "Needs discussion.",
+    "We send proposals and quotes.",
+    "Agreement, then the project begins."
+  ],
+  "form": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Bob",
+    "emailLabel": "Email",
+    "emailPlaceholder": "example123@gmail.com",
+    "phoneLabel": "WhatsApp Number (optional)",
+    "phonePlaceholder": "62891234567890",
+    "organizationLabel": "Organization",
+    "organizationPlaceholder": "PT Bob Victory",
+    "messageLabel": "Message",
+    "privacyConsentPrefix": "I agree to my data being processed in accordance with the ",
+    "privacyConsentLink": "Privacy Policy",
+    "privacyConsentSuffix": ".",
+    "submitButton": "Send Message",
+    "submitting": "Sending...",
+    "successTitle": "Message Sent!",
+    "errorTitle": "Failed to Send Message"
+  },
+  "infoTitle": "Contact Information",
+  "infoEmailLabel": "Email",
+  "infoEmailValue": "[to follow]",
+  "infoWhatsappLabel": "WhatsApp",
+  "infoWhatsappValue": "[to follow]",
+  "infoAddressLabel": "Address",
+  "infoAddressValue": "[to follow]",
+  "faqTitle": "Frequently Asked Questions",
+  "faq": [
+    {
+      "question": "Have you worked in our sector?",
+      "answer": "We have worked with government agencies, law enforcement, stateowned enterprises, a telecom company, and a university. Examples are on the Services/Products page"
+    },
+    {
+      "question": "What if our needs are not clear yet?",
+      "answer": "We start with a needs discussion, study your data and systems, then propose the most sensible next step."
+    },
+    {
+      "question": "Does our data stay ours?",
+      "answer": "Yes. Access, ownership, and exit rights are agreed in writing from the start."
+    },
+    {
+      "question": "Do you do everything inhouse?",
+      "answer": "We handle consulting, solution architecture, and AWS operations directly. Application development is done with partners, with VeloCT accountable for the whole project."
+    }
+  ]
 }

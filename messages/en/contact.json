@@ -23,6 +23,9 @@
       "tooLong": "Organization can be at most 150 characters.",
       "invalid": "Organization contains characters that are not allowed."
     },
+    "phone": {
+      "invalid": "WhatsApp number must start with 08 or +62, for example 081234567890."
+    },
     "message": {
       "required": "Message is required.",
       "tooLong": "Message can be at most 5000 characters.",

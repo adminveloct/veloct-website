@@ -95,10 +95,20 @@ export default async function SiteFooter({ locale }: Props) {
     { icon: <IconMail />, label: pending },
   ];
 
+  const activeContacts = contacts.filter((contact) =>
+    Boolean(contact.label?.trim())
+  );
+
   return (
     <footer>
       <div className="bg-[#222222] px-6 py-12 md:py-16">
-        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[auto_1fr_1fr] md:gap-12">
+        <div
+          className={`mx-auto grid max-w-6xl gap-10 md:gap-12 ${
+            activeContacts.length > 0
+              ? "md:grid-cols-[auto_1fr_1fr]"
+              : "md:grid-cols-[auto_1fr]"
+          }`}
+        >
           <div className="flex justify-center md:block md:w-fit">
             <div className="inline-block">
               <Image
@@ -121,22 +131,24 @@ export default async function SiteFooter({ locale }: Props) {
             </p>
           </div>
 
-          <div>
-            <p className="text-lg font-bold text-white">
-              {t("footer.contactTitle")}
-            </p>
-            <ul className="mt-4 space-y-4 md:space-y-3">
-              {contacts.map((contact, index) => (
-                <li
-                  key={index}
-                  className="flex items-center gap-3 text-sm text-zinc-300"
-                >
-                  <span className="text-zinc-300">{contact.icon}</span>
-                  <span>{contact.label}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {activeContacts.length > 0 && (
+            <div>
+              <p className="text-lg font-bold text-white">
+                {t("footer.contactTitle")}
+              </p>
+              <ul className="mt-4 space-y-4 md:space-y-3">
+                {activeContacts.map((contact, index) => (
+                  <li
+                    key={index}
+                    className="flex items-center gap-3 text-sm text-zinc-300"
+                  >
+                    <span className="text-zinc-300">{contact.icon}</span>
+                    <span>{contact.label}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
         {/* Mobile only: Copyright & Kebijakan Privasi */}

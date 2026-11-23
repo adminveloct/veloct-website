@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 
 export type Project = {
@@ -9,7 +10,8 @@ export type Project = {
   categoryLabel: string;
   title: string;
   sector: string;
-  description: string;
+  description?: string;
+  image?: string;
 };
 
 type Props = {
@@ -110,9 +112,11 @@ export default function ProjectShowcase({
             <p className="mt-1 text-sm text-[#555555]">
               {project.sector}
             </p>
-            <span className="mt-2 inline-block rounded-[3px] bg-[#EDEDED] px-2 py-0.5 text-xs text-[#555555]">
-              {project.description}
-            </span>
+            {project.description?.trim() ? (
+              <span className="mt-2 inline-block rounded-[3px] bg-[#EDEDED] px-2 py-0.5 text-xs text-[#555555]">
+                {project.description}
+              </span>
+            ) : null}
           </article>
         ))}
 
@@ -196,13 +200,18 @@ export default function ProjectShowcase({
         {/* Right Column: Project Preview */}
         {selectedProject && (
           <div className="sticky top-24 flex flex-col">
-            <div className="flex aspect-[16/10] w-full items-center justify-center bg-[#C6C6C6]">
-              <span className="text-sm font-medium tracking-wide text-[#666666] md:text-base">
-                mockup
-              </span>
-            </div>
+            {selectedProject.image ? (
+              <div className="relative mb-4 aspect-[16/10] w-full overflow-hidden rounded-lg bg-[#C6C6C6]">
+                <Image
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ) : null}
 
-            <div className="mt-4">
+            <div>
               <span
                 className={`inline-block rounded-md px-2.5 py-0.5 text-xs font-bold ${
                   CATEGORY_TAG_STYLES[selectedProject.category] ||
@@ -220,9 +229,11 @@ export default function ProjectShowcase({
                 {selectedProject.sector}
               </p>
 
-              <p className="mt-2 text-sm text-[#777777]">
-                {selectedProject.description}
-              </p>
+              {selectedProject.description?.trim() ? (
+                <p className="mt-2 text-sm text-[#777777]">
+                  {selectedProject.description}
+                </p>
+              ) : null}
             </div>
           </div>
         )}

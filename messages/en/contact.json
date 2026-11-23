@@ -54,7 +54,7 @@
     "emailLabel": "Email",
     "emailPlaceholder": "example123@gmail.com",
     "phoneLabel": "WhatsApp Number (optional)",
-    "phonePlaceholder": "62891234567890",
+    "phonePlaceholder": "081234567890",
     "organizationLabel": "Organization",
     "organizationPlaceholder": "PT Bob Victory",
     "messageLabel": "Message",
@@ -68,11 +68,11 @@
   },
   "infoTitle": "Contact Information",
   "infoEmailLabel": "Email",
-  "infoEmailValue": "[to follow]",
+  "infoEmailValue": "",
   "infoWhatsappLabel": "WhatsApp",
-  "infoWhatsappValue": "[to follow]",
+  "infoWhatsappValue": "",
   "infoAddressLabel": "Address",
-  "infoAddressValue": "[to follow]",
+  "infoAddressValue": "",
   "faqTitle": "Frequently Asked Questions",
   "faq": [
     {

@@ -18,9 +18,6 @@
       "tooLong": "Email paling panjang 254 karakter.",
       "invalid": "Format email tidak valid."
     },
-    "phone": {
-      "invalid": "Nomor WhatsApp harus diawali 08 atau +62, contoh 081234567890."
-    },
     "organization": {
       "required": "Organisasi wajib diisi.",
       "tooLong": "Organisasi paling panjang 150 karakter.",
@@ -57,7 +54,7 @@
     "emailLabel": "Email",
     "emailPlaceholder": "example123@gmail.com",
     "phoneLabel": "Nomor WhatsApp (opsional)",
-    "phonePlaceholder": "62891234567890",
+    "phonePlaceholder": "081234567890",
     "organizationLabel": "Organisasi",
     "organizationPlaceholder": "PT Bob Victory",
     "messageLabel": "Pesan",
@@ -71,11 +68,11 @@
   },
   "infoTitle": "Informasi Kontak",
   "infoEmailLabel": "Email",
-  "infoEmailValue": "[menyusul]",
+  "infoEmailValue": "",
   "infoWhatsappLabel": "WhatsApp",
-  "infoWhatsappValue": "[menyusul]",
+  "infoWhatsappValue": "",
   "infoAddressLabel": "Alamat",
-  "infoAddressValue": "[menyusul]",
+  "infoAddressValue": "",
   "faqTitle": "Pertanyaan Umum",
   "faq": [
     {

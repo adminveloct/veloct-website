@@ -809,6 +809,11 @@ export default async function SlugPage({ params }: Props) {
     const steps = t.raw("steps") as string[];
     const faqTitle = t("faqTitle");
     const faqItems = t.raw("faq") as FaqItem[];
+    const errorMessages = t.raw("errors") as Record<
+      string,
+      Record<string, string>
+    >;
+    const invalidMessage = t("api.invalid");
     const formLabels = t.raw("form") as {
       nameLabel: string;
       namePlaceholder: string;
@@ -827,6 +832,16 @@ export default async function SlugPage({ params }: Props) {
       successTitle: string;
       errorTitle: string;
     };
+    const infoItems = [
+      { label: t("infoEmailLabel"), value: t("infoEmailValue") },
+      { label: t("infoWhatsappLabel"), value: t("infoWhatsappValue") },
+      { label: t("infoAddressLabel"), value: t("infoAddressValue") },
+    ].filter(
+      (item) =>
+        Boolean(item.value?.trim()) &&
+        item.value !== "[menyusul]" &&
+        item.value !== "[to follow]"
+    );
 
     return (
       <div className="flex flex-1 flex-col">
@@ -849,7 +864,13 @@ export default async function SlugPage({ params }: Props) {
 
           {/* 3 Columns Section: Langkah Kerja Sama, Form, Informasi Kontak */}
           <section className="px-6 pb-20 md:pb-28">
-            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 lg:grid-cols-[280px_1fr_220px] lg:items-start lg:gap-8">
+            <div
+              className={`mx-auto grid max-w-6xl grid-cols-1 gap-10 lg:items-start lg:gap-8 ${
+                infoItems.length > 0
+                  ? "lg:grid-cols-[280px_1fr_220px]"
+                  : "lg:grid-cols-[280px_1fr]"
+              }`}
+            >
               {/* Kolom 1: Langkah Kerja Sama */}
               <div>
                 <h2 className="text-xl font-bold tracking-tight text-[#222222]">
@@ -871,29 +892,30 @@ export default async function SlugPage({ params }: Props) {
 
               {/* Kolom 2: Form Kontak */}
               <div>
-                <ContactForm locale={locale} labels={formLabels} />
+                <ContactForm
+                  locale={locale}
+                  labels={formLabels}
+                  errorMessages={errorMessages}
+                  invalidMessage={invalidMessage}
+                />
               </div>
 
-              {/* Kolom 3: Informasi Kontak */}
-              <div>
-                <h2 className="text-xl font-bold tracking-tight text-[#222222]">
-                  {t("infoTitle")}
-                </h2>
-                <div className="mt-6 flex flex-col gap-5 text-sm text-[#222222]">
-                  <div>
-                    <h3 className="font-bold">{t("infoEmailLabel")}</h3>
-                    <p className="mt-1 text-[#555555]">{t("infoEmailValue")}</p>
-                  </div>
-                  <div>
-                    <h3 className="font-bold">{t("infoWhatsappLabel")}</h3>
-                    <p className="mt-1 text-[#555555]">{t("infoWhatsappValue")}</p>
-                  </div>
-                  <div>
-                    <h3 className="font-bold">{t("infoAddressLabel")}</h3>
-                    <p className="mt-1 text-[#555555]">{t("infoAddressValue")}</p>
+              {/* Kolom 3: Informasi Kontak (hanya tampil jika ada data) */}
+              {infoItems.length > 0 && (
+                <div>
+                  <h2 className="text-xl font-bold tracking-tight text-[#222222]">
+                    {t("infoTitle")}
+                  </h2>
+                  <div className="mt-6 flex flex-col gap-5 text-sm text-[#222222]">
+                    {infoItems.map((item, index) => (
+                      <div key={index}>
+                        <h3 className="font-bold">{item.label}</h3>
+                        <p className="mt-1 text-[#555555]">{item.value}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </section>
         </div>

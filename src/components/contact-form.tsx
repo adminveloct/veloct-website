@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { getSlug } from "@/i18n/pages";
+import { validateContactInput } from "@/lib/contact/validation";
 
 type FormProps = {
   locale: string;
@@ -24,9 +25,16 @@ type FormProps = {
     successTitle: string;
     errorTitle: string;
   };
+  errorMessages?: Record<string, Record<string, string>>;
+  invalidMessage?: string;
 };
 
-export default function ContactForm({ locale, labels }: FormProps) {
+export default function ContactForm({
+  locale,
+  labels,
+  errorMessages,
+  invalidMessage,
+}: FormProps) {
   const [formToken, setFormToken] = useState<string>("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -84,14 +92,95 @@ export default function ContactForm({ locale, labels }: FormProps) {
     setSuccessMessage(null);
     setAlternatives(null);
 
-    if (!privacyConsent) {
-      setFieldErrors((prev) => ({
-        ...prev,
-        privacyConsent:
-          locale === "id"
-            ? "Centang persetujuan Kebijakan Privasi untuk mengirim pesan."
-            : "Please check the Privacy Policy consent to send your message.",
-      }));
+    // Validasi instan di sisi klien sebelum pengiriman
+    const validation = validateContactInput({
+      name,
+      email,
+      organization,
+      phone: phone.trim() ? phone.trim() : undefined,
+      message,
+      privacyConsent,
+    });
+
+    if (!validation.ok) {
+      const defaultErrors: Record<string, Record<string, string>> = {
+        name: {
+          required: locale === "id" ? "Nama wajib diisi." : "Name is required.",
+          tooLong:
+            locale === "id"
+              ? "Nama paling panjang 100 karakter."
+              : "Name cannot exceed 100 characters.",
+          invalid:
+            locale === "id"
+              ? "Nama mengandung karakter yang tidak diizinkan."
+              : "Name contains invalid characters.",
+        },
+        email: {
+          required:
+            locale === "id" ? "Email wajib diisi." : "Email is required.",
+          tooLong:
+            locale === "id"
+              ? "Email paling panjang 254 karakter."
+              : "Email cannot exceed 254 characters.",
+          invalid:
+            locale === "id"
+              ? "Format email tidak valid."
+              : "Invalid email address format.",
+        },
+        phone: {
+          invalid:
+            locale === "id"
+              ? "Nomor WhatsApp harus diawali 08 atau +62, contoh 081234567890."
+              : "WhatsApp number must start with 08 or +62, for example 081234567890.",
+        },
+        organization: {
+          required:
+            locale === "id"
+              ? "Organisasi wajib diisi."
+              : "Organization is required.",
+          tooLong:
+            locale === "id"
+              ? "Organisasi paling panjang 150 karakter."
+              : "Organization cannot exceed 150 characters.",
+          invalid:
+            locale === "id"
+              ? "Organisasi mengandung karakter yang tidak diizinkan."
+              : "Organization contains invalid characters.",
+        },
+        message: {
+          required:
+            locale === "id" ? "Pesan wajib diisi." : "Message is required.",
+          tooLong:
+            locale === "id"
+              ? "Pesan paling panjang 5000 karakter."
+              : "Message cannot exceed 5000 characters.",
+          invalid:
+            locale === "id"
+              ? "Pesan mengandung karakter yang tidak diizinkan."
+              : "Message contains invalid characters.",
+        },
+        privacyConsent: {
+          required:
+            locale === "id"
+              ? "Centang persetujuan Kebijakan Privasi untuk mengirim pesan."
+              : "Please check the Privacy Policy consent to send your message.",
+        },
+      };
+
+      const localizedErrors: Record<string, string> = {};
+      for (const [key, code] of Object.entries(validation.errors)) {
+        localizedErrors[key] =
+          errorMessages?.[key]?.[code] ||
+          defaultErrors[key]?.[code] ||
+          (code as string);
+      }
+      setFieldErrors(localizedErrors);
+      setGeneralError(
+        invalidMessage ||
+          (locale === "id"
+            ? "Periksa kembali kolom yang ditandai."
+            : "Please check the marked fields.")
+      );
       return;
     }
 
@@ -368,11 +457,12 @@ export default function ContactForm({ locale, labels }: FormProps) {
               htmlFor="contact-message"
               className="block text-xs font-bold text-[#222222]"
             >
-              {labels.messageLabel}
+              {labels.messageLabel} <span className="text-[#EE4A1B]">*</span>
             </label>
             <textarea
               id="contact-message"
               name="message"
+              required
               rows={4}
               value={message}
               onChange={(e) => {

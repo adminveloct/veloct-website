@@ -19,6 +19,7 @@ describe("validateContactInput", () => {
         name: "Budi Contoh",
         email: "budi@contoh.test",
         organization: "PT Contoh",
+        phone: null,
         message: "Halo,\nsaya ingin bertanya.",
       },
     });
@@ -89,5 +90,40 @@ describe("validateContactInput", () => {
   it("treats non text values as empty", () => {
     const result = validateContactInput({ ...valid, name: { a: 1 } });
     expect(result).toEqual({ ok: false, errors: { name: "required" } });
+  });
+
+  describe("phone", () => {
+    it.each([undefined, null, "", "   "])("is optional (%j)", (phone) => {
+      const result = validateContactInput({ ...valid, phone });
+      expect(result.ok && result.data.phone).toBeNull();
+    });
+
+    it.each([
+      ["081234567890", "081234567890"],
+      ["+6281234567890", "+6281234567890"],
+      ["0812-3456-7890", "081234567890"],
+      [" +62 812 3456 7890 ", "+6281234567890"],
+      ["0812345678", "0812345678"],
+      ["0812345678901", "0812345678901"],
+    ])("accepts %j as %j", (phone, expected) => {
+      const result = validateContactInput({ ...valid, phone });
+      expect(result.ok && result.data.phone).toBe(expected);
+    });
+
+    it.each([
+      "6281234567890",
+      "81234567890",
+      "+6221234567",
+      "0211234567",
+      "081234567",
+      "08123456789012",
+      "0812abc4567",
+      "(0812) 3456 7890",
+      "+62 812 3456 7890\r\nBcc: x@contoh.test",
+      81234567890,
+    ])("rejects %j", (phone) => {
+      const result = validateContactInput({ ...valid, phone });
+      expect(result).toEqual({ ok: false, errors: { phone: "invalid" } });
+    });
   });
 });

@@ -64,6 +64,7 @@ export function buildEmailBody(
     "",
     `Nama: ${submission.name}`,
     `Email: ${submission.email}`,
+    `WhatsApp: ${submission.phone ?? "-"}`,
     `Organisasi: ${submission.organization}`,
     `Bahasa halaman: ${locale.toUpperCase()}`,
     "",

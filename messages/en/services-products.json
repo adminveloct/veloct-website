@@ -55,7 +55,7 @@
     }
   ],
   "projectsHeading": "Project list",
-  "projectsSubtitle": "Clients are shown by sector. Project images are team-made mockups, not screenshots of client applications. A short description for each project is [menyusul].",
+  "projectsSubtitle": "A selection of projects we have delivered for government agencies, state-owned enterprises, and private companies.",
   "projectFilters": {
     "all": "All",
     "ai": "AI",
@@ -73,7 +73,7 @@
       "categoryLabel": "AI",
       "title": "AI helpdesk application consulting",
       "sector": "Instansi pemerintah pusat",
-      "description": "[to follow]"
+      "description": ""
     },
     {
       "id": "pelatihan-ai",
@@ -82,7 +82,7 @@
       "categoryLabel": "AI",
       "title": "AI training for digital talent",
       "sector": "University",
-      "description": "[to follow]"
+      "description": ""
     },
     {
       "id": "energi-ekonomi",
@@ -91,7 +91,7 @@
       "categoryLabel": "Big Data",
       "title": "Energy-economy dashboard and database",
       "sector": "State-owned energy research institute",
-      "description": "[to follow]"
+      "description": ""
     },
     {
       "id": "data-personel",
@@ -100,7 +100,7 @@
       "categoryLabel": "Big Data",
       "title": "Automated personnel data recap",
       "sector": "Law enforcement agency",
-      "description": "[to follow]"
+      "description": ""
     },
     {
       "id": "pengelolaan-data",
@@ -109,7 +109,7 @@
       "categoryLabel": "Big Data",
       "title": "Data Management Consulting",
       "sector": "Central government agency",
-      "description": "[to follow]"
+      "description": ""
     },
     {
       "id": "monitoring-cloud-aws",
@@ -118,7 +118,7 @@
       "categoryLabel": "Infrastructure",
       "title": "AWS cloud management and monitoring",
       "sector": "Central government agency",
-      "description": "[to follow]"
+      "description": ""
     },
     {
       "id": "layanan-email",
@@ -127,7 +127,7 @@
       "categoryLabel": "Infrastructure",
       "title": "Email service consulting",
       "sector": "Central government agency",
-      "description": "[to follow]"
+      "description": ""
     },
     {
       "id": "prediksi-keuangan",
@@ -136,7 +136,7 @@
       "categoryLabel": "AI",
       "title": "Financial and occupational risk prediction",
       "sector": "Telecommunications company",
-      "description": "[to follow]"
+      "description": ""
     },
     {
       "id": "audit-kecepatan",
@@ -145,7 +145,7 @@
       "categoryLabel": "Software",
       "title": "Speed audit system",
       "sector": "Law enforcement agency",
-      "description": "[to follow]"
+      "description": ""
     },
     {
       "id": "pemeliharaan-it",
@@ -154,7 +154,7 @@
       "categoryLabel": "Infrastructure",
       "title": "IT maintenance",
       "sector": "Law enforcement agency",
-      "description": "[to follow]"
+      "description": ""
     }
   ]
 }

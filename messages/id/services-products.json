@@ -55,7 +55,7 @@
     }
   ],
   "projectsHeading": "Daftar proyek",
-  "projectsSubtitle": "Klien ditampilkan sebagai sektor. Gambar proyek berupa mockup buatan tim. Deskripsi singkat tiap proyek [menyusul].",
+  "projectsSubtitle": "Beberapa proyek yang sudah kami kerjakan untuk instansi pemerintah, BUMN, dan perusahaan.",
   "projectFilters": {
     "all": "Semua",
     "ai": "AI",
@@ -73,7 +73,7 @@
       "categoryLabel": "AI",
       "title": "Konsultasi aplikasi Helpdesk AI",
       "sector": "Instansi pemerintah pusat",
-      "description": "[menyusul]"
+      "description": ""
     },
     {
       "id": "pelatihan-ai",
@@ -82,7 +82,7 @@
       "categoryLabel": "AI",
       "title": "Pelatihan AI untuk talenta digital",
       "sector": "Perguruan tinggi",
-      "description": "[menyusul]"
+      "description": ""
     },
     {
       "id": "energi-ekonomi",
@@ -91,7 +91,7 @@
       "categoryLabel": "Big Data",
       "title": "Dashboard dan database energi-ekonomi",
       "sector": "Lembaga riset BUMN energi",
-      "description": "[menyusul]"
+      "description": ""
     },
     {
       "id": "data-personel",
@@ -100,7 +100,7 @@
       "categoryLabel": "Big Data",
       "title": "Rekap data personel otomatis",
       "sector": "Instansi penegak hukum",
-      "description": "[menyusul]"
+      "description": ""
     },
     {
       "id": "pengelolaan-data",
@@ -109,7 +109,7 @@
       "categoryLabel": "Big Data",
       "title": "Konsultasi pengelolaan data",
       "sector": "Instansi pemerintah pusat",
-      "description": "[menyusul]"
+      "description": ""
     },
     {
       "id": "monitoring-cloud-aws",
@@ -118,7 +118,7 @@
       "categoryLabel": "Infrastruktur",
       "title": "Pengelolaan dan monitoring cloud AWS",
       "sector": "Instansi pemerintah pusat",
-      "description": "[menyusul]"
+      "description": ""
     },
     {
       "id": "layanan-email",
@@ -127,7 +127,7 @@
       "categoryLabel": "Infrastruktur",
       "title": "Konsultasi layanan email",
       "sector": "Instansi pemerintah pusat",
-      "description": "[menyusul]"
+      "description": ""
     },
     {
       "id": "prediksi-keuangan",
@@ -136,7 +136,7 @@
       "categoryLabel": "AI",
       "title": "Prediksi keuangan dan risiko kerja",
       "sector": "Perusahaan telekomunikasi",
-      "description": "[menyusul]"
+      "description": ""
     },
     {
       "id": "audit-kecepatan",
@@ -145,7 +145,7 @@
       "categoryLabel": "Software",
       "title": "Sistem audit kecepatan",
       "sector": "Instansi penegak hukum",
-      "description": "[menyusul]"
+      "description": ""
     },
     {
       "id": "pemeliharaan-it",
@@ -154,7 +154,7 @@
       "categoryLabel": "Infrastruktur",
       "title": "Pemeliharaan IT",
       "sector": "Instansi penegak hukum",
-      "description": "[menyusul]"
+      "description": ""
     }
   ]
 }

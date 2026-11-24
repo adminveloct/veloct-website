@@ -9,6 +9,9 @@ import type { Locale } from "@/i18n/pages";
 import { getTeamData } from "@/lib/team";
 import ProjectShowcase from "@/components/project-showcase";
 import type { Project } from "@/components/project-showcase";
+import ContactForm from "@/components/contact-form";
+import ContactFaq from "@/components/contact-faq";
+import type { FaqItem } from "@/components/contact-faq";
 
 const PARTNER_LOGOS = [
   { src: "/images/logo-polairud-polri.webp", alt: "Polairud Polri" },
@@ -798,6 +801,138 @@ export default async function SlugPage({ params }: Props) {
             </div>
           </div>
         </section>
+      </div>
+    );
+  }
+
+  if (key === "contact") {
+    const steps = t.raw("steps") as string[];
+    const faqTitle = t("faqTitle");
+    const faqItems = t.raw("faq") as FaqItem[];
+    const errorMessages = t.raw("errors") as Record<
+      string,
+      Record<string, string>
+    >;
+    const invalidMessage = t("api.invalid");
+    const formLabels = t.raw("form") as {
+      nameLabel: string;
+      namePlaceholder: string;
+      emailLabel: string;
+      emailPlaceholder: string;
+      phoneLabel: string;
+      phonePlaceholder: string;
+      organizationLabel: string;
+      organizationPlaceholder: string;
+      messageLabel: string;
+      privacyConsentPrefix: string;
+      privacyConsentLink: string;
+      privacyConsentSuffix: string;
+      submitButton: string;
+      submitting: string;
+      successTitle: string;
+      errorTitle: string;
+    };
+    const infoItems = [
+      { label: t("infoEmailLabel"), value: t("infoEmailValue") },
+      { label: t("infoWhatsappLabel"), value: t("infoWhatsappValue") },
+      { label: t("infoAddressLabel"), value: t("infoAddressValue") },
+    ].filter(
+      (item) =>
+        Boolean(item.value?.trim()) &&
+        item.value !== "[menyusul]" &&
+        item.value !== "[to follow]"
+    );
+
+    return (
+      <div className="flex flex-1 flex-col">
+        {/* Bagian Formulir & Hero dengan gradasi berakhir tepat di #D9EEDF */}
+        <div className="bg-[linear-gradient(180deg,#FFFFFF_0%,rgba(217,238,223,0.3)_25%,#D9EEDF_100%)]">
+          {/* Hero Section */}
+          <section className="px-6 pt-12 pb-8 md:pt-16 md:pb-10">
+            <div className="mx-auto max-w-6xl">
+              <h1 className="text-4xl font-bold tracking-tight text-[#222222] md:text-5xl lg:text-[56px] lg:leading-[64px]">
+                {t("heading")}
+              </h1>
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#222222] md:text-lg">
+                {t("subtitle")}
+                <span className="font-semibold text-[#EE4A1B]">
+                  {t("subtitleHighlight")}
+                </span>
+              </p>
+            </div>
+          </section>
+
+          {/* 3 Columns Section: Langkah Kerja Sama, Form, Informasi Kontak */}
+          <section className="px-6 pb-20 md:pb-28">
+            <div
+              className={`mx-auto grid max-w-6xl grid-cols-1 gap-10 lg:items-start lg:gap-8 ${
+                infoItems.length > 0
+                  ? "lg:grid-cols-[280px_1fr_220px]"
+                  : "lg:grid-cols-[280px_1fr]"
+              }`}
+            >
+              {/* Kolom 1: Langkah Kerja Sama */}
+              <div>
+                <h2 className="text-xl font-bold tracking-tight text-[#222222]">
+                  {t("stepsTitle")}
+                </h2>
+                <ul className="mt-6 flex flex-col gap-6">
+                  {steps.map((step, index) => (
+                    <li key={index} className="flex items-start gap-4">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0F5A28] text-base font-bold text-white">
+                        {index + 1}
+                      </span>
+                      <p className="pt-2 text-sm font-medium leading-snug text-[#222222]">
+                        {step}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Kolom 2: Form Kontak */}
+              <div>
+                <ContactForm
+                  locale={locale}
+                  labels={formLabels}
+                  errorMessages={errorMessages}
+                  invalidMessage={invalidMessage}
+                />
+              </div>
+
+              {/* Kolom 3: Informasi Kontak (hanya tampil jika ada data) */}
+              {infoItems.length > 0 && (
+                <div>
+                  <h2 className="text-xl font-bold tracking-tight text-[#222222]">
+                    {t("infoTitle")}
+                  </h2>
+                  <div className="mt-6 flex flex-col gap-5 text-sm text-[#222222]">
+                    {infoItems.map((item, index) => (
+                      <div key={index}>
+                        <h3 className="font-bold">{item.label}</h3>
+                        <p className="mt-1 text-[#555555]">{item.value}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
+        </div>
+
+        {/* Frame 9 Divider */}
+        <div aria-hidden="true" className="relative -mt-px -mb-px">
+          <Image
+            src="/images/Frame9.png"
+            alt=""
+            width={5760}
+            height={800}
+            className="block h-auto w-full"
+          />
+        </div>
+
+        {/* FAQ Section */}
+        <ContactFaq title={faqTitle} items={faqItems} />
       </div>
     );
   }

@@ -14,7 +14,7 @@ export default async function SiteHeader({ locale }: Props) {
   const t = await getTranslations({ locale, namespace: "common" });
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-200 bg-background px-6 py-3">
+    <header className="sticky top-0 z-50 bg-[#FBFBFA] px-6 py-3 shadow-[0_2px_10px_rgba(0,0,0,0.25)]">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
         <div className="flex items-center gap-6">
           <Link

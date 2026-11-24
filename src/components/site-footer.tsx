@@ -20,7 +20,13 @@ function IconBuilding() {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M4 21h16M6 21V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v16M14 9h4a1 1 0 0 1 1 1v11M9 8h2M9 12h2M9 16h2" />
+      <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
+      <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
+      <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
+      <path d="M10 6h4" />
+      <path d="M10 10h4" />
+      <path d="M10 14h4" />
+      <path d="M10 18h4" />
     </svg>
   );
 }
@@ -37,7 +43,7 @@ function IconPhone() {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M6.5 3h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5L16 12l4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.2 2 2 0 0 1 6.5 3z" />
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg>
   );
 }
@@ -72,8 +78,8 @@ function IconMail() {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <rect x="3" y="5" width="18" height="14" rx="2" />
-      <path d="m3 7 9 6 9-6" />
+      <rect width="20" height="16" x="2" y="4" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
     </svg>
   );
 }
@@ -89,57 +95,87 @@ export default async function SiteFooter({ locale }: Props) {
     { icon: <IconMail />, label: pending },
   ];
 
+  const activeContacts = contacts.filter((contact) =>
+    Boolean(contact.label?.trim())
+  );
+
   return (
     <footer>
-      <div className="bg-[#222222] px-6 py-14 md:py-16">
-        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[auto_1fr_1fr] md:gap-12">
-          <div className="w-fit">
-            <Image
-              src="/images/logo-veloct.png"
-              alt="VeloCT"
-              width={600}
-              height={416}
-              unoptimized
-              className="h-20 w-auto md:h-24"
-            />
+      <div className="bg-[#222222] px-6 py-12 md:py-16">
+        <div
+          className={`mx-auto grid max-w-6xl gap-10 md:gap-12 ${
+            activeContacts.length > 0
+              ? "md:grid-cols-[auto_1fr_1fr]"
+              : "md:grid-cols-[auto_1fr]"
+          }`}
+        >
+          <div className="flex justify-center md:block md:w-fit">
+            <div className="inline-block">
+              <Image
+                src="/images/logo-veloct.png"
+                alt="VeloCT"
+                width={152}
+                height={100}
+                unoptimized
+                className="h-auto w-[160px] md:h-24 md:w-auto"
+              />
+            </div>
           </div>
 
-          <div className="max-w-sm">
+          <div className="text-center md:max-w-sm md:text-left">
             <p className="text-lg font-bold text-white">
               {t("footer.companyName")}
             </p>
-            <p className="mt-3 text-sm leading-6 text-zinc-400">
+            <p className="mx-auto mt-3 max-w-[280px] text-sm leading-6 text-zinc-300 md:mx-0 md:max-w-none md:text-zinc-400">
               {t("footer.tagline")}
             </p>
           </div>
 
+          {activeContacts.length > 0 && (
+            <div>
+              <p className="text-lg font-bold text-white">
+                {t("footer.contactTitle")}
+              </p>
+              <ul className="mt-4 space-y-4 md:space-y-3">
+                {activeContacts.map((contact, index) => (
+                  <li
+                    key={index}
+                    className="flex items-center gap-3 text-sm text-zinc-300"
+                  >
+                    <span className="text-zinc-300">{contact.icon}</span>
+                    <span>{contact.label}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+        {/* Mobile only: Copyright & Kebijakan Privasi */}
+        <div className="mt-12 space-y-8 text-center md:hidden">
+          <p className="text-sm font-medium text-zinc-300">
+            © {new Date().getFullYear()} {t("footer.companyName")}
+          </p>
           <div>
-            <p className="text-lg font-bold text-white">
-              {t("footer.contactTitle")}
-            </p>
-            <ul className="mt-4 space-y-3">
-              {contacts.map((contact, index) => (
-                <li
-                  key={index}
-                  className="flex items-center gap-3 text-sm text-zinc-300"
-                >
-                  <span className="text-zinc-300">{contact.icon}</span>
-                  <span>{contact.label}</span>
-                </li>
-              ))}
-            </ul>
+            <Link
+              href={`/${getSlug("privacy", locale)}`}
+              className="inline-block text-base font-medium text-white transition-opacity hover:opacity-80"
+            >
+              {t("nav.privacy")}
+            </Link>
           </div>
         </div>
       </div>
 
-      <div className="bg-[#FBFBFA] px-6 py-3">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-3 text-sm text-zinc-600 sm:flex-row sm:gap-8">
-          <span>
+      {/* Desktop only: Light bottom bar */}
+      <div className="hidden bg-[#FBFBFA] px-6 py-3 md:block">
+        <div className="mx-auto flex max-w-6xl items-center justify-center gap-8 text-sm text-zinc-600">
+          <span className="font-medium">
             © {new Date().getFullYear()} {t("footer.companyName")}
           </span>
           <Link
             href={`/${getSlug("privacy", locale)}`}
-            className="transition-colors hover:text-zinc-900"
+            className="font-medium transition-colors hover:text-zinc-900"
           >
             {t("nav.privacy")}
           </Link>

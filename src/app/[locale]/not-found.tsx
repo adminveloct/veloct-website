@@ -1,36 +1,54 @@
-import { getLocale, getTranslations } from "next-intl/server";
+import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
-import { getSlug } from "@/i18n/pages";
 
 export default async function NotFoundPage() {
-  const locale = await getLocale();
-  const t = await getTranslations({ locale, namespace: "common" });
+  const t = await getTranslations("common.notFound");
 
   return (
-    <div className="flex flex-1 flex-col items-center justify-center gap-5 px-6 py-16 text-center">
-      <p className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
-        404
-      </p>
-      <h1 className="text-3xl font-semibold leading-tight tracking-tight">
-        {t("notFound.title")}
-      </h1>
-      <p className="max-w-md text-lg leading-8 text-zinc-600">
-        {t("notFound.description")}
-      </p>
-      <div className="mt-1 flex flex-wrap justify-center gap-3">
-        <Link
-          href="/"
-          className="rounded-full bg-foreground px-6 py-3 text-background transition-colors hover:bg-[#383838]"
-        >
-          {t("notFound.backHome")}
-        </Link>
-        <Link
-          href={`/${getSlug("contact", locale)}`}
-          className="rounded-full border border-zinc-300 px-6 py-3 transition-colors hover:border-zinc-900"
-        >
-          {t("notFound.goContact")}
-        </Link>
+    <div className="flex flex-1 items-center bg-[#FBFBFA] px-6 py-16 md:py-24">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        {/* Kolom Kiri: Teks & Tombol */}
+        <div className="flex flex-col items-start">
+          <h1 className="max-w-md text-4xl font-bold tracking-tight text-[#222222] sm:text-5xl lg:text-[56px] lg:leading-[1.15]">
+            {t("title")}
+          </h1>
+          <p className="mt-4 text-base text-[#555555] md:text-lg">
+            {t("description")}
+          </p>
+          <div className="mt-8">
+            <Link
+              href="/"
+              className="btn-flame inline-flex items-center gap-2.5 rounded-lg px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:opacity-90"
+            >
+              <span>{t("backHome")}</span>
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+
+        {/* Kolom Kanan: Ilustrasi 404 */}
+        <div className="flex justify-center lg:justify-end">
+          <Image
+            src="/images/elemen-404.png"
+            alt="404 Illustration"
+            width={600}
+            height={555}
+            priority
+            className="h-auto w-full max-w-md object-contain lg:max-w-lg"
+          />
+        </div>
       </div>
     </div>
   );

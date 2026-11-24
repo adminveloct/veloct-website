@@ -7,14 +7,14 @@ export default async function NotFoundPage() {
   const t = await getTranslations("common.notFound");
 
   return (
-    <div className="flex flex-1 items-center bg-[#FBFBFA] px-6 py-16 md:py-24">
+    <div className="flex flex-1 items-center bg-neutral-50 px-6 py-16 md:py-24">
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
         {/* Kolom Kiri: Teks & Tombol */}
         <div className="flex flex-col items-start">
-          <h1 className="max-w-md text-4xl font-bold tracking-tight text-[#222222] sm:text-5xl lg:text-[56px] lg:leading-[1.15]">
+          <h1 className="max-w-md text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl lg:text-[56px] lg:leading-[1.15]">
             {t("title")}
           </h1>
-          <p className="mt-4 text-base text-[#555555] md:text-lg">
+          <p className="mt-4 text-base text-neutral-600 md:text-lg">
             {t("description")}
           </p>
           <div className="mt-8">

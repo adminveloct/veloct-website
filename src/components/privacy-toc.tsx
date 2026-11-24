@@ -112,7 +112,7 @@ export default function PrivacyToc({ heading, sections }: Props) {
               >
                 <span
                   aria-hidden="true"
-                  className={`absolute left-[7px] top-0 bottom-0 w-px bg-[#D5D5D5] transition-opacity duration-300 ease-in-out ${
+                  className={`absolute left-[7px] top-0 bottom-0 w-px bg-neutral-200 transition-opacity duration-300 ease-in-out ${
                     isActive ? "opacity-0" : "opacity-100"
                   }`}
                 />
@@ -121,8 +121,8 @@ export default function PrivacyToc({ heading, sections }: Props) {
                   onClick={(e) => handleClick(e, section.id)}
                   className={`block text-xs transition-all duration-300 ease-in-out ${
                     isActive
-                      ? "pl-0 font-bold text-[#222222]"
-                      : "pl-[18px] text-[#555555] hover:font-bold hover:text-[#222222]"
+                      ? "pl-0 font-bold text-neutral-900"
+                      : "pl-[18px] text-neutral-600 hover:font-bold hover:text-neutral-900"
                   }`}
                 >
                   {section.title}

@@ -4,6 +4,10 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
 import { getSlug } from "@/i18n/pages";
+import { Container } from "@/components/ui/container";
+import { Hero } from "@/components/sections/hero";
+import { CtaClosing } from "@/components/sections/cta-closing";
+import { ArrowRightIcon } from "@/components/icons";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -48,23 +52,6 @@ const PARTNER_LOGOS = [
   { src: "/images/logo-pertamina-energy-institute.png", alt: "Pertamina Energy Institute" },
 ] as const;
 
-function ArrowIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 20 20"
-      className="h-4 w-4"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M4 10h11m0 0l-4-4m4 4l-4 4" />
-    </svg>
-  );
-}
-
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -80,61 +67,20 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <div className="flex flex-1 flex-col">
-      <section className="bg-linear-to-b from-blush via-blush to-blush-deep/80 px-6 pb-14 pt-12 md:pt-16">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
-          <div className="max-w-xl">
-            <h1 className="text-4xl font-normal leading-tight tracking-tight text-zinc-900 md:text-5xl">
-              {t.rich("heading", {
-                bold: (chunks) => <strong className="font-bold">{chunks}</strong>,
-              })}
-            </h1>
-            <p className="mt-5 text-lg leading-8 text-zinc-700">
-              {t.rich("description", {
-                bold: (chunks) => <strong className="font-semibold">{chunks}</strong>,
-              })}
-            </p>
-            <Link
-              href={`/${getSlug("services-products", locale)}`}
-              className="btn-flame mt-8 flex h-14 w-full items-center justify-center gap-2 rounded-lg px-5 text-base font-semibold text-white shadow-sm transition hover:brightness-110 sm:inline-flex sm:w-auto"
-            >
-              {t("button")}
-              <ArrowIcon />
-            </Link>
-          </div>
-
-          <div className="w-full max-w-sm md:max-w-md ml-auto">
-            <Image
-              src="/images/hero.png"
-              alt={t("heroImageAlt")}
-              priority
-              width={921}
-              height={1080}
-              className="block h-auto w-full"
-            />
-          </div>
-        </div>
-
-        <div className="mt-12 flex justify-center">
-          <a
-            href={`#${servicesSectionId}`}
-            className="inline-flex items-center gap-2 rounded-full bg-[#222222] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-black"
-          >
-            {t("scrollHint")}
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 20 20"
-              className="h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M10 4v11m0 0l-4-4m4 4l4-4" />
-            </svg>
-          </a>
-        </div>
-      </section>
+      <Hero
+        title={t.rich("heading", {
+          bold: (chunks) => <strong className="font-bold">{chunks}</strong>,
+        })}
+        description={t.rich("description", {
+          bold: (chunks) => <strong className="font-semibold">{chunks}</strong>,
+        })}
+        ctaText={t("button")}
+        ctaHref={`/${getSlug("services-products", locale)}`}
+        imageSrc="/images/hero.png"
+        imageAlt={t("heroImageAlt")}
+        scrollHintText={t("scrollHint")}
+        scrollHintHref={`#${servicesSectionId}`}
+      />
 
       <div aria-hidden="true" className="relative">
         <Image
@@ -148,10 +94,10 @@ export default async function HomePage({ params }: Props) {
 
       <section
         id={servicesSectionId}
-        className="bg-linear-to-b from-mint via-mint to-[#f4faf6] px-6 py-16 md:py-20"
+        className="bg-linear-to-b from-mint via-mint to-mint-50 py-16 md:py-20"
       >
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl font-semibold tracking-tight text-zinc-900 md:text-4xl">
+        <Container size="default">
+          <h2 className="text-center text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
             {t("servicesTitle")}
           </h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:items-start">
@@ -171,27 +117,27 @@ export default async function HomePage({ params }: Props) {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <h3 className="mt-4 text-center text-lg font-bold text-zinc-900 md:text-xl">
+                <h3 className="mt-4 text-center text-lg font-bold text-neutral-900 md:text-xl">
                   {t(`services.${key}`)}
                 </h3>
-                <p className="mt-3 flex-1 text-center text-sm leading-6 text-zinc-600">
+                <p className="mt-3 flex-1 text-center text-sm leading-6 text-neutral-600">
                   {t.rich(`serviceDescriptions.${key}`, {
                     medium: (chunks) => (
-                      <span className="font-medium text-zinc-900">{chunks}</span>
+                      <span className="font-medium text-neutral-900">{chunks}</span>
                     ),
                     bold: (chunks) => (
-                      <span className="font-medium text-zinc-900">{chunks}</span>
+                      <span className="font-medium text-neutral-900">{chunks}</span>
                     ),
                   })}
                 </p>
-                <span className="mt-4 flex w-full items-center justify-center gap-3 rounded-full bg-[#D9EEDF] px-4 py-2 text-sm font-medium text-[#222222] transition-colors group-hover:bg-[#21813E] group-hover:text-white">
+                <span className="mt-4 flex w-full items-center justify-center gap-3 rounded-full bg-mint-100 px-4 py-2 text-sm font-medium text-neutral-900 transition-colors group-hover:bg-forest-600 group-hover:text-white">
                   {t("serviceCardCta")}
-                  <ArrowIcon />
+                  <ArrowRightIcon size={18} />
                 </span>
               </Link>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       <div aria-hidden="true" className="relative">
@@ -204,13 +150,13 @@ export default async function HomePage({ params }: Props) {
         />
       </div>
 
-      <section className="bg-sun px-6 py-16 md:py-20">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
+      <section className="bg-sun py-16 md:py-20">
+        <Container size="default" className="grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-semibold tracking-tight text-zinc-900 md:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
               {t("workTitle")}
             </h2>
-            <p className="mt-4 max-w-md text-base leading-7 text-zinc-700">
+            <p className="mt-4 max-w-md text-base leading-7 text-neutral-700">
               {t.rich("workSubtitle", {
                 bold: (chunks) => <strong className="font-bold">{chunks}</strong>,
               })}
@@ -220,7 +166,7 @@ export default async function HomePage({ params }: Props) {
               className="btn-flame mt-6 flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:brightness-110 sm:inline-flex sm:w-auto"
             >
               {t("workCta")}
-              <ArrowIcon />
+              <ArrowRightIcon size={18} />
             </Link>
           </div>
           <ul className="flex flex-col gap-2">
@@ -229,17 +175,17 @@ export default async function HomePage({ params }: Props) {
                 key={`${project.year}-${project.label}`}
                 className="flex items-center gap-6 rounded-lg bg-white px-5 py-3.5 shadow-sm"
               >
-                <span className="shrink-0 text-sm text-zinc-500">
+                <span className="shrink-0 text-sm text-neutral-500">
                   {project.year}
                 </span>
-                <span className="shrink-0 text-sm font-bold text-zinc-900">
+                <span className="shrink-0 text-sm font-bold text-neutral-900">
                   {project.tag}
                 </span>
-                <span className="text-sm text-zinc-700">{project.label}</span>
+                <span className="text-sm text-neutral-700">{project.label}</span>
               </li>
             ))}
           </ul>
-        </div>
+        </Container>
       </section>
 
       <div aria-hidden="true" className="relative">
@@ -252,9 +198,9 @@ export default async function HomePage({ params }: Props) {
         />
       </div>
 
-      <section className="bg-[#FBFBFA]  px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl font-semibold tracking-tight text-zinc-900 md:text-4xl">
+      <section className="bg-neutral-50 py-16 md:py-20">
+        <Container size="default">
+          <h2 className="text-center text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
             {t("partnersTitle")}
           </h2>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
@@ -269,36 +215,16 @@ export default async function HomePage({ params }: Props) {
               />
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
-      <section className="bg-[linear-gradient(to_right,#FBFBFA,rgba(153,153,153,0.25))] px-6 pt-10 pb-30">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
-          <div className="flex justify-center lg:justify-start">
-            <Image
-              src="/images/elemen-callNow.png"
-              alt=""
-              width={644}
-              height={470}
-              className="h-auto w-full max-w-sm"
-            />
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl">
-              {t("ctaTitle")}
-            </h2>
-            <p className="mt-4 max-w-md text-base leading-7 text-zinc-700">
-              {t("ctaSubtitle")}
-            </p>
-            <Link
-              href={`/${getSlug("contact", locale)}`}
-              className="btn-flame mt-6 flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:brightness-110 sm:inline-flex sm:w-auto"
-            >
-              {t("ctaButton")}
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CtaClosing
+        title={t("ctaTitle")}
+        subtitle={t("ctaSubtitle")}
+        ctaText={t("ctaButton")}
+        ctaHref={`/${getSlug("contact", locale)}`}
+        imageSrc="/images/elemen-callNow.png"
+      />
     </div>
   );
 }

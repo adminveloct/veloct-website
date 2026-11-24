@@ -39,19 +39,19 @@
       "key": "understand",
       "title": "Understand",
       "description": "We study the client's data, infrastructure, and ways of working, then design the solution architecture.",
-      "bg": "bg-[#FADBD5]"
+      "bg": "bg-red-100"
     },
     {
       "key": "build",
       "title": "Build",
       "description": "We build the solution with trusted partners, with VeloCT as the single point of accountability.",
-      "bg": "bg-[#D9EEDF]"
+      "bg": "bg-mint-100"
     },
     {
       "key": "impact",
       "title": "Deliver Impact",
       "description": "We stay until the system is used every day and its benefits are felt.",
-      "bg": "bg-[#FCEFB8]"
+      "bg": "bg-sun-100"
     }
   ],
   "projectsHeading": "Project list",

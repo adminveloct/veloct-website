@@ -1,6 +1,160 @@
 {
-  "metaTitle": "Layanan/Produk — VeloCT",
-  "metaDescription": "Layanan dan produk teknologi VeloCT untuk membantu bisnis Anda berkembang.",
+  "metaTitle": "Layanan & Produk — VeloCT",
+  "metaDescription": "Layanan dan produk teknologi VeloCT: AI, Big Data, Cloud AWS, dan Software yang siap dipakai untuk instansi pemerintah dan industri.",
   "heading": "Layanan/Produk",
-  "description": "Bagian ini masih berisi kerangka. Rincian layanan akan diisi pada tahap berikutnya."
+  "description": "AI hanya bekerja bila datanya lengkap dan infrastrukturnya andal. Karena itu kami membangun ketiganya, lalu menambahkan software yang menghubungkannya ke pekerjaan sehari-hari.",
+  "roleHeading": "Bagaimana peran kami dalam menyelesaikan masalah klien?",
+  "problemTitle": "Masalah klien",
+  "solutionTitle": "Yang kami kerjakan",
+  "roles": [
+    {
+      "key": "ai",
+      "category": "AI",
+      "problem": "Pekerjaan membaca laporan, memilah dokumen, dan menjawab pertanyaan layanan masih manual dan lambat.",
+      "solution": "Prediksi dan otomatisasi pekerjaan kognitif, dari aplikasi Helpdesk AI sampai model prediksi risiko. Termasuk konsultasi dan training."
+    },
+    {
+      "key": "bigData",
+      "category": "Big Data",
+      "problem": "Data tersebar, tidak lengkap, dan belum bisa dipakai untuk keputusan.",
+      "solution": "Data historis yang siap dipakai untuk keputusan, dengan pelindungan data pribadi dan kedaulatan data. Termasuk konsultasi dan training."
+    },
+    {
+      "key": "cloud",
+      "category": "Cloud AWS",
+      "problem": "Sistem di cloud sering bermasalah, kurang aman, atau biayanya membengkak.",
+      "solution": "Pengelolaan dan pemantauan cloud AWS supaya sistem andal, aman, dan biayanya terkendali.",
+      "partnerNote": "VeloCT anggota AWS Partner Network."
+    },
+    {
+      "key": "software",
+      "category": "Software",
+      "problem": "Klien butuh aplikasi tetapi tidak ingin mengurus banyak vendor.",
+      "solution": "Aplikasi dibangun bersama mitra terpercaya, dengan VeloCT sebagai satu penanggung jawab."
+    }
+  ],
+  "howWeWorkHeading": "Cara kerja",
+  "steps": [
+    {
+      "key": "understand",
+      "title": "Memahami",
+      "description": "Kami pelajari kondisi data, infrastruktur, dan cara kerja klien, lalu menyusun arsitektur solusinya.",
+      "bg": "bg-[#FADBD5]"
+    },
+    {
+      "key": "build",
+      "title": "Membangun",
+      "description": "Kami bangun solusinya bersama mitra terpercaya, dengan VeloCT sebagai satu penanggung jawab.",
+      "bg": "bg-[#D9EEDF]"
+    },
+    {
+      "key": "impact",
+      "title": "Berdampak",
+      "description": "Kami dampingi sampai sistem dipakai setiap hari dan manfaatnya terasa.",
+      "bg": "bg-[#FCEFB8]"
+    }
+  ],
+  "projectsHeading": "Daftar proyek",
+  "projectsSubtitle": "Beberapa proyek yang sudah kami kerjakan untuk instansi pemerintah, BUMN, dan perusahaan.",
+  "projectFilters": {
+    "all": "Semua",
+    "ai": "AI",
+    "bigData": "Big Data",
+    "infrastructure": "Infrastruktur",
+    "software": "Software"
+  },
+  "showMore": "Tampilkan Lebih Banyak",
+  "showLess": "Tampilkan Lebih Sedikit",
+  "projects": [
+    {
+      "id": "helpdesk-ai",
+      "year": "2026",
+      "category": "ai",
+      "categoryLabel": "AI",
+      "title": "Konsultasi aplikasi Helpdesk AI",
+      "sector": "Instansi pemerintah pusat",
+      "description": ""
+    },
+    {
+      "id": "pelatihan-ai",
+      "year": "2026",
+      "category": "ai",
+      "categoryLabel": "AI",
+      "title": "Pelatihan AI untuk talenta digital",
+      "sector": "Perguruan tinggi",
+      "description": ""
+    },
+    {
+      "id": "energi-ekonomi",
+      "year": "2026",
+      "category": "bigData",
+      "categoryLabel": "Big Data",
+      "title": "Dashboard dan database energi-ekonomi",
+      "sector": "Lembaga riset BUMN energi",
+      "description": ""
+    },
+    {
+      "id": "data-personel",
+      "year": "2026",
+      "category": "bigData",
+      "categoryLabel": "Big Data",
+      "title": "Rekap data personel otomatis",
+      "sector": "Instansi penegak hukum",
+      "description": ""
+    },
+    {
+      "id": "pengelolaan-data",
+      "year": "2026",
+      "category": "bigData",
+      "categoryLabel": "Big Data",
+      "title": "Konsultasi pengelolaan data",
+      "sector": "Instansi pemerintah pusat",
+      "description": ""
+    },
+    {
+      "id": "monitoring-cloud-aws",
+      "year": "2026",
+      "category": "infrastructure",
+      "categoryLabel": "Infrastruktur",
+      "title": "Pengelolaan dan monitoring cloud AWS",
+      "sector": "Instansi pemerintah pusat",
+      "description": ""
+    },
+    {
+      "id": "layanan-email",
+      "year": "2025",
+      "category": "infrastructure",
+      "categoryLabel": "Infrastruktur",
+      "title": "Konsultasi layanan email",
+      "sector": "Instansi pemerintah pusat",
+      "description": ""
+    },
+    {
+      "id": "prediksi-keuangan",
+      "year": "2024",
+      "category": "ai",
+      "categoryLabel": "AI",
+      "title": "Prediksi keuangan dan risiko kerja",
+      "sector": "Perusahaan telekomunikasi",
+      "description": ""
+    },
+    {
+      "id": "audit-kecepatan",
+      "year": "2023",
+      "category": "software",
+      "categoryLabel": "Software",
+      "title": "Sistem audit kecepatan",
+      "sector": "Instansi penegak hukum",
+      "description": ""
+    },
+    {
+      "id": "pemeliharaan-it",
+      "year": "2023",
+      "category": "infrastructure",
+      "categoryLabel": "Infrastruktur",
+      "title": "Pemeliharaan IT",
+      "sector": "Instansi penegak hukum",
+      "description": ""
+    }
+  ]
 }

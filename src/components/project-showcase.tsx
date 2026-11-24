@@ -1,0 +1,243 @@
+"use client";
+
+import Image from "next/image";
+import { useMemo, useState } from "react";
+
+export type Project = {
+  id: string;
+  year: string;
+  category: "ai" | "bigData" | "infrastructure" | "software";
+  categoryLabel: string;
+  title: string;
+  sector: string;
+  description?: string;
+  image?: string;
+};
+
+type Props = {
+  projects: Project[];
+  filterLabels: {
+    all: string;
+    ai: string;
+    bigData: string;
+    infrastructure: string;
+    software: string;
+  };
+  showMoreLabel: string;
+  showLessLabel: string;
+};
+
+const CATEGORY_TAG_STYLES: Record<string, string> = {
+  ai: "bg-[#89C799] text-[#222222]",
+  bigData: "bg-[#2E9E4F] text-white",
+  infrastructure: "bg-[#0F5A28] text-white",
+  software: "bg-[#B1DABC] text-[#222222]",
+};
+
+export default function ProjectShowcase({
+  projects,
+  filterLabels,
+  showMoreLabel,
+  showLessLabel,
+}: Props) {
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedProjectId, setSelectedProjectId] = useState<string>(
+    projects[0]?.id || ""
+  );
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const filterOptions = [
+    { key: "all", label: filterLabels.all },
+    { key: "ai", label: filterLabels.ai },
+    { key: "bigData", label: filterLabels.bigData },
+    { key: "infrastructure", label: filterLabels.infrastructure },
+    { key: "software", label: filterLabels.software },
+  ];
+
+  const filteredProjects = useMemo(() => {
+    if (selectedCategory === "all") {
+      return projects;
+    }
+    return projects.filter((p) => p.category === selectedCategory);
+  }, [projects, selectedCategory]);
+
+  const visibleProjects = useMemo(() => {
+    if (isExpanded || filteredProjects.length <= 5) {
+      return filteredProjects;
+    }
+    return filteredProjects.slice(0, 5);
+  }, [filteredProjects, isExpanded]);
+
+  const selectedProject = useMemo(() => {
+    const found = filteredProjects.find((p) => p.id === selectedProjectId);
+    return found || filteredProjects[0] || projects[0];
+  }, [filteredProjects, selectedProjectId, projects]);
+
+  return (
+    <div className="mt-8">
+      {/* Category Filter Buttons */}
+      <div className="flex flex-wrap items-center gap-2">
+        {filterOptions.map((opt) => {
+          const isActive = selectedCategory === opt.key;
+          return (
+            <button
+              key={opt.key}
+              type="button"
+              onClick={() => {
+                setSelectedCategory(opt.key);
+                setIsExpanded(false);
+              }}
+              className={`rounded-md px-4 py-1.5 text-xs font-semibold transition-colors md:text-sm ${
+                isActive
+                  ? "bg-[#222222] text-white"
+                  : "bg-[#EDEDED] text-[#222222] hover:bg-[#E0E0E0]"
+              }`}
+            >
+              {opt.label}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Mobile View (< lg) */}
+      <div className="mt-8 flex flex-col gap-7 lg:hidden">
+        {visibleProjects.map((project) => (
+          <article key={project.id} className="flex flex-col items-start">
+            <span className="text-sm font-normal text-[#777777]">
+              {project.year} · {project.categoryLabel}
+            </span>
+            <h3 className="mt-1 text-lg font-bold tracking-tight text-[#222222]">
+              {project.title}
+            </h3>
+            <p className="mt-1 text-sm text-[#555555]">
+              {project.sector}
+            </p>
+            {project.description?.trim() ? (
+              <span className="mt-2 inline-block rounded-[3px] bg-[#EDEDED] px-2 py-0.5 text-xs text-[#555555]">
+                {project.description}
+              </span>
+            ) : null}
+          </article>
+        ))}
+
+        {filteredProjects.length > 5 && (
+          <button
+            type="button"
+            onClick={() => setIsExpanded((prev) => !prev)}
+            className="mt-2 w-full rounded-md bg-[#F2B705] py-3 text-center text-sm font-bold text-[#222222] transition hover:brightness-105 active:scale-[0.99]"
+          >
+            {isExpanded ? showLessLabel : showMoreLabel}
+          </button>
+        )}
+      </div>
+
+      {/* Desktop 2-Column Grid Layout (>= lg) */}
+      <div className="mt-6 hidden items-start gap-8 lg:grid lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-10">
+        {/* Left Column: Project List */}
+        <div className="flex flex-col gap-2">
+          {visibleProjects.map((project) => {
+            const isSelected = selectedProject?.id === project.id;
+            return (
+              <button
+                key={project.id}
+                type="button"
+                onClick={() => setSelectedProjectId(project.id)}
+                className={`flex w-full items-center justify-between gap-4 p-4 text-left transition-colors md:px-5 md:py-4 ${
+                  isSelected
+                    ? "bg-[#222222] text-white"
+                    : "bg-[#EDEDED] text-[#222222] hover:bg-[#E2E2E2]"
+                }`}
+              >
+                <div className="flex items-baseline gap-4 md:gap-6">
+                  <span
+                    className={`text-sm font-bold md:text-base ${
+                      isSelected ? "text-white" : "text-[#222222]"
+                    }`}
+                  >
+                    {project.year}
+                  </span>
+                  <div>
+                    <h4
+                      className={`text-sm font-bold md:text-base ${
+                        isSelected ? "text-white" : "text-[#222222]"
+                      }`}
+                    >
+                      {project.title}
+                    </h4>
+                    <p
+                      className={`mt-0.5 text-xs ${
+                        isSelected ? "text-[#A0A0A0]" : "text-[#666666]"
+                      }`}
+                    >
+                      {project.sector}
+                    </p>
+                  </div>
+                </div>
+
+                <span
+                  className={`shrink-0 rounded-md px-2.5 py-1 text-xs font-bold ${
+                    CATEGORY_TAG_STYLES[project.category] ||
+                    "bg-[#D9EEDF] text-[#222222]"
+                  }`}
+                >
+                  {project.categoryLabel}
+                </span>
+              </button>
+            );
+          })}
+
+          {filteredProjects.length > 5 && (
+            <button
+              type="button"
+              onClick={() => setIsExpanded((prev) => !prev)}
+              className="mt-3 w-full rounded-md bg-[#F2B705] py-3 text-center text-sm font-bold text-[#222222] transition hover:brightness-105 active:scale-[0.99]"
+            >
+              {isExpanded ? showLessLabel : showMoreLabel}
+            </button>
+          )}
+        </div>
+
+        {/* Right Column: Project Preview */}
+        {selectedProject && (
+          <div className="sticky top-24 flex flex-col">
+            {selectedProject.image ? (
+              <div className="relative mb-4 aspect-[16/10] w-full overflow-hidden rounded-lg bg-[#C6C6C6]">
+                <Image
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ) : null}
+
+            <div>
+              <span
+                className={`inline-block rounded-md px-2.5 py-0.5 text-xs font-bold ${
+                  CATEGORY_TAG_STYLES[selectedProject.category] ||
+                  "bg-[#D9EEDF] text-[#222222]"
+                }`}
+              >
+                {selectedProject.categoryLabel}
+              </span>
+
+              <h3 className="mt-2 text-xl font-bold tracking-tight text-[#222222] md:text-2xl">
+                {selectedProject.year} {selectedProject.title}
+              </h3>
+
+              <p className="mt-1 text-sm text-[#555555]">
+                {selectedProject.sector}
+              </p>
+
+              {selectedProject.description?.trim() ? (
+                <p className="mt-2 text-sm text-[#777777]">
+                  {selectedProject.description}
+                </p>
+              ) : null}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

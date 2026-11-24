@@ -7,6 +7,32 @@ import { Link } from "@/i18n/navigation";
 import { PAGES, findPageKey, getSlug } from "@/i18n/pages";
 import type { Locale } from "@/i18n/pages";
 import { getTeamData } from "@/lib/team";
+import ProjectShowcase from "@/components/project-showcase";
+import type { Project } from "@/components/project-showcase";
+
+const PARTNER_LOGOS = [
+  { src: "/images/logo-polairud-polri.webp", alt: "Polairud Polri" },
+  { src: "/images/logo-istn.png", alt: "ISTN" },
+  { src: "/images/logo-densus-88-polri.png", alt: "Densus 88 Polri" },
+  { src: "/images/logo-korlantas-polri.png", alt: "Korlantas Polri" },
+  { src: "/images/logo-telkom-akses.png", alt: "Telkom Akses" },
+  { src: "/images/logo-pertamina-energy-institute.png", alt: "Pertamina Energy Institute" },
+] as const;
+
+type ServiceRole = {
+  key: string;
+  category: string;
+  problem: string;
+  solution: string;
+  partnerNote?: string;
+};
+
+type WorkStep = {
+  key: string;
+  title: string;
+  description: string;
+  bg: string;
+};
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -541,6 +567,210 @@ export default async function SlugPage({ params }: Props) {
           </div>
         </section>
 
+        <section className="bg-[linear-gradient(to_right,#FBFBFA,rgba(153,153,153,0.25))] px-6 pt-10 pb-30">
+          <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
+            <div className="flex justify-center lg:justify-start">
+              <Image
+                src="/images/elemen-callNow.png"
+                alt=""
+                width={644}
+                height={470}
+                className="h-auto w-full max-w-sm"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-[#222222] md:text-4xl">
+                {home("ctaTitle")}
+              </h2>
+              <p className="mt-4 max-w-md text-base leading-7 text-[#222222]">
+                {home("ctaSubtitle")}
+              </p>
+              <Link
+                href={`/${getSlug("contact", locale)}`}
+                className="btn-flame mt-6 flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:brightness-110 sm:inline-flex sm:w-auto"
+              >
+                {home("ctaButton")}
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  if (key === "services-products") {
+    const home = await getTranslations({ locale, namespace: "home" });
+    const roles = t.raw("roles") as ServiceRole[];
+    const steps = t.raw("steps") as WorkStep[];
+    const projects = t.raw("projects") as Project[];
+    const projectFilters = t.raw("projectFilters") as {
+      all: string;
+      ai: string;
+      bigData: string;
+      infrastructure: string;
+      software: string;
+    };
+
+    return (
+      <div className="flex flex-1 flex-col bg-[#FBFBFA]">
+        {/* Hero Section */}
+        <section className="px-6 pb-16 pt-12 md:pb-24 md:pt-20">
+          <div className="mx-auto max-w-6xl">
+            <h1 className="text-4xl font-bold tracking-tight text-[#222222] md:text-5xl lg:text-[64px] lg:leading-[76px]">
+              {t("heading")}
+            </h1>
+            <p className="mt-6 max-w-4xl text-lg font-normal leading-relaxed text-[#222222] md:text-xl lg:text-[24px] lg:leading-[36px]">
+              {t("description")}
+            </p>
+
+            {/* Peran Section */}
+            <div className="mt-16 md:mt-24">
+              <h2 className="text-2xl font-bold tracking-tight text-[#222222] md:text-3xl lg:text-[40px] lg:leading-[48px]">
+                {t("roleHeading")}
+              </h2>
+
+              <div className="mt-8 flex flex-col gap-6 md:mt-12 md:gap-7">
+                {roles.map((role) => (
+                  <div
+                    key={role.key}
+                    className="grid grid-cols-1 gap-3 md:grid-cols-[180px_1fr_1fr] md:items-stretch md:gap-6 lg:grid-cols-[220px_1fr_1fr]"
+                  >
+                    <div className="flex items-center">
+                      <h3 className="text-3xl font-bold tracking-tight text-[#222222] lg:text-[40px]">
+                        {role.category}
+                      </h3>
+                    </div>
+                    <div className="flex flex-col justify-start bg-[#FADBD5] p-6 lg:p-8">
+                      <h4 className="text-base font-bold text-[#222222] lg:text-[18px]">
+                        {t("problemTitle")}
+                      </h4>
+                      <p className="mt-3 text-sm leading-relaxed text-[#222222] lg:text-[16px]">
+                        {role.problem}
+                      </p>
+                    </div>
+                    <div className="flex flex-col justify-between bg-[#D9EEDF] p-6 lg:p-8">
+                      <div>
+                        <h4 className="text-base font-bold text-[#222222] lg:text-[18px]">
+                          {t("solutionTitle")}
+                        </h4>
+                        <p className="mt-3 text-sm leading-relaxed text-[#222222] lg:text-[16px]">
+                          {role.solution}
+                        </p>
+                      </div>
+                      {role.partnerNote && (
+                        <p className="mt-4 text-xs font-normal text-[#222222] lg:text-[15px]">
+                          {role.partnerNote}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Frame 7 Divider */}
+        <div aria-hidden="true" className="relative">
+          <Image
+            src="/images/Frame7.png"
+            alt=""
+            width={2880}
+            height={162}
+            className="block h-auto w-full"
+          />
+        </div>
+
+        {/* Cara Kerja Section */}
+        <section className="bg-[radial-gradient(50%_50%_at_50%_50%,_#FFFFFF_0%,_#EDEDED_100%)] px-6 py-16 md:py-[120px]">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-3xl font-bold tracking-tight text-[#222222] md:text-4xl">
+              {t("howWeWorkHeading")}
+            </h2>
+
+            <div className="mt-10 flex flex-col items-start gap-6 md:mt-12">
+              {steps.map((step, index) => {
+                const stepClass =
+                  index === 0
+                    ? "w-full md:max-w-2xl lg:max-w-3xl md:ml-0"
+                    : index === 1
+                      ? "w-full md:max-w-2xl lg:max-w-3xl md:ml-16 lg:ml-28"
+                      : "w-full md:max-w-2xl lg:max-w-3xl md:ml-32 lg:ml-56";
+
+                return (
+                  <div
+                    key={step.key}
+                    className={`${stepClass} ${step.bg} p-6 md:p-8`}
+                  >
+                    <h3 className="text-2xl font-bold tracking-tight text-[#222222] md:text-[28px]">
+                      {step.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-[#222222] md:text-base">
+                      {step.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Frame 8 Divider */}
+        <div aria-hidden="true" className="relative">
+          <Image
+            src="/images/Frame8.png"
+            alt=""
+            width={2880}
+            height={162}
+            className="block h-auto w-full"
+          />
+        </div>
+
+        {/* Daftar Proyek Section */}
+        <section
+          id={locale === "id" ? "proyek" : "projects"}
+          className="scroll-mt-20 bg-[#FBFBFA] px-6 py-16 md:py-20"
+        >
+          <span id={locale === "id" ? "projects" : "proyek"} className="sr-only" />
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-3xl font-bold tracking-tight text-[#222222] md:text-4xl lg:text-[48px]">
+              {t("projectsHeading")}
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#555555] md:text-base">
+              {t("projectsSubtitle")}
+            </p>
+
+            <ProjectShowcase
+              projects={projects}
+              filterLabels={projectFilters}
+              showMoreLabel={t("showMore")}
+              showLessLabel={t("showLess")}
+            />
+          </div>
+        </section>
+
+        {/* Klien dan Mitra Kami Section */}
+        <section className="bg-[#FBFBFA] px-6 py-16 md:py-20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-center text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl">
+              {home("partnersTitle")}
+            </h2>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+              {PARTNER_LOGOS.map((logo) => (
+                <Image
+                  key={logo.src}
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={160}
+                  height={64}
+                  className="h-16 w-auto object-contain md:h-24"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
         <section className="bg-[linear-gradient(to_right,#FBFBFA,rgba(153,153,153,0.25))] px-6 pt-10 pb-30">
           <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
             <div className="flex justify-center lg:justify-start">

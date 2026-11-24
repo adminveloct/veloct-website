@@ -13,15 +13,7 @@ type Props = {
 };
 
 export default function PrivacyToc({ heading, sections }: Props) {
-  const [activeId, setActiveId] = useState<string>(() => {
-    if (typeof window !== "undefined" && window.location.hash) {
-      const hashId = window.location.hash.replace("#", "");
-      if (sections.some((s) => s.id === hashId)) {
-        return hashId;
-      }
-    }
-    return sections[0]?.id || "";
-  });
+  const [activeId, setActiveId] = useState<string>(sections[0]?.id || "");
 
   const isManualScrolling = useRef(false);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -55,10 +47,23 @@ export default function PrivacyToc({ heading, sections }: Props) {
       setActiveId(currentActive);
     };
 
+    // Check hash and initial position after hydration completes
+    const rafId = requestAnimationFrame(() => {
+      if (window.location.hash) {
+        const hashId = window.location.hash.replace("#", "");
+        if (sections.some((s) => s.id === hashId)) {
+          setActiveId(hashId);
+          return;
+        }
+      }
+      handleScroll();
+    });
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("hashchange", handleScroll, { passive: true });
 
     return () => {
+      cancelAnimationFrame(rafId);
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("hashchange", handleScroll);
       if (scrollTimeoutRef.current) {

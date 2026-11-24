@@ -23,6 +23,9 @@ type FormProps = {
     submitButton: string;
     submitting: string;
     successTitle: string;
+    successSubtitle?: string;
+    backHome?: string;
+    sendAnother?: string;
     errorTitle: string;
   };
   errorMessages?: Record<string, Record<string, string>>;
@@ -249,32 +252,51 @@ export default function ContactForm({
   return (
     <div className="rounded-2xl bg-white p-6 shadow-[0_4px_24px_rgba(0,0,0,0.06)] md:p-8">
       {successMessage ? (
-        <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-6 text-center">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-          </div>
-          <h3 className="mt-4 text-lg font-bold text-emerald-900">
+        <div className="flex flex-col items-center py-6 text-center md:py-10">
+          {/* Green Check Icon */}
+          <svg
+            className="h-16 w-16 text-[#2E9D4E]"
+            viewBox="0 0 48 48"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M41 21A18 18 0 1 1 31.8 7.2" />
+            <path d="m18 24 8 8 18-18" />
+          </svg>
+
+          {/* Judul Sukses */}
+          <h3 className="mt-6 text-xl font-bold tracking-tight text-[#222222] md:text-2xl">
             {labels.successTitle}
           </h3>
-          <p className="mt-2 text-sm text-emerald-800">{successMessage}</p>
+
+          {/* Deskripsi */}
+          <p className="mt-3 max-w-sm text-sm leading-relaxed text-[#222222] md:text-base">
+            {labels.successSubtitle ||
+              (locale === "id"
+                ? "Kami akan membalas lewat email Anda, atau WhatsApp bila Anda mengisinya"
+                : "We will reply via your email, or WhatsApp if you provided it")}
+          </p>
+
+          {/* Tombol Kembali ke Beranda */}
+          <Link
+            href="/"
+            className="mt-8 block w-full rounded-xl bg-[#222222] py-3.5 text-center text-sm font-semibold text-white transition hover:bg-[#333333]"
+          >
+            {labels.backHome ||
+              (locale === "id" ? "Kembali ke Beranda" : "Back to Home")}
+          </Link>
+
+          {/* Link Kirim Pesan Lain */}
           <button
             type="button"
             onClick={() => setSuccessMessage(null)}
-            className="mt-6 rounded-lg bg-emerald-600 px-5 py-2 text-xs font-semibold text-white transition hover:bg-emerald-700"
+            className="mt-5 text-sm font-medium text-[#222222] underline underline-offset-4 transition hover:text-[#555555]"
           >
-            {locale === "id" ? "Kirim Pesan Lain" : "Send Another Message"}
+            {labels.sendAnother ||
+              (locale === "id" ? "Kirim Pesan Lain" : "Send Another Message")}
           </button>
         </div>
       ) : (

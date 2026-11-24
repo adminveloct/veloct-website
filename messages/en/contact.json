@@ -63,7 +63,10 @@
     "privacyConsentSuffix": ".",
     "submitButton": "Send Message",
     "submitting": "Sending...",
-    "successTitle": "Message Sent!",
+    "successTitle": "We have received your message",
+    "successSubtitle": "We will reply via your email, or by WhatsApp if you provided a number",
+    "backHome": "Back to Home",
+    "sendAnother": "Send Another Message",
     "errorTitle": "Failed to Send Message"
   },
   "infoTitle": "Contact Information",

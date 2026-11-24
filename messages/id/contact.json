@@ -63,7 +63,10 @@
     "privacyConsentSuffix": ".",
     "submitButton": "Kirim Pesan",
     "submitting": "Mengirim...",
-    "successTitle": "Pesan Terkirim!",
+    "successTitle": "Pesan Anda sudah kami terima",
+    "successSubtitle": "Kami akan membalas lewat email Anda, atau WhatsApp bila Anda mengisinya",
+    "backHome": "Kembali ke Beranda",
+    "sendAnother": "Kirim Pesan Lain",
     "errorTitle": "Gagal Mengirim Pesan"
   },
   "infoTitle": "Informasi Kontak",

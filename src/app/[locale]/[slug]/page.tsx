@@ -831,6 +831,9 @@ export default async function SlugPage({ params }: Props) {
       submitButton: string;
       submitting: string;
       successTitle: string;
+      successSubtitle?: string;
+      backHome?: string;
+      sendAnother?: string;
       errorTitle: string;
     };
     const infoItems = [

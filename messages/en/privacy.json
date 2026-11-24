@@ -2,5 +2,36 @@
   "metaTitle": "Privacy Policy — VeloCT",
   "metaDescription": "VeloCT's privacy policy on visitor data collection and usage.",
   "heading": "Privacy Policy",
-  "description": "This page is still a skeleton. The policy content will be added in the next stage."
+  "sections": [
+    {
+      "id": "data-we-collect",
+      "title": "Data we collect",
+      "content": ""
+    },
+    {
+      "id": "how-data-is-used",
+      "title": "How we use your data",
+      "content": ""
+    },
+    {
+      "id": "data-storage-and-access",
+      "title": "Storage and access",
+      "content": ""
+    },
+    {
+      "id": "your-rights",
+      "title": "Your rights",
+      "content": ""
+    },
+    {
+      "id": "contacting-the-data-controller",
+      "title": "Contacting the data controller",
+      "content": ""
+    },
+    {
+      "id": "last-updated",
+      "title": "Last updated",
+      "content": ""
+    }
+  ]
 }

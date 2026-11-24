@@ -2,5 +2,36 @@
   "metaTitle": "Kebijakan Privasi — VeloCT",
   "metaDescription": "Kebijakan privasi VeloCT mengenai pengumpulan dan penggunaan data pengunjung.",
   "heading": "Kebijakan Privasi",
-  "description": "Bagian ini masih berisi kerangka. Isi kebijakan privasi akan diisi pada tahap berikutnya."
+  "sections": [
+    {
+      "id": "data-yang-kami-kumpulkan",
+      "title": "Data yang kami kumpulkan",
+      "content": ""
+    },
+    {
+      "id": "untuk-apa-data-dipakai",
+      "title": "Untuk apa data dipakai",
+      "content": ""
+    },
+    {
+      "id": "penyimpanan-dan-akses-data",
+      "title": "Penyimpanan dan akses data",
+      "content": ""
+    },
+    {
+      "id": "hak-anda",
+      "title": "Hak Anda",
+      "content": ""
+    },
+    {
+      "id": "menghubungi-pengelola-data",
+      "title": "Menghubungi pengelola data",
+      "content": ""
+    },
+    {
+      "id": "terakhir-diperbarui",
+      "title": "Terakhir diperbarui",
+      "content": ""
+    }
+  ]
 }

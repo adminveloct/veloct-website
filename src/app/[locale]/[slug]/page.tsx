@@ -12,6 +12,7 @@ import type { Project } from "@/components/project-showcase";
 import ContactForm from "@/components/contact-form";
 import ContactFaq from "@/components/contact-faq";
 import type { FaqItem } from "@/components/contact-faq";
+import PrivacyToc from "@/components/privacy-toc";
 
 const PARTNER_LOGOS = [
   { src: "/images/logo-polairud-polri.webp", alt: "Polairud Polri" },
@@ -933,6 +934,52 @@ export default async function SlugPage({ params }: Props) {
 
         {/* FAQ Section */}
         <ContactFaq title={faqTitle} items={faqItems} />
+      </div>
+    );
+  }
+
+  if (key === "privacy") {
+    const sections = t.raw("sections") as Array<{
+      id: string;
+      title: string;
+      content: string;
+    }>;
+
+    return (
+      <div className="mx-auto w-full max-w-6xl flex-1 px-6 py-12 md:py-16">
+        <h1 className="text-3xl font-bold tracking-tight text-[#222222] md:text-4xl lg:text-[40px]">
+          {t("heading")}
+        </h1>
+
+        <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-[240px_1fr] lg:gap-16">
+          {/* Sidebar Navigasi / Table of Contents */}
+          <PrivacyToc heading={t("heading")} sections={sections} />
+
+          {/* Konten Utama */}
+          <div className="space-y-20 pb-32 md:space-y-24">
+            {sections.map((section) => {
+              const hasContent =
+                Boolean(section.content?.trim()) &&
+                section.content !== "[menyusul]" &&
+                section.content !== "[to follow]";
+
+              return (
+                <section key={section.id} id={section.id} className="scroll-mt-28">
+                  <h2 className="text-2xl font-bold tracking-tight text-[#222222] md:text-[28px]">
+                    {section.title}
+                  </h2>
+                  {hasContent && (
+                    <div className="mt-3">
+                      <p className="text-sm leading-relaxed text-[#555555] md:text-base">
+                        {section.content}
+                      </p>
+                    </div>
+                  )}
+                </section>
+              );
+            })}
+          </div>
+        </div>
       </div>
     );
   }

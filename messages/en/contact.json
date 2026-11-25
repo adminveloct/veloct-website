@@ -61,6 +61,7 @@
     "privacyConsentPrefix": "I agree that my data is processed according to the",
     "privacyConsentLink": "Privacy Policy",
     "privacyConsentSuffix": ".",
+    "privacyNote": "Your data is only used to reply to this message and is never shared for advertising.",
     "submitButton": "Send Message",
     "submitting": "Sending...",
     "successTitle": "We have received your message",

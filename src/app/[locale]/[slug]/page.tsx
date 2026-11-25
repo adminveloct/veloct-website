@@ -811,6 +811,7 @@ export default async function SlugPage({ params }: Props) {
       privacyConsentPrefix: string;
       privacyConsentLink: string;
       privacyConsentSuffix: string;
+      privacyNote?: string;
       submitButton: string;
       submitting: string;
       successTitle: string;
@@ -957,7 +958,7 @@ export default async function SlugPage({ params }: Props) {
                   </h2>
                   {hasContent && (
                     <div className="mt-3">
-                      <p className="text-sm leading-relaxed text-neutral-600 md:text-base">
+                      <p className="whitespace-pre-line text-sm leading-relaxed text-neutral-600 md:text-base">
                         {section.content}
                       </p>
                     </div>

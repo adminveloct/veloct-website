@@ -21,6 +21,7 @@ type FormProps = {
     privacyConsentPrefix: string;
     privacyConsentLink: string;
     privacyConsentSuffix: string;
+    privacyNote?: string;
     submitButton: string;
     submitting: string;
     successTitle: string;
@@ -530,6 +531,11 @@ export default function ContactForm({
             {fieldErrors.privacyConsent && (
               <p className="mt-1 text-xs text-red-600">
                 {fieldErrors.privacyConsent}
+              </p>
+            )}
+            {labels.privacyNote && (
+              <p className="mt-1.5 text-xs text-neutral-500">
+                {labels.privacyNote}
               </p>
             )}
           </div>

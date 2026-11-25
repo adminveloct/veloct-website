@@ -4,34 +4,59 @@
   "heading": "Privacy Policy",
   "sections": [
     {
+      "id": "summary",
+      "title": "Summary",
+      "content": "- We only collect the data you enter in the Contact form, and only to reply to your message.\n- We do not sell your data, use it for advertising, or set cookies or trackers.\n- Form submissions are sent as email to the VeloCT team and are not stored in the site's database.\n- You can ask for a copy, correction, or deletion of your data at any time through the email in \"Who we are\".\n\nThe full details are in the sections below."
+    },
+    {
+      "id": "who-we-are",
+      "title": "Who we are and how to contact us",
+      "content": "This site is operated by PT Velo Citra Teknologi (\"VeloCT\" or \"we\"). VeloCT is the personal data controller for the data collected through this site.\n\nFor questions, personal data requests, or complaints, email tech@veloct.co.id with the subject \"Personal Data\"."
+    },
+    {
       "id": "data-we-collect",
       "title": "Data we collect",
-      "content": ""
+      "content": "Through the Contact form, we collect the data you enter yourself:\n- your name, email, and organization;\n- your message;\n- your WhatsApp number, if you provide one (optional).\n\nAlong with it, we record the language of the page you used and the time you ticked the consent box, as proof of consent.\n\nWhen the form is sent, our server also reads your IP address to prevent spam. The IP address is immediately turned into a random code (hash) and is not written to a database.\n\nThis site does not use cookies, analytics tools, or advertising trackers. Please do not include sensitive personal data, such as health or financial data or ID numbers, in your message."
     },
     {
       "id": "how-data-is-used",
       "title": "How we use your data",
-      "content": ""
+      "content": "We use your data only to:\n- read and reply to your message by email or WhatsApp;\n- if you want to continue, prepare a needs discussion, proposal, and quotation;\n- prevent misuse of the form, such as spam and automated submissions.\n\nWe do not add you to a newsletter or use your data for automated decisions or profiling."
     },
     {
-      "id": "data-storage-and-access",
-      "title": "Storage and access",
-      "content": ""
+      "id": "legal-basis",
+      "title": "Legal basis for processing",
+      "content": "We process your data under Indonesian Law No. 27 of 2022 on Personal Data Protection (the PDP Law):\n- Form data is processed with your consent (Article 20(2)(a) of the PDP Law), which you give by ticking the consent box. The form cannot be sent without it.\n- The hashed IP address is processed to keep the form secure, as a legitimate interest (Article 20(2)(f) of the PDP Law).\n- If you later become a client, the data needed for the engagement is processed under the contract (Article 20(2)(b) of the PDP Law)."
+    },
+    {
+      "id": "who-receives-data",
+      "title": "Who receives your data",
+      "content": "We do not sell, rent, or lend your data. Your data only reaches the following parties:\n- The VeloCT team handling technical and sales inquiries, who read the form emails.\n- Vercel Inc., which hosts this site.\n- Google LLC, through the Gmail service we use to send form submissions to the team inbox.\n- Fontshare, which provides the fonts on this site. Your browser connects directly to Fontshare's servers when you open a page.\n- Law enforcement or competent authorities, only when required by law or a court order.\n\nVercel, Google, and Fontshare servers may be located outside Indonesia, so your data may be transferred outside Indonesia. These transfers are carried out in accordance with Article 56 of the PDP Law."
+    },
+    {
+      "id": "retention",
+      "title": "How long we keep data",
+      "content": "- Form emails, including proof of consent: kept for as long as needed to follow up on your message, then deleted, in line with the storage limitation principle of the PDP Law. If you withdraw consent or ask for deletion, we delete them sooner.\n- Hashed IP address: kept only in server memory for as long as needed to count submissions, and lost when the server restarts.\n- If your message leads to an engagement, related documents are kept for the period required by law, such as company document and tax regulations."
+    },
+    {
+      "id": "data-security",
+      "title": "Data security",
+      "content": "This site can only be opened over HTTPS, so the data you send is encrypted in transit. The form is protected by a signed token and a submission limit. Access to the inbox and site settings is given only to authorized team members.\n\nIf a personal data protection failure affects your data, we will notify you in writing no later than 3 x 24 hours after we become aware of it, in accordance with Article 46 of the PDP Law. The notice will describe the data exposed, when and how it happened, and the steps we have taken."
     },
     {
       "id": "your-rights",
       "title": "Your rights",
-      "content": ""
+      "content": "Under the PDP Law, you have the right to:\n- be informed about how your data is processed;\n- access and receive a copy of your data;\n- correct or complete your data;\n- ask us to stop processing and delete your data;\n- withdraw your consent at any time;\n- delay or restrict processing;\n- sue and receive compensation if your data is processed unlawfully.\n\nSend your request to the email in \"Who we are\" and include the email address you used in the form. For security, we may ask you to prove that the email belongs to you. We fulfil access and correction requests within 3 x 24 hours of receiving them. Withdrawing consent does not affect processing carried out before the withdrawal."
     },
     {
-      "id": "contacting-the-data-controller",
-      "title": "Contacting the data controller",
-      "content": ""
+      "id": "childrens-data",
+      "title": "Children's data",
+      "content": "This site and form are intended for business and government inquiries, not for children. If you are under 18, do not send the form without the consent of a parent or guardian. If we learn that a child's data was sent without that consent, we will delete it."
     },
     {
-      "id": "last-updated",
-      "title": "Last updated",
-      "content": ""
+      "id": "policy-changes",
+      "title": "Changes to this policy",
+      "content": "This policy is effective from 27 November 2026. If it changes, we will update this page and the date in this section before the change takes effect. If a change affects data you have already sent, we will notify you by email before the change takes effect."
     }
   ]
 }

@@ -19,15 +19,40 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "home" });
 
+  const title = t("metaTitle");
+  const description = t("metaDescription");
+
   return {
-    title: t("metaTitle"),
-    description: t("metaDescription"),
+    title,
+    description,
     alternates: {
       canonical: `/${locale}`,
       languages: {
         id: "/id",
         en: "/en",
       },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `/${locale}`,
+      locale: locale === "id" ? "id_ID" : "en_US",
+      siteName: "VeloCT",
+      type: "website",
+      images: [
+        {
+          url: "/images/og-image.png",
+          width: 2838,
+          height: 1440,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/images/og-image.png"],
     },
   };
 }

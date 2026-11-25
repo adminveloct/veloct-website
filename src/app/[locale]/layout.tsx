@@ -23,7 +23,33 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(
       process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
     ),
-    title: "VeloCT",
+    title: {
+      default: "VeloCT",
+      template: "%s",
+    },
+    icons: {
+      icon: [
+        { url: "/favicon.ico" },
+        { url: "/icon.png", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-icon.png" }],
+    },
+    openGraph: {
+      siteName: "VeloCT",
+      type: "website",
+      images: [
+        {
+          url: "/images/og-image.png",
+          width: 2838,
+          height: 1440,
+          alt: "VeloCT — Konsultan AI dan Data untuk Pemerintah dan Industri",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: ["/images/og-image.png"],
+    },
   };
 }
 

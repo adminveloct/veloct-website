@@ -468,7 +468,7 @@ export default async function SlugPage({ params }: Props) {
                     size="lg"
                   />
                 </h3>
-                <p className="mt-1 text-sm font-semibold text-red-500 md:text-base">
+                <p className="mt-1 text-sm font-semibold text-red-700 md:text-base">
                   {teamLead.role}
                 </p>
                 {teamLead.certifications.length > 0 && (
@@ -544,7 +544,7 @@ export default async function SlugPage({ params }: Props) {
                           size="md"
                         />
                       </h3>
-                      <p className="mt-0.5 text-xs font-semibold text-red-500 md:text-sm">
+                      <p className="mt-0.5 text-xs font-semibold text-red-700 md:text-sm">
                         {member.role}
                       </p>
 
@@ -843,7 +843,7 @@ export default async function SlugPage({ params }: Props) {
               </h1>
               <p className="mt-6 max-w-3xl text-lg leading-relaxed text-neutral-900 md:text-xl lg:text-[20px] lg:leading-8">
                 {t("subtitle")}{" "}
-                <span className="font-semibold text-red-500">
+                <span className="font-semibold text-red-700">
                   {t("subtitleHighlight")}
                 </span>
               </p>

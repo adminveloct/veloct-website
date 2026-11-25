@@ -34,7 +34,7 @@ export default async function SiteHeader({ locale }: Props) {
         <div className="flex items-center gap-2">
           <Link
             href={`/${getSlug("contact", locale)}`}
-            className="btn-flame-hover rounded-lg border border-red-500 px-4 py-2 text-sm font-semibold text-red-500 transition-colors"
+            className="btn-flame-hover rounded-lg border border-red-700 px-4 py-2 text-sm font-semibold text-red-700 transition-colors"
           >
             {t("nav.contact")}
           </Link>

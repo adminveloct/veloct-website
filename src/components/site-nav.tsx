@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { useLocale, useTranslations } from "next-intl";
 
@@ -14,6 +14,21 @@ export default function SiteNav() {
   const t = useTranslations("common");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [open]);
 
   const items = PAGES.filter(
     (page) => page.key !== "privacy" && page.key !== "contact"
@@ -45,12 +60,13 @@ export default function SiteNav() {
       </nav>
 
       <button
+        ref={menuButtonRef}
         type="button"
         aria-expanded={open}
         aria-controls="site-menu"
         aria-label={t("nav.menuLabel")}
         onClick={() => setOpen((value) => !value)}
-        className="rounded-md p-2 text-neutral-700 transition-colors hover:bg-neutral-100 lg:hidden"
+        className="rounded-md p-2 text-neutral-700 transition-colors hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 lg:hidden"
       >
         <svg
           aria-hidden="true"

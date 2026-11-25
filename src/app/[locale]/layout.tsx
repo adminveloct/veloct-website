@@ -69,14 +69,32 @@ export default async function LocaleLayout({ children, params }: Props) {
       data-scroll-behavior="smooth"
     >
       <link
+        rel="preconnect"
+        href="https://api.fontshare.com"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preconnect"
+        href="https://cdn.fontshare.com"
+        crossOrigin="anonymous"
+      />
+      <link
         rel="stylesheet"
         href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap"
         precedence="default"
       />
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider messages={messages}>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-neutral-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg"
+          >
+            {locale === "id" ? "Langsung ke konten utama" : "Skip to main content"}
+          </a>
           <SiteHeader locale={locale} />
-          <main className="flex flex-1 flex-col">{children}</main>
+          <main id="main-content" className="flex flex-1 flex-col">
+            {children}
+          </main>
           <SiteFooter locale={locale} />
         </NextIntlClientProvider>
       </body>

@@ -29,6 +29,7 @@ export function CtaClosing({
             alt={imageAlt}
             width={644}
             height={470}
+            sizes="(min-width: 768px) 384px, 90vw"
             className="h-auto w-full max-w-sm"
           />
         </div>

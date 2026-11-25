@@ -113,6 +113,7 @@ export default async function HomePage({ params }: Props) {
           alt=""
           width={2880}
           height={400}
+          sizes="100vw"
           className="block h-auto w-full"
         />
       </div>
@@ -139,6 +140,7 @@ export default async function HomePage({ params }: Props) {
                     alt=""
                     width={506}
                     height={336}
+                    sizes="(min-width: 1024px) 260px, (min-width: 640px) 45vw, 90vw"
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -171,6 +173,7 @@ export default async function HomePage({ params }: Props) {
           alt=""
           width={2880}
           height={400}
+          sizes="100vw"
           className="block h-auto w-full"
         />
       </div>
@@ -200,7 +203,7 @@ export default async function HomePage({ params }: Props) {
                 key={`${project.year}-${project.label}`}
                 className="flex items-center gap-6 rounded-lg bg-white px-5 py-3.5 shadow-sm"
               >
-                <span className="shrink-0 text-sm text-neutral-500">
+                <span className="shrink-0 text-sm text-neutral-600">
                   {project.year}
                 </span>
                 <span className="shrink-0 text-sm font-bold text-neutral-900">
@@ -219,6 +222,7 @@ export default async function HomePage({ params }: Props) {
           alt=""
           width={2880}
           height={400}
+          sizes="100vw"
           className="block h-auto w-full"
         />
       </div>
@@ -236,6 +240,7 @@ export default async function HomePage({ params }: Props) {
                 alt={logo.alt}
                 width={160}
                 height={64}
+                sizes="160px"
                 className="h-16 w-auto object-contain md:h-24"
               />
             ))}

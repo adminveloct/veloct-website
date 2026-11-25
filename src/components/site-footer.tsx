@@ -71,7 +71,7 @@ export default async function SiteFooter({ locale }: Props) {
                 alt="VeloCT"
                 width={152}
                 height={100}
-                unoptimized
+                sizes="160px"
                 className="h-auto w-[160px] md:h-24 md:w-auto"
               />
             </div>
@@ -81,7 +81,7 @@ export default async function SiteFooter({ locale }: Props) {
             <p className="text-lg font-bold text-white">
               {t("footer.companyName")}
             </p>
-            <p className="mx-auto mt-3 max-w-[280px] text-sm leading-6 text-neutral-300 md:mx-0 md:max-w-none md:text-neutral-400">
+            <p className="mx-auto mt-3 max-w-[280px] text-sm leading-6 text-neutral-300 md:mx-0 md:max-w-none">
               {t("footer.tagline")}
             </p>
           </div>

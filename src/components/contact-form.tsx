@@ -341,7 +341,7 @@ export default function ContactForm({
               htmlFor="contact-name"
               className="block text-xs font-bold text-neutral-900"
             >
-              {labels.nameLabel} <span className="text-red-500">*</span>
+              {labels.nameLabel} <span className="text-red-700" aria-hidden="true">*</span>
             </label>
             <input
               id="contact-name"
@@ -373,7 +373,7 @@ export default function ContactForm({
               htmlFor="contact-email"
               className="block text-xs font-bold text-neutral-900"
             >
-              {labels.emailLabel} <span className="text-red-500">*</span>
+              {labels.emailLabel} <span className="text-red-700" aria-hidden="true">*</span>
             </label>
             <input
               id="contact-email"
@@ -436,7 +436,7 @@ export default function ContactForm({
               htmlFor="contact-organization"
               className="block text-xs font-bold text-neutral-900"
             >
-              {labels.organizationLabel} <span className="text-red-500">*</span>
+              {labels.organizationLabel} <span className="text-red-700" aria-hidden="true">*</span>
             </label>
             <input
               id="contact-organization"
@@ -470,7 +470,7 @@ export default function ContactForm({
               htmlFor="contact-message"
               className="block text-xs font-bold text-neutral-900"
             >
-              {labels.messageLabel} <span className="text-red-500">*</span>
+              {labels.messageLabel} <span className="text-red-700" aria-hidden="true">*</span>
             </label>
             <textarea
               id="contact-message"
@@ -534,7 +534,7 @@ export default function ContactForm({
               </p>
             )}
             {labels.privacyNote && (
-              <p className="mt-1.5 text-xs text-neutral-500">
+              <p className="mt-1.5 text-xs text-neutral-600">
                 {labels.privacyNote}
               </p>
             )}

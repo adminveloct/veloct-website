@@ -29,7 +29,7 @@ type Props = {
 
 const CATEGORY_TAG_STYLES: Record<string, string> = {
   ai: "bg-mint-300 text-neutral-900",
-  bigData: "bg-forest-500 text-white",
+  bigData: "bg-forest-700 text-white",
   infrastructure: "bg-forest-800 text-white",
   software: "bg-mint-200 text-neutral-900",
 };
@@ -83,6 +83,7 @@ export default function ProjectShowcase({
             <button
               key={opt.key}
               type="button"
+              aria-pressed={isActive}
               onClick={() => {
                 setSelectedCategory(opt.key);
                 setIsExpanded(false);
@@ -103,7 +104,7 @@ export default function ProjectShowcase({
       <div className="mt-8 flex flex-col gap-7 lg:hidden">
         {visibleProjects.map((project) => (
           <article key={project.id} className="flex flex-col items-start">
-            <span className="text-sm font-normal text-neutral-500">
+            <span className="text-sm font-normal text-neutral-600">
               {project.year} · {project.categoryLabel}
             </span>
             <h3 className="mt-1 text-lg font-bold tracking-tight text-neutral-900">
@@ -141,6 +142,7 @@ export default function ProjectShowcase({
               <button
                 key={project.id}
                 type="button"
+                aria-pressed={isSelected}
                 onClick={() => setSelectedProjectId(project.id)}
                 className={`flex w-full items-center justify-between gap-4 p-4 text-left transition-colors md:px-5 md:py-4 ${
                   isSelected
@@ -157,20 +159,20 @@ export default function ProjectShowcase({
                     {project.year}
                   </span>
                   <div>
-                    <h4
-                      className={`text-sm font-bold md:text-base ${
+                    <span
+                      className={`block text-sm font-bold md:text-base ${
                         isSelected ? "text-white" : "text-neutral-900"
                       }`}
                     >
                       {project.title}
-                    </h4>
-                    <p
-                      className={`mt-0.5 text-xs ${
-                        isSelected ? "text-neutral-400" : "text-neutral-600"
+                    </span>
+                    <span
+                      className={`mt-0.5 block text-xs ${
+                        isSelected ? "text-neutral-300" : "text-neutral-600"
                       }`}
                     >
                       {project.sector}
-                    </p>
+                    </span>
                   </div>
                 </div>
 
@@ -206,6 +208,7 @@ export default function ProjectShowcase({
                   src={selectedProject.image}
                   alt={selectedProject.title}
                   fill
+                  sizes="(min-width: 1024px) 45vw, 100vw"
                   className="object-cover"
                 />
               </div>
@@ -230,7 +233,7 @@ export default function ProjectShowcase({
               </p>
 
               {selectedProject.description?.trim() ? (
-                <p className="mt-2 text-sm text-neutral-500">
+                <p className="mt-2 text-sm text-neutral-600">
                   {selectedProject.description}
                 </p>
               ) : null}

@@ -54,8 +54,11 @@ export function Hero({
             src={imageSrc}
             alt={imageAlt}
             priority
+            fetchPriority="high"
+            quality={80}
             width={921}
             height={1080}
+            sizes="(min-width: 768px) 448px, 384px"
             className="block h-auto w-full"
           />
         </div>

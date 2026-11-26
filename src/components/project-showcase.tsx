@@ -28,10 +28,10 @@ type Props = {
 };
 
 const CATEGORY_TAG_STYLES: Record<string, string> = {
-  ai: "bg-[#89C799] text-[#222222]",
-  bigData: "bg-[#2E9E4F] text-white",
-  infrastructure: "bg-[#0F5A28] text-white",
-  software: "bg-[#B1DABC] text-[#222222]",
+  ai: "bg-mint-300 text-neutral-900",
+  bigData: "bg-forest-700 text-white",
+  infrastructure: "bg-forest-800 text-white",
+  software: "bg-mint-200 text-neutral-900",
 };
 
 export default function ProjectShowcase({
@@ -83,14 +83,15 @@ export default function ProjectShowcase({
             <button
               key={opt.key}
               type="button"
+              aria-pressed={isActive}
               onClick={() => {
                 setSelectedCategory(opt.key);
                 setIsExpanded(false);
               }}
               className={`rounded-md px-4 py-1.5 text-xs font-semibold transition-colors md:text-sm ${
                 isActive
-                  ? "bg-[#222222] text-white"
-                  : "bg-[#EDEDED] text-[#222222] hover:bg-[#E0E0E0]"
+                  ? "bg-neutral-900 text-white"
+                  : "bg-neutral-100 text-neutral-900 hover:bg-neutral-200"
               }`}
             >
               {opt.label}
@@ -103,17 +104,17 @@ export default function ProjectShowcase({
       <div className="mt-8 flex flex-col gap-7 lg:hidden">
         {visibleProjects.map((project) => (
           <article key={project.id} className="flex flex-col items-start">
-            <span className="text-sm font-normal text-[#777777]">
+            <span className="text-sm font-normal text-neutral-600">
               {project.year} · {project.categoryLabel}
             </span>
-            <h3 className="mt-1 text-lg font-bold tracking-tight text-[#222222]">
+            <h3 className="mt-1 text-lg font-bold tracking-tight text-neutral-900">
               {project.title}
             </h3>
-            <p className="mt-1 text-sm text-[#555555]">
+            <p className="mt-1 text-sm text-neutral-600">
               {project.sector}
             </p>
             {project.description?.trim() ? (
-              <span className="mt-2 inline-block rounded-[3px] bg-[#EDEDED] px-2 py-0.5 text-xs text-[#555555]">
+              <span className="mt-2 inline-block rounded-[3px] bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600">
                 {project.description}
               </span>
             ) : null}
@@ -124,7 +125,7 @@ export default function ProjectShowcase({
           <button
             type="button"
             onClick={() => setIsExpanded((prev) => !prev)}
-            className="mt-2 w-full rounded-md bg-[#F2B705] py-3 text-center text-sm font-bold text-[#222222] transition hover:brightness-105 active:scale-[0.99]"
+            className="mt-2 w-full rounded-md bg-sun-500 py-3 text-center text-sm font-bold text-neutral-900 transition hover:brightness-105 active:scale-[0.99]"
           >
             {isExpanded ? showLessLabel : showMoreLabel}
           </button>
@@ -141,43 +142,44 @@ export default function ProjectShowcase({
               <button
                 key={project.id}
                 type="button"
+                aria-pressed={isSelected}
                 onClick={() => setSelectedProjectId(project.id)}
                 className={`flex w-full items-center justify-between gap-4 p-4 text-left transition-colors md:px-5 md:py-4 ${
                   isSelected
-                    ? "bg-[#222222] text-white"
-                    : "bg-[#EDEDED] text-[#222222] hover:bg-[#E2E2E2]"
+                    ? "bg-neutral-900 text-white"
+                    : "bg-neutral-100 text-neutral-900 hover:bg-neutral-200"
                 }`}
               >
                 <div className="flex items-baseline gap-4 md:gap-6">
                   <span
                     className={`text-sm font-bold md:text-base ${
-                      isSelected ? "text-white" : "text-[#222222]"
+                      isSelected ? "text-white" : "text-neutral-900"
                     }`}
                   >
                     {project.year}
                   </span>
                   <div>
-                    <h4
-                      className={`text-sm font-bold md:text-base ${
-                        isSelected ? "text-white" : "text-[#222222]"
+                    <span
+                      className={`block text-sm font-bold md:text-base ${
+                        isSelected ? "text-white" : "text-neutral-900"
                       }`}
                     >
                       {project.title}
-                    </h4>
-                    <p
-                      className={`mt-0.5 text-xs ${
-                        isSelected ? "text-[#A0A0A0]" : "text-[#666666]"
+                    </span>
+                    <span
+                      className={`mt-0.5 block text-xs ${
+                        isSelected ? "text-neutral-300" : "text-neutral-600"
                       }`}
                     >
                       {project.sector}
-                    </p>
+                    </span>
                   </div>
                 </div>
 
                 <span
                   className={`shrink-0 rounded-md px-2.5 py-1 text-xs font-bold ${
                     CATEGORY_TAG_STYLES[project.category] ||
-                    "bg-[#D9EEDF] text-[#222222]"
+                    "bg-mint-100 text-neutral-900"
                   }`}
                 >
                   {project.categoryLabel}
@@ -190,7 +192,7 @@ export default function ProjectShowcase({
             <button
               type="button"
               onClick={() => setIsExpanded((prev) => !prev)}
-              className="mt-3 w-full rounded-md bg-[#F2B705] py-3 text-center text-sm font-bold text-[#222222] transition hover:brightness-105 active:scale-[0.99]"
+              className="mt-3 w-full rounded-md bg-sun-500 py-3 text-center text-sm font-bold text-neutral-900 transition hover:brightness-105 active:scale-[0.99]"
             >
               {isExpanded ? showLessLabel : showMoreLabel}
             </button>
@@ -201,11 +203,12 @@ export default function ProjectShowcase({
         {selectedProject && (
           <div className="sticky top-24 flex flex-col">
             {selectedProject.image ? (
-              <div className="relative mb-4 aspect-[16/10] w-full overflow-hidden rounded-lg bg-[#C6C6C6]">
+              <div className="relative mb-4 aspect-[16/10] w-full overflow-hidden rounded-lg bg-neutral-300">
                 <Image
                   src={selectedProject.image}
                   alt={selectedProject.title}
                   fill
+                  sizes="(min-width: 1024px) 45vw, 100vw"
                   className="object-cover"
                 />
               </div>
@@ -215,22 +218,22 @@ export default function ProjectShowcase({
               <span
                 className={`inline-block rounded-md px-2.5 py-0.5 text-xs font-bold ${
                   CATEGORY_TAG_STYLES[selectedProject.category] ||
-                  "bg-[#D9EEDF] text-[#222222]"
+                  "bg-mint-100 text-neutral-900"
                 }`}
               >
                 {selectedProject.categoryLabel}
               </span>
 
-              <h3 className="mt-2 text-xl font-bold tracking-tight text-[#222222] md:text-2xl">
+              <h3 className="mt-2 text-xl font-bold tracking-tight text-neutral-900 md:text-2xl">
                 {selectedProject.year} {selectedProject.title}
               </h3>
 
-              <p className="mt-1 text-sm text-[#555555]">
+              <p className="mt-1 text-sm text-neutral-600">
                 {selectedProject.sector}
               </p>
 
               {selectedProject.description?.trim() ? (
-                <p className="mt-2 text-sm text-[#777777]">
+                <p className="mt-2 text-sm text-neutral-600">
                   {selectedProject.description}
                 </p>
               ) : null}

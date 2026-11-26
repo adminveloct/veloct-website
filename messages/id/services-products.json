@@ -39,19 +39,19 @@
       "key": "understand",
       "title": "Memahami",
       "description": "Kami pelajari kondisi data, infrastruktur, dan cara kerja klien, lalu menyusun arsitektur solusinya.",
-      "bg": "bg-[#FADBD5]"
+      "bg": "bg-red-100"
     },
     {
       "key": "build",
       "title": "Membangun",
       "description": "Kami bangun solusinya bersama mitra terpercaya, dengan VeloCT sebagai satu penanggung jawab.",
-      "bg": "bg-[#D9EEDF]"
+      "bg": "bg-mint-100"
     },
     {
       "key": "impact",
       "title": "Berdampak",
       "description": "Kami dampingi sampai sistem dipakai setiap hari dan manfaatnya terasa.",
-      "bg": "bg-[#FCEFB8]"
+      "bg": "bg-sun-100"
     }
   ],
   "projectsHeading": "Daftar proyek",

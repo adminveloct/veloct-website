@@ -40,13 +40,13 @@
   "heading": "Contact Us",
   "subtitle": "Tell us about your data, AI, cloud, or application needs. We will reply to your message ",
   "subtitleHighlight": "within 3 working days.",
-  "stepsTitle": "Collaboration Steps",
+  "stepsTitle": "Steps to Work Together",
   "steps": [
-    "Contact us via form, email, or WhatsApp.",
-    "We reply within 3 business days at the latest.",
-    "Needs discussion.",
-    "We send proposals and quotes.",
-    "Agreement, then the project begins."
+    "Contact us through the form, email, or WhatsApp.",
+    "We reply within 3 working days.",
+    "We discuss your needs.",
+    "We send a proposal and quotation.",
+    "We agree on terms and the project begins."
   ],
   "form": {
     "nameLabel": "Name",
@@ -58,12 +58,16 @@
     "organizationLabel": "Organization",
     "organizationPlaceholder": "Company or organization name",
     "messageLabel": "Message",
-    "privacyConsentPrefix": "I agree to my data being processed in accordance with the ",
+    "privacyConsentPrefix": "I agree that my data is processed according to the",
     "privacyConsentLink": "Privacy Policy",
     "privacyConsentSuffix": ".",
+    "privacyNote": "Your data is only used to reply to this message and is never shared for advertising.",
     "submitButton": "Send Message",
     "submitting": "Sending...",
-    "successTitle": "Message Sent!",
+    "successTitle": "We have received your message",
+    "successSubtitle": "We will reply by email, or by WhatsApp if you provided a number",
+    "backHome": "Back to Home",
+    "sendAnother": "Send Another Message",
     "errorTitle": "Failed to Send Message"
   },
   "infoTitle": "Contact Information",

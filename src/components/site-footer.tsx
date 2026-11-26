@@ -3,49 +3,18 @@ import { getTranslations } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
 import { getSlug } from "@/i18n/pages";
+import { BuildingIcon, PhoneIcon, MailIcon } from "@/components/icons";
 
 type Props = {
   locale: string;
 };
 
 function IconBuilding() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      className="h-[18px] w-[18px] shrink-0"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
-      <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
-      <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
-      <path d="M10 6h4" />
-      <path d="M10 10h4" />
-      <path d="M10 14h4" />
-      <path d="M10 18h4" />
-    </svg>
-  );
+  return <BuildingIcon size={18} className="shrink-0" />;
 }
 
 function IconPhone() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      className="h-[18px] w-[18px] shrink-0"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-    </svg>
-  );
+  return <PhoneIcon size={18} className="shrink-0" />;
 }
 
 function IconWhatsApp() {
@@ -67,21 +36,7 @@ function IconWhatsApp() {
 }
 
 function IconMail() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      className="h-[18px] w-[18px] shrink-0"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect width="20" height="16" x="2" y="4" rx="2" />
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-    </svg>
-  );
+  return <MailIcon size={18} className="shrink-0" />;
 }
 
 export default async function SiteFooter({ locale }: Props) {
@@ -101,7 +56,7 @@ export default async function SiteFooter({ locale }: Props) {
 
   return (
     <footer>
-      <div className="bg-[#222222] px-6 py-12 md:py-16">
+      <div className="bg-neutral-900 px-6 py-12 md:py-16">
         <div
           className={`mx-auto grid max-w-6xl gap-10 md:gap-12 ${
             activeContacts.length > 0
@@ -116,7 +71,7 @@ export default async function SiteFooter({ locale }: Props) {
                 alt="VeloCT"
                 width={152}
                 height={100}
-                unoptimized
+                sizes="160px"
                 className="h-auto w-[160px] md:h-24 md:w-auto"
               />
             </div>
@@ -126,7 +81,7 @@ export default async function SiteFooter({ locale }: Props) {
             <p className="text-lg font-bold text-white">
               {t("footer.companyName")}
             </p>
-            <p className="mx-auto mt-3 max-w-[280px] text-sm leading-6 text-zinc-300 md:mx-0 md:max-w-none md:text-zinc-400">
+            <p className="mx-auto mt-3 max-w-[280px] text-sm leading-6 text-neutral-300 md:mx-0 md:max-w-none">
               {t("footer.tagline")}
             </p>
           </div>
@@ -140,9 +95,9 @@ export default async function SiteFooter({ locale }: Props) {
                 {activeContacts.map((contact, index) => (
                   <li
                     key={index}
-                    className="flex items-center gap-3 text-sm text-zinc-300"
+                    className="flex items-center gap-3 text-sm text-neutral-300"
                   >
-                    <span className="text-zinc-300">{contact.icon}</span>
+                    <span className="text-neutral-300">{contact.icon}</span>
                     <span>{contact.label}</span>
                   </li>
                 ))}
@@ -153,7 +108,7 @@ export default async function SiteFooter({ locale }: Props) {
 
         {/* Mobile only: Copyright & Kebijakan Privasi */}
         <div className="mt-12 space-y-8 text-center md:hidden">
-          <p className="text-sm font-medium text-zinc-300">
+          <p className="text-sm font-medium text-neutral-300">
             © {new Date().getFullYear()} {t("footer.companyName")}
           </p>
           <div>
@@ -168,14 +123,14 @@ export default async function SiteFooter({ locale }: Props) {
       </div>
 
       {/* Desktop only: Light bottom bar */}
-      <div className="hidden bg-[#FBFBFA] px-6 py-3 md:block">
-        <div className="mx-auto flex max-w-6xl items-center justify-center gap-8 text-sm text-zinc-600">
+      <div className="hidden bg-neutral-50 px-6 py-3 md:block">
+        <div className="mx-auto flex max-w-6xl items-center justify-center gap-8 text-sm text-neutral-600">
           <span className="font-medium">
             © {new Date().getFullYear()} {t("footer.companyName")}
           </span>
           <Link
             href={`/${getSlug("privacy", locale)}`}
-            className="font-medium transition-colors hover:text-zinc-900"
+            className="font-medium transition-colors hover:text-neutral-900"
           >
             {t("nav.privacy")}
           </Link>

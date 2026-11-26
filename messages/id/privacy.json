@@ -2,5 +2,61 @@
   "metaTitle": "Kebijakan Privasi — VeloCT",
   "metaDescription": "Kebijakan privasi VeloCT mengenai pengumpulan dan penggunaan data pengunjung.",
   "heading": "Kebijakan Privasi",
-  "description": "Bagian ini masih berisi kerangka. Isi kebijakan privasi akan diisi pada tahap berikutnya."
+  "sections": [
+    {
+      "id": "ringkasan",
+      "title": "Ringkasan",
+      "content": "- Kami hanya mengumpulkan data yang Anda isi di formulir Kontak, dan hanya untuk membalas pesan Anda.\n- Kami tidak menjual data Anda, tidak memakainya untuk iklan, dan tidak memasang cookie atau pelacak.\n- Isian formulir dikirim sebagai email ke tim VeloCT dan tidak disimpan di database situs.\n- Anda bisa meminta salinan, perbaikan, atau penghapusan data kapan saja lewat email di bagian \"Siapa kami\".\n\nRincian lengkapnya ada di bagian-bagian berikut."
+    },
+    {
+      "id": "siapa-kami",
+      "title": "Siapa kami dan cara menghubungi kami",
+      "content": "Situs ini dikelola oleh PT Velo Citra Teknologi (\"VeloCT\" atau \"kami\"). VeloCT bertindak sebagai pengendali data pribadi atas data yang dikumpulkan lewat situs ini.\n\nUntuk pertanyaan, permintaan terkait data pribadi, atau pengaduan, kirim email ke adminveloct@gmail.com dengan subjek \"Data Pribadi\"."
+    },
+    {
+      "id": "data-yang-kami-kumpulkan",
+      "title": "Data yang kami kumpulkan",
+      "content": "Lewat formulir Kontak, kami mengumpulkan data yang Anda isi sendiri:\n- nama, email, dan nama organisasi;\n- isi pesan;\n- nomor WhatsApp, bila Anda mengisinya (tidak wajib).\n\nBersama data itu kami mencatat bahasa halaman yang Anda pakai dan waktu Anda mencentang persetujuan, sebagai bukti persetujuan.\n\nSaat formulir dikirim, server kami juga membaca alamat IP Anda untuk mencegah spam. Alamat IP langsung diubah menjadi kode acak (hash) dan tidak dicatat ke database.\n\nSitus ini tidak memakai cookie, alat analitik, atau pelacak iklan. Mohon tidak menuliskan data pribadi yang bersifat spesifik, seperti data kesehatan, data keuangan, atau nomor identitas, di kolom pesan."
+    },
+    {
+      "id": "tujuan-pemrosesan",
+      "title": "Untuk apa data dipakai",
+      "content": "Kami memakai data Anda hanya untuk:\n- membaca dan membalas pesan Anda lewat email atau WhatsApp;\n- bila Anda ingin melanjutkan, menyiapkan diskusi kebutuhan, proposal, dan penawaran;\n- mencegah penyalahgunaan formulir, seperti spam dan kiriman otomatis.\n\nKami tidak memasukkan Anda ke daftar newsletter dan tidak memakai data Anda untuk keputusan otomatis atau profiling."
+    },
+    {
+      "id": "dasar-hukum",
+      "title": "Dasar hukum pemrosesan",
+      "content": "Pemrosesan data Anda berpedoman pada Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP):\n- Data formulir diproses atas persetujuan Anda (Pasal 20 ayat (2) huruf a UU PDP), yang Anda berikan dengan mencentang kotak persetujuan. Tanpa centang itu, formulir tidak bisa dikirim.\n- Alamat IP yang sudah di-hash diproses untuk menjaga keamanan formulir, sebagai kepentingan yang sah (Pasal 20 ayat (2) huruf f UU PDP).\n- Bila Anda kemudian menjadi klien, data yang diperlukan untuk kerja sama diproses berdasarkan perjanjian (Pasal 20 ayat (2) huruf b UU PDP)."
+    },
+    {
+      "id": "pihak-lain",
+      "title": "Pihak lain yang menerima data",
+      "content": "Kami tidak menjual, menyewakan, atau meminjamkan data Anda. Data Anda hanya sampai ke pihak berikut:\n- Tim VeloCT yang menangani pertanyaan teknis dan penjualan, yang membaca email isian formulir.\n- Vercel Inc., penyedia hosting situs ini.\n- Google LLC, lewat layanan Gmail yang kami pakai untuk mengirim isian formulir ke kotak masuk tim.\n- Fontshare, penyedia huruf di situs ini. Browser Anda terhubung langsung ke server Fontshare saat membuka halaman.\n- Aparat penegak hukum atau instansi berwenang, hanya bila diwajibkan oleh peraturan atau putusan pengadilan.\n\nServer Vercel, Google, dan Fontshare bisa berada di luar Indonesia, sehingga data Anda dapat ditransfer ke luar wilayah Indonesia. Transfer ini dilakukan sesuai Pasal 56 UU PDP."
+    },
+    {
+      "id": "lama-penyimpanan",
+      "title": "Lama penyimpanan",
+      "content": "- Email isian formulir, termasuk bukti persetujuan: disimpan selama masih diperlukan untuk menindaklanjuti pesan Anda, lalu dihapus, sesuai prinsip pembatasan penyimpanan dalam UU PDP. Bila Anda menarik persetujuan atau meminta penghapusan, email itu kami hapus lebih cepat.\n- Hash alamat IP: hanya ada di memori server selama dibutuhkan untuk menghitung jumlah kiriman, dan hilang saat server dimulai ulang.\n- Bila pesan Anda berlanjut menjadi kerja sama, dokumen yang terkait disimpan selama jangka waktu yang diwajibkan peraturan, seperti ketentuan dokumen perusahaan dan perpajakan."
+    },
+    {
+      "id": "keamanan-data",
+      "title": "Keamanan data",
+      "content": "Situs ini hanya bisa dibuka lewat HTTPS, sehingga data yang Anda kirim terenkripsi selama perjalanan. Formulir dilindungi token bertanda tangan dan batas jumlah kiriman. Akses ke kotak masuk dan pengaturan situs hanya diberikan kepada tim yang berwenang.\n\nBila terjadi kegagalan pelindungan data pribadi yang menyangkut data Anda, kami memberi tahu Anda secara tertulis paling lambat 3 x 24 jam sejak kami mengetahuinya, sesuai Pasal 46 UU PDP. Pemberitahuan itu memuat data yang terungkap, kapan dan bagaimana kejadiannya, serta langkah penanganan yang kami ambil."
+    },
+    {
+      "id": "hak-anda",
+      "title": "Hak Anda",
+      "content": "Sesuai UU PDP, Anda berhak untuk:\n- mendapat informasi tentang pemrosesan data Anda;\n- mengakses dan mendapat salinan data Anda;\n- memperbaiki atau melengkapi data Anda;\n- meminta pemrosesan dihentikan dan data Anda dihapus;\n- menarik persetujuan kapan saja;\n- menunda atau membatasi pemrosesan;\n- menggugat dan menerima ganti rugi bila data Anda diproses dengan melanggar hukum.\n\nKirim permintaan ke email di bagian \"Siapa kami\" dan sebutkan email yang Anda pakai saat mengisi formulir. Untuk keamanan, kami dapat meminta Anda membuktikan bahwa email itu milik Anda. Permintaan akses dan perbaikan kami penuhi paling lambat 3 x 24 jam sejak permintaan diterima. Penarikan persetujuan tidak membatalkan pemrosesan yang sudah dilakukan sebelumnya."
+    },
+    {
+      "id": "data-anak",
+      "title": "Data anak",
+      "content": "Situs dan formulir ini ditujukan untuk kebutuhan bisnis dan instansi, bukan untuk anak. Bila Anda belum berusia 18 tahun, jangan mengirim formulir tanpa persetujuan orang tua atau wali. Bila kami mengetahui ada data anak yang terkirim tanpa persetujuan tersebut, data itu kami hapus."
+    },
+    {
+      "id": "perubahan-kebijakan",
+      "title": "Perubahan kebijakan",
+      "content": "Kebijakan ini berlaku sejak 27 November 2026. Bila isinya berubah, kami memperbarui halaman ini dan tanggal di bagian ini sebelum perubahan berlaku. Bila perubahan menyangkut data yang sudah Anda kirim, kami memberi tahu Anda lewat email sebelum perubahan berlaku."
+    }
+  ]
 }

@@ -14,7 +14,7 @@ export default async function SiteHeader({ locale }: Props) {
   const t = await getTranslations({ locale, namespace: "common" });
 
   return (
-    <header className="sticky top-0 z-50 bg-[#FBFBFA] px-6 py-3 shadow-[0_2px_10px_rgba(0,0,0,0.25)]">
+    <header className="sticky top-0 z-50 bg-neutral-50 px-6 py-3 shadow-[0_2px_10px_rgba(0,0,0,0.25)]">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
         <div className="flex items-center gap-6">
           <Link
@@ -34,7 +34,7 @@ export default async function SiteHeader({ locale }: Props) {
         <div className="flex items-center gap-2">
           <Link
             href={`/${getSlug("contact", locale)}`}
-            className="btn-flame-hover rounded-lg border border-flame px-4 py-2 text-sm font-semibold text-flame transition-colors"
+            className="btn-flame-hover rounded-lg border border-red-700 px-4 py-2 text-sm font-semibold text-red-700 transition-colors"
           >
             {t("nav.contact")}
           </Link>

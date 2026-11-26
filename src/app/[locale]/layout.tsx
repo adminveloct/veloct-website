@@ -23,7 +23,33 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(
       process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
     ),
-    title: "VeloCT",
+    title: {
+      default: "VeloCT",
+      template: "%s",
+    },
+    icons: {
+      icon: [
+        { url: "/favicon.ico" },
+        { url: "/icon.png", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-icon.png" }],
+    },
+    openGraph: {
+      siteName: "VeloCT",
+      type: "website",
+      images: [
+        {
+          url: "/images/og-image.png",
+          width: 2838,
+          height: 1440,
+          alt: "VeloCT — Konsultan AI dan Data untuk Pemerintah dan Industri",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: ["/images/og-image.png"],
+    },
   };
 }
 
@@ -43,14 +69,32 @@ export default async function LocaleLayout({ children, params }: Props) {
       data-scroll-behavior="smooth"
     >
       <link
+        rel="preconnect"
+        href="https://api.fontshare.com"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preconnect"
+        href="https://cdn.fontshare.com"
+        crossOrigin="anonymous"
+      />
+      <link
         rel="stylesheet"
         href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap"
         precedence="default"
       />
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider messages={messages}>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-neutral-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg"
+          >
+            {locale === "id" ? "Langsung ke konten utama" : "Skip to main content"}
+          </a>
           <SiteHeader locale={locale} />
-          <main className="flex flex-1 flex-col">{children}</main>
+          <main id="main-content" className="flex flex-1 flex-col">
+            {children}
+          </main>
           <SiteFooter locale={locale} />
         </NextIntlClientProvider>
       </body>

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { getSlug } from "@/i18n/pages";
 import { validateContactInput } from "@/lib/contact/validation";
+import { CheckCircleIcon } from "@/components/icons";
 
 type FormProps = {
   locale: string;
@@ -20,9 +21,13 @@ type FormProps = {
     privacyConsentPrefix: string;
     privacyConsentLink: string;
     privacyConsentSuffix: string;
+    privacyNote?: string;
     submitButton: string;
     submitting: string;
     successTitle: string;
+    successSubtitle?: string;
+    backHome?: string;
+    sendAnother?: string;
     errorTitle: string;
   };
   errorMessages?: Record<string, Record<string, string>>;
@@ -249,32 +254,40 @@ export default function ContactForm({
   return (
     <div className="rounded-2xl bg-white p-6 shadow-[0_4px_24px_rgba(0,0,0,0.06)] md:p-8">
       {successMessage ? (
-        <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-6 text-center">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-          </div>
-          <h3 className="mt-4 text-lg font-bold text-emerald-900">
+        <div className="flex flex-col items-center py-6 text-center md:py-10">
+          {/* Green Check Icon */}
+          <CheckCircleIcon size={64} className="text-forest-500" />
+
+          {/* Judul Sukses */}
+          <h3 className="mt-6 text-xl font-bold tracking-tight text-neutral-900 md:text-2xl">
             {labels.successTitle}
           </h3>
-          <p className="mt-2 text-sm text-emerald-800">{successMessage}</p>
+
+          {/* Deskripsi */}
+          <p className="mt-3 max-w-sm text-sm leading-relaxed text-neutral-900 md:text-base">
+            {labels.successSubtitle ||
+              (locale === "id"
+                ? "Kami akan membalas lewat email Anda, atau WhatsApp bila Anda mengisinya"
+                : "We will reply via your email, or WhatsApp if you provided it")}
+          </p>
+
+          {/* Tombol Kembali ke Beranda */}
+          <Link
+            href="/"
+            className="mt-8 block w-full rounded-xl bg-neutral-900 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-neutral-800"
+          >
+            {labels.backHome ||
+              (locale === "id" ? "Kembali ke Beranda" : "Back to Home")}
+          </Link>
+
+          {/* Link Kirim Pesan Lain */}
           <button
             type="button"
             onClick={() => setSuccessMessage(null)}
-            className="mt-6 rounded-lg bg-emerald-600 px-5 py-2 text-xs font-semibold text-white transition hover:bg-emerald-700"
+            className="mt-5 text-sm font-medium text-neutral-900 underline underline-offset-4 transition hover:text-neutral-600"
           >
-            {locale === "id" ? "Kirim Pesan Lain" : "Send Another Message"}
+            {labels.sendAnother ||
+              (locale === "id" ? "Kirim Pesan Lain" : "Send Another Message")}
           </button>
         </div>
       ) : (
@@ -326,9 +339,9 @@ export default function ContactForm({
           <div>
             <label
               htmlFor="contact-name"
-              className="block text-xs font-bold text-[#222222]"
+              className="block text-xs font-bold text-neutral-900"
             >
-              {labels.nameLabel} <span className="text-[#EE4A1B]">*</span>
+              {labels.nameLabel} <span className="text-red-700" aria-hidden="true">*</span>
             </label>
             <input
               id="contact-name"
@@ -343,10 +356,10 @@ export default function ContactForm({
                 }
               }}
               placeholder={labels.namePlaceholder}
-              className={`mt-1.5 w-full rounded-md border px-3.5 py-2.5 text-sm text-[#222222] placeholder:text-[#999999] transition focus:outline-none focus:ring-1 ${
+              className={`mt-1.5 w-full rounded-md border px-3.5 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-400 transition focus:outline-none focus:ring-1 ${
                 fieldErrors.name
                   ? "border-red-500 focus:border-red-500 focus:ring-red-500"
-                  : "border-[#E0E0E0] focus:border-[#222222] focus:ring-[#222222]"
+                  : "border-neutral-200 focus:border-neutral-900 focus:ring-neutral-900"
               }`}
             />
             {fieldErrors.name && (
@@ -358,9 +371,9 @@ export default function ContactForm({
           <div>
             <label
               htmlFor="contact-email"
-              className="block text-xs font-bold text-[#222222]"
+              className="block text-xs font-bold text-neutral-900"
             >
-              {labels.emailLabel} <span className="text-[#EE4A1B]">*</span>
+              {labels.emailLabel} <span className="text-red-700" aria-hidden="true">*</span>
             </label>
             <input
               id="contact-email"
@@ -375,10 +388,10 @@ export default function ContactForm({
                 }
               }}
               placeholder={labels.emailPlaceholder}
-              className={`mt-1.5 w-full rounded-md border px-3.5 py-2.5 text-sm text-[#222222] placeholder:text-[#999999] transition focus:outline-none focus:ring-1 ${
+              className={`mt-1.5 w-full rounded-md border px-3.5 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-400 transition focus:outline-none focus:ring-1 ${
                 fieldErrors.email
                   ? "border-red-500 focus:border-red-500 focus:ring-red-500"
-                  : "border-[#E0E0E0] focus:border-[#222222] focus:ring-[#222222]"
+                  : "border-neutral-200 focus:border-neutral-900 focus:ring-neutral-900"
               }`}
             />
             {fieldErrors.email && (
@@ -390,7 +403,7 @@ export default function ContactForm({
           <div>
             <label
               htmlFor="contact-phone"
-              className="block text-xs font-bold text-[#222222]"
+              className="block text-xs font-bold text-neutral-900"
             >
               {labels.phoneLabel}
             </label>
@@ -406,10 +419,10 @@ export default function ContactForm({
                 }
               }}
               placeholder={labels.phonePlaceholder}
-              className={`mt-1.5 w-full rounded-md border px-3.5 py-2.5 text-sm text-[#222222] placeholder:text-[#999999] transition focus:outline-none focus:ring-1 ${
+              className={`mt-1.5 w-full rounded-md border px-3.5 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-400 transition focus:outline-none focus:ring-1 ${
                 fieldErrors.phone
                   ? "border-red-500 focus:border-red-500 focus:ring-red-500"
-                  : "border-[#E0E0E0] focus:border-[#222222] focus:ring-[#222222]"
+                  : "border-neutral-200 focus:border-neutral-900 focus:ring-neutral-900"
               }`}
             />
             {fieldErrors.phone && (
@@ -421,9 +434,9 @@ export default function ContactForm({
           <div>
             <label
               htmlFor="contact-organization"
-              className="block text-xs font-bold text-[#222222]"
+              className="block text-xs font-bold text-neutral-900"
             >
-              {labels.organizationLabel} <span className="text-[#EE4A1B]">*</span>
+              {labels.organizationLabel} <span className="text-red-700" aria-hidden="true">*</span>
             </label>
             <input
               id="contact-organization"
@@ -438,10 +451,10 @@ export default function ContactForm({
                 }
               }}
               placeholder={labels.organizationPlaceholder}
-              className={`mt-1.5 w-full rounded-md border px-3.5 py-2.5 text-sm text-[#222222] placeholder:text-[#999999] transition focus:outline-none focus:ring-1 ${
+              className={`mt-1.5 w-full rounded-md border px-3.5 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-400 transition focus:outline-none focus:ring-1 ${
                 fieldErrors.organization
                   ? "border-red-500 focus:border-red-500 focus:ring-red-500"
-                  : "border-[#E0E0E0] focus:border-[#222222] focus:ring-[#222222]"
+                  : "border-neutral-200 focus:border-neutral-900 focus:ring-neutral-900"
               }`}
             />
             {fieldErrors.organization && (
@@ -455,9 +468,9 @@ export default function ContactForm({
           <div>
             <label
               htmlFor="contact-message"
-              className="block text-xs font-bold text-[#222222]"
+              className="block text-xs font-bold text-neutral-900"
             >
-              {labels.messageLabel} <span className="text-[#EE4A1B]">*</span>
+              {labels.messageLabel} <span className="text-red-700" aria-hidden="true">*</span>
             </label>
             <textarea
               id="contact-message"
@@ -471,10 +484,10 @@ export default function ContactForm({
                   setFieldErrors((prev) => ({ ...prev, message: "" }));
                 }
               }}
-              className={`mt-1.5 w-full rounded-md border px-3.5 py-2.5 text-sm text-[#222222] placeholder:text-[#999999] transition focus:outline-none focus:ring-1 ${
+              className={`mt-1.5 w-full rounded-md border px-3.5 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-400 transition focus:outline-none focus:ring-1 ${
                 fieldErrors.message
                   ? "border-red-500 focus:border-red-500 focus:ring-red-500"
-                  : "border-[#E0E0E0] focus:border-[#222222] focus:ring-[#222222]"
+                  : "border-neutral-200 focus:border-neutral-900 focus:ring-neutral-900"
               }`}
             />
             {fieldErrors.message && (
@@ -499,16 +512,16 @@ export default function ContactForm({
                     }));
                   }
                 }}
-                className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-[#EB3113] focus:ring-[#EB3113]"
+                className="mt-0.5 h-4 w-4 shrink-0 rounded border-neutral-300 text-red-500 focus:ring-red-500"
               />
               <label
                 htmlFor="contact-privacy"
-                className="text-xs leading-relaxed text-[#555555]"
+                className="text-xs leading-relaxed text-neutral-600"
               >
                 {labels.privacyConsentPrefix}
                 <Link
                   href={`/${getSlug("privacy", locale)}`}
-                  className="font-medium text-[#222222] underline transition hover:text-[#EB3113]"
+                  className="font-medium text-neutral-900 underline transition hover:text-red-500"
                 >
                   {labels.privacyConsentLink}
                 </Link>
@@ -520,13 +533,18 @@ export default function ContactForm({
                 {fieldErrors.privacyConsent}
               </p>
             )}
+            {labels.privacyNote && (
+              <p className="mt-1.5 text-xs text-neutral-600">
+                {labels.privacyNote}
+              </p>
+            )}
           </div>
 
           {/* Submit Button */}
           <button
             type="submit"
             disabled={isSubmitting}
-            className="mt-2 w-full rounded-lg bg-[#EB3113] py-3 text-center text-sm font-bold text-white shadow-sm transition hover:brightness-110 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60"
+            className="btn-flame mt-2 w-full rounded-lg py-3 text-center text-sm font-bold text-white shadow-sm transition hover:brightness-110 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {isSubmitting ? labels.submitting : labels.submitButton}
           </button>

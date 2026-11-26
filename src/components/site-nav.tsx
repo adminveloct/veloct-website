@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { useLocale, useTranslations } from "next-intl";
 
@@ -14,6 +14,21 @@ export default function SiteNav() {
   const t = useTranslations("common");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [open]);
 
   const items = PAGES.filter(
     (page) => page.key !== "privacy" && page.key !== "contact"
@@ -33,8 +48,8 @@ export default function SiteNav() {
                 aria-current={pathname === item.href ? "page" : undefined}
                 className={`relative block px-3 py-2 transition-colors ${
                   pathname === item.href
-                    ? "font-semibold text-zinc-900 after:absolute after:inset-x-3 after:bottom-0 after:h-[3px] after:bg-[linear-gradient(90deg,#eb3113_0%,#c6461f_50%,#ec4b11_100%)] after:content-['']"
-                    : "font-medium text-zinc-600 hover:text-zinc-900"
+                    ? "font-semibold text-neutral-900 after:absolute after:inset-x-3 after:bottom-0 after:h-[3px] after:bg-linear-to-r after:from-red-500 after:via-red-700 after:to-red-600 after:content-['']"
+                    : "font-medium text-neutral-600 hover:text-neutral-900"
                 }`}
               >
                 {t(`nav.${item.key}`)}
@@ -45,12 +60,13 @@ export default function SiteNav() {
       </nav>
 
       <button
+        ref={menuButtonRef}
         type="button"
         aria-expanded={open}
         aria-controls="site-menu"
         aria-label={t("nav.menuLabel")}
         onClick={() => setOpen((value) => !value)}
-        className="rounded-md p-2 text-zinc-700 transition-colors hover:bg-zinc-100 lg:hidden"
+        className="rounded-md p-2 text-neutral-700 transition-colors hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 lg:hidden"
       >
         <svg
           aria-hidden="true"
@@ -72,7 +88,7 @@ export default function SiteNav() {
       {open && (
         <div
           id="site-menu"
-          className="absolute inset-x-0 top-full z-10 border-b border-zinc-200 bg-background px-6 py-3 shadow-lg lg:hidden"
+          className="absolute inset-x-0 top-full z-10 border-b border-neutral-200 bg-background px-6 py-3 shadow-lg lg:hidden"
         >
           <nav aria-label={t("nav.aria")}>
             <ul className="mx-auto flex max-w-6xl flex-col gap-1 text-sm">
@@ -86,8 +102,8 @@ export default function SiteNav() {
                     onClick={() => setOpen(false)}
                     className={`relative block rounded-md px-3 py-2 transition-colors ${
                       pathname === item.href
-                        ? "font-semibold text-zinc-900 after:absolute after:inset-x-3 after:bottom-1 after:h-[3px] after:bg-[linear-gradient(90deg,#eb3113_0%,#c6461f_50%,#ec4b11_100%)] after:content-['']"
-                        : "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900"
+                        ? "font-semibold text-neutral-900 after:absolute after:inset-x-3 after:bottom-1 after:h-[3px] after:bg-linear-to-r after:from-red-500 after:via-red-700 after:to-red-600 after:content-['']"
+                        : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
                     }`}
                   >
                     {t(`nav.${item.key}`)}
@@ -96,7 +112,7 @@ export default function SiteNav() {
               ))}
             </ul>
           </nav>
-          <div className="mx-auto mt-3 flex max-w-6xl border-t border-zinc-200 pt-3">
+          <div className="mx-auto mt-3 flex max-w-6xl border-t border-neutral-200 pt-3">
             <LanguageSwitcher locale={locale} label={t("switcher.label")} />
           </div>
         </div>

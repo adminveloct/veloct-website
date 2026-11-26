@@ -5,4 +5,5 @@ export const routing = defineRouting({
   defaultLocale: "id",
   localePrefix: "always",
   localeDetection: false,
+  localeCookie: false,
 });

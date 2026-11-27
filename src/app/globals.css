@@ -98,3 +98,24 @@ body {
   background: linear-gradient(90deg, #ec3013 0%, #c6461f 50%, #ee4a1b 100%);
   color: #ffffff;
 }
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-page-enter {
+  animation: page-enter 300ms ease-out backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-page-enter {
+    animation: none;
+  }
+}

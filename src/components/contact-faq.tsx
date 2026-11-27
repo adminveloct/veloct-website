@@ -35,39 +35,62 @@ export default function ContactFaq({ title, items }: Props) {
           {items.map((item, index) => {
             const isOpen = openIndices.includes(index);
             return (
-              <div key={index} className="flex flex-col">
-                {/* Question Card */}
+              <div
+                key={index}
+                className={`overflow-hidden rounded-2xl shadow-[0px_4px_12px_0px_rgba(0,0,0,0.08)] transition-[translate,transform,box-shadow,background-color] duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0px_10px_20px_0px_rgba(0,0,0,0.25)] ${
+                  isOpen
+                    ? "bg-neutral-900 text-white"
+                    : "bg-neutral-50 text-neutral-900"
+                }`}
+              >
                 <button
                   type="button"
                   onClick={() => toggleIndex(index)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 rounded-xl bg-white p-5 text-left shadow-sm transition hover:opacity-95 md:px-6 md:py-5"
+                  className="flex w-full items-center justify-between gap-4 p-5 text-left transition-colors duration-300 ease-out md:px-6 md:py-5"
                 >
-                  <span className="text-sm font-bold text-neutral-900 md:text-base">
+                  <span
+                    className={`text-sm font-bold transition-colors duration-300 ease-out md:text-base ${
+                      isOpen ? "text-white" : "text-neutral-900"
+                    }`}
+                  >
                     {item.question}
                   </span>
                   <span
-                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-md transition-colors ${
+                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-sm transition-all duration-300 ease-out ${
                       isOpen
-                        ? "bg-sun-500 text-neutral-900"
-                        : "bg-neutral-900 text-white"
+                        ? "rotate-180 bg-sun-500 text-neutral-900"
+                        : "rotate-0 bg-neutral-900 text-white"
                     }`}
                     aria-hidden="true"
                   >
                     {isOpen ? (
-                      <MinusIcon size={16} />
+                      <MinusIcon
+                        size={16}
+                        className="transition-transform duration-300 ease-out"
+                      />
                     ) : (
-                      <PlusIcon size={16} />
+                      <PlusIcon
+                        size={16}
+                        className="transition-transform duration-300 ease-out"
+                      />
                     )}
                   </span>
                 </button>
 
-                {/* Answer Card (Terpisah dari card pertanyaan, dengan jeda sedikit) */}
-                {isOpen && (
-                  <div className="mt-2.5 rounded-xl bg-neutral-900 p-5 text-sm leading-relaxed text-neutral-100 shadow-sm md:mt-3 md:px-6 md:py-5 md:text-base">
-                    {item.answer}
+                <div
+                  className={`grid transition-all duration-300 ease-out ${
+                    isOpen
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-5 pb-5 pt-0 text-sm leading-relaxed text-neutral-200 md:px-6 md:pb-6 md:text-base">
+                      {item.answer}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}

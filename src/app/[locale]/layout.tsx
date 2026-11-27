@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
+import PageTransition from "@/components/page-transition";
 import { routing } from "@/i18n/routing";
 
 import "../globals.css";
@@ -93,7 +94,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           </a>
           <SiteHeader locale={locale} />
           <main id="main-content" className="flex flex-1 flex-col">
-            {children}
+            <PageTransition>{children}</PageTransition>
           </main>
           <SiteFooter locale={locale} />
         </NextIntlClientProvider>

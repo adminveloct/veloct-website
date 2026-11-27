@@ -64,6 +64,13 @@ const SERVICE_IMAGES: Record<string, string> = {
   software: "/images/elemen-Software.png",
 };
 
+const SERVICE_ANCHORS: Record<string, string> = {
+  ai: "ai",
+  bigData: "big-data",
+  cloud: "cloud-aws",
+  software: "software",
+};
+
 const SERVICE_KEYS = ["ai", "bigData", "cloud", "software"] as const;
 
 const SERVICE_TOP_OFFSETS = ["lg:mt-7", "lg:mt-26", "lg:mt-15", ""];
@@ -130,11 +137,11 @@ export default async function HomePage({ params }: Props) {
             {SERVICE_KEYS.map((key, index) => (
               <Link
                 key={key}
-                href={`/${getSlug("services-products", locale)}`}
-                className={`group flex flex-col rounded-2xl border border-white/80 bg-white p-5 shadow-sm transition-shadow hover:shadow-md ${SERVICE_TOP_OFFSETS[index] ?? ""
+                href={`/${getSlug("services-products", locale)}#${SERVICE_ANCHORS[key]}`}
+                className={`group flex flex-col gap-4 rounded-[16px] border border-neutral-200/70 bg-white p-5 shadow-[0px_4px_12px_0px_rgba(0,0,0,0.08)] transition-[translate,transform,box-shadow] duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0px_10px_20px_0px_rgba(0,0,0,0.25)] md:gap-5 ${SERVICE_TOP_OFFSETS[index] ?? ""
                   }`}
               >
-                <div className="aspect-[4/3] overflow-hidden rounded-xl bg-mint/40">
+                <div className="aspect-[4/3] overflow-hidden rounded-xl bg-mint-100">
                   <Image
                     src={SERVICE_IMAGES[key]}
                     alt=""
@@ -144,20 +151,20 @@ export default async function HomePage({ params }: Props) {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <h3 className="mt-4 text-center text-lg font-bold text-neutral-900 md:text-xl">
+                <h3 className="text-center text-2xl font-bold text-neutral-900">
                   {t(`services.${key}`)}
                 </h3>
-                <p className="mt-3 flex-1 text-center text-sm leading-6 text-neutral-600">
+                <p className="text-center text-sm leading-6 text-neutral-700 md:text-base md:leading-7">
                   {t.rich(`serviceDescriptions.${key}`, {
                     medium: (chunks) => (
-                      <span className="font-medium text-neutral-900">{chunks}</span>
+                      <span className="font-semibold text-neutral-900">{chunks}</span>
                     ),
                     bold: (chunks) => (
-                      <span className="font-medium text-neutral-900">{chunks}</span>
+                      <span className="font-semibold text-neutral-900">{chunks}</span>
                     ),
                   })}
                 </p>
-                <span className="mt-4 flex w-full items-center justify-center gap-3 rounded-full bg-mint-100 px-4 py-2 text-sm font-medium text-neutral-900 transition-colors group-hover:bg-forest-600 group-hover:text-white">
+                <span className="flex min-h-[44px] w-full items-center justify-center gap-2.5 rounded-full bg-mint-100 px-4 py-2.5 text-sm font-medium text-neutral-900 transition-colors duration-300 ease-out group-hover:bg-forest-600 group-hover:text-white">
                   {t("serviceCardCta")}
                   <ArrowRightIcon size={18} />
                 </span>

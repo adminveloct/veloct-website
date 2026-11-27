@@ -46,10 +46,10 @@ export default function SiteNav() {
               <Link
                 href={item.href}
                 aria-current={pathname === item.href ? "page" : undefined}
-                className={`relative block px-3 py-2 transition-colors ${
+                className={`relative block px-3 py-2 transition-colors duration-200 ${
                   pathname === item.href
                     ? "font-semibold text-neutral-900 after:absolute after:inset-x-3 after:bottom-0 after:h-[3px] after:bg-linear-to-r after:from-red-500 after:via-red-700 after:to-red-600 after:content-['']"
-                    : "font-medium text-neutral-600 hover:text-neutral-900"
+                    : "font-medium text-neutral-600 hover:font-bold hover:text-red-700"
                 }`}
               >
                 {t(`nav.${item.key}`)}
@@ -100,10 +100,10 @@ export default function SiteNav() {
                       pathname === item.href ? "page" : undefined
                     }
                     onClick={() => setOpen(false)}
-                    className={`relative block rounded-md px-3 py-2 transition-colors ${
+                    className={`relative block rounded-md px-3 py-2 transition-colors duration-200 ${
                       pathname === item.href
                         ? "font-semibold text-neutral-900 after:absolute after:inset-x-3 after:bottom-1 after:h-[3px] after:bg-linear-to-r after:from-red-500 after:via-red-700 after:to-red-600 after:content-['']"
-                        : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
+                        : "text-neutral-600 hover:bg-neutral-100 hover:font-bold hover:text-red-700"
                     }`}
                   >
                     {t(`nav.${item.key}`)}

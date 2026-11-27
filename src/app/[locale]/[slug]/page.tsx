@@ -210,8 +210,8 @@ export default async function SlugPage({ params }: Props) {
     return (
       <div className="flex flex-1 flex-col bg-neutral-50">
         <section className="pb-16 pt-12 md:pb-24 md:pt-20">
-          <Container size="default" className="grid items-center gap-10 lg:grid-cols-2">
-            <div className="max-w-xl">
+          <Container size="default">
+            <div className="max-w-3xl">
               <h1 className="text-4xl font-bold leading-tight tracking-tight text-neutral-900 md:text-5xl lg:text-[64px] lg:leading-[1.15]">
                 {t("heading")}
               </h1>
@@ -219,6 +219,7 @@ export default async function SlugPage({ params }: Props) {
                 {t("description")}
               </p>
             </div>
+            {/* Foto tim di hero disembunyikan sementara
             <div className="w-full max-w-[519.33px] justify-self-center lg:justify-self-end">
               <div
                 className="w-full overflow-hidden rounded-[28px]"
@@ -235,6 +236,7 @@ export default async function SlugPage({ params }: Props) {
                 />
               </div>
             </div>
+            */}
           </Container>
         </section>
 
@@ -244,6 +246,7 @@ export default async function SlugPage({ params }: Props) {
             alt=""
             width={5760}
             height={800}
+            sizes="100vw"
             className="block h-auto w-full"
           />
         </div>
@@ -326,6 +329,7 @@ export default async function SlugPage({ params }: Props) {
             alt=""
             width={5760}
             height={800}
+            sizes="100vw"
             className="block h-auto w-full"
           />
         </div>
@@ -391,6 +395,7 @@ export default async function SlugPage({ params }: Props) {
             alt=""
             width={5760}
             height={800}
+            sizes="100vw"
             className="block h-auto w-full"
           />
         </div>
@@ -433,6 +438,7 @@ export default async function SlugPage({ params }: Props) {
             alt=""
             width={5760}
             height={800}
+            sizes="100vw"
             className="block h-auto w-full"
           />
         </div>
@@ -638,10 +644,18 @@ export default async function SlugPage({ params }: Props) {
               </h2>
 
               <div className="mt-8 flex flex-col gap-6 md:mt-12 md:gap-7">
-                {roles.map((role) => (
+                {roles.map((role) => {
+                  const roleAnchorMap: Record<string, string> = {
+                    ai: "ai",
+                    bigData: "big-data",
+                    cloud: "cloud-aws",
+                    software: "software",
+                  };
+                  return (
                   <div
                     key={role.key}
-                    className="grid grid-cols-1 gap-3 md:grid-cols-[180px_1fr_1fr] md:items-stretch md:gap-6 lg:grid-cols-[220px_1fr_1fr]"
+                    id={roleAnchorMap[role.key] ?? role.key}
+                    className="grid scroll-mt-28 grid-cols-1 gap-3 md:grid-cols-[180px_1fr_1fr] md:items-stretch md:gap-6 lg:grid-cols-[220px_1fr_1fr]"
                   >
                     <div className="flex items-center">
                       <h3 className="text-3xl font-bold tracking-tight text-neutral-900 lg:text-[40px]">
@@ -672,7 +686,8 @@ export default async function SlugPage({ params }: Props) {
                       )}
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </Container>
@@ -685,6 +700,7 @@ export default async function SlugPage({ params }: Props) {
             alt=""
             width={2880}
             height={162}
+            sizes="100vw"
             className="block h-auto w-full"
           />
         </div>
@@ -730,6 +746,7 @@ export default async function SlugPage({ params }: Props) {
             alt=""
             width={2880}
             height={162}
+            sizes="100vw"
             className="block h-auto w-full"
           />
         </div>
@@ -916,6 +933,7 @@ export default async function SlugPage({ params }: Props) {
             alt=""
             width={5760}
             height={800}
+            sizes="100vw"
             className="block h-auto w-full"
           />
         </div>

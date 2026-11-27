@@ -88,7 +88,7 @@ export default function ProjectShowcase({
                 setSelectedCategory(opt.key);
                 setIsExpanded(false);
               }}
-              className={`rounded-md px-4 py-1.5 text-xs font-semibold transition-colors md:text-sm ${
+              className={`min-h-[44px] rounded-lg px-4 py-2 text-xs font-semibold transition-colors md:text-sm ${
                 isActive
                   ? "bg-neutral-900 text-white"
                   : "bg-neutral-100 text-neutral-900 hover:bg-neutral-200"
@@ -101,9 +101,12 @@ export default function ProjectShowcase({
       </div>
 
       {/* Mobile View (< lg) */}
-      <div className="mt-8 flex flex-col gap-7 lg:hidden">
+      <div className="mt-8 flex flex-col gap-4 lg:hidden">
         {visibleProjects.map((project) => (
-          <article key={project.id} className="flex flex-col items-start">
+          <article
+            key={project.id}
+            className="flex flex-col items-start rounded-xl bg-neutral-100/70 p-4"
+          >
             <span className="text-sm font-normal text-neutral-600">
               {project.year} · {project.categoryLabel}
             </span>
@@ -125,7 +128,7 @@ export default function ProjectShowcase({
           <button
             type="button"
             onClick={() => setIsExpanded((prev) => !prev)}
-            className="mt-2 w-full rounded-md bg-sun-500 py-3 text-center text-sm font-bold text-neutral-900 transition hover:brightness-105 active:scale-[0.99]"
+            className="mt-2 min-h-[44px] w-full rounded-lg bg-sun-500 py-2.5 text-center text-sm font-bold text-neutral-900 transition hover:brightness-105 active:scale-[0.99]"
           >
             {isExpanded ? showLessLabel : showMoreLabel}
           </button>
@@ -144,7 +147,7 @@ export default function ProjectShowcase({
                 type="button"
                 aria-pressed={isSelected}
                 onClick={() => setSelectedProjectId(project.id)}
-                className={`flex w-full items-center justify-between gap-4 p-4 text-left transition-colors md:px-5 md:py-4 ${
+                className={`flex min-h-[44px] w-full items-center justify-between gap-4 rounded-xl p-4 text-left transition-colors md:px-5 md:py-4 ${
                   isSelected
                     ? "bg-neutral-900 text-white"
                     : "bg-neutral-100 text-neutral-900 hover:bg-neutral-200"
@@ -192,7 +195,7 @@ export default function ProjectShowcase({
             <button
               type="button"
               onClick={() => setIsExpanded((prev) => !prev)}
-              className="mt-3 w-full rounded-md bg-sun-500 py-3 text-center text-sm font-bold text-neutral-900 transition hover:brightness-105 active:scale-[0.99]"
+              className="mt-3 min-h-[44px] w-full rounded-lg bg-sun-500 py-2.5 text-center text-sm font-bold text-neutral-900 transition hover:brightness-105 active:scale-[0.99]"
             >
               {isExpanded ? showLessLabel : showMoreLabel}
             </button>
@@ -201,7 +204,7 @@ export default function ProjectShowcase({
 
         {/* Right Column: Project Preview */}
         {selectedProject && (
-          <div className="sticky top-24 flex flex-col">
+          <div className="flex flex-col self-start">
             {selectedProject.image ? (
               <div className="relative mb-4 aspect-[16/10] w-full overflow-hidden rounded-lg bg-neutral-300">
                 <Image

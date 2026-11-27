@@ -78,10 +78,10 @@ export default async function SiteFooter({ locale }: Props) {
           </div>
 
           <div className="text-center md:max-w-sm md:text-left">
-            <p className="text-lg font-bold text-white">
+            <p className="text-[18px] font-bold leading-[28px] tracking-normal text-white">
               {t("footer.companyName")}
             </p>
-            <p className="mx-auto mt-3 max-w-[280px] text-sm leading-6 text-neutral-300 md:mx-0 md:max-w-none">
+            <p className="mx-auto mt-3 max-w-[280px] text-[17px] font-normal leading-[26px] tracking-normal text-neutral-300 md:mx-0 md:max-w-none">
               {t("footer.tagline")}
             </p>
           </div>
